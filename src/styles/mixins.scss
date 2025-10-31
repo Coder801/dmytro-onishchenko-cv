@@ -1,0 +1,45 @@
+@use "sass:string";
+@use "./variables.scss" as *;
+
+// Mobile-first approach: min-width media queries
+@mixin respond-to($breakpoint) {
+  $breakpoint-sm: 480px;
+  $breakpoint-md: 768px;
+  $breakpoint-lg: 1024px;
+  $breakpoint-xl: 1440px;
+
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// Helper mixin for mobile-only styles (max-width)
+@mixin mobile-only($breakpoint: md) {
+  $breakpoint-value: 767px;
+  
+  @if $breakpoint == sm {
+    $breakpoint-value: 479px;
+  } @else if $breakpoint == md {
+    $breakpoint-value: 767px;
+  } @else if $breakpoint == lg {
+    $breakpoint-value: 1023px;
+  }
+
+  @media (max-width: $breakpoint-value) {
+    @content;
+  }
+}

@@ -1,0 +1,61 @@
+@use "../../styles/mixins" as *;
+
+.container {
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  padding: calc(var(--base) * 6) calc(var(--base) * 4);
+
+  @include respond-to(md) {
+    padding: calc(var(--base) * 10) calc(var(--base) * 10);
+  }
+
+  & .title {
+    margin: 0 0 var(--space-md) 0;
+
+    @include respond-to(md) {
+      margin: 0 0 var(--space-lg) 0;
+    }
+  }
+
+  & .text {
+    margin: 0 0 var(--space-sm) 0;
+    font-size: 0.9rem;
+
+    @include respond-to(md) {
+      margin: 0 0 var(--space-md) 0;
+      font-size: 1rem;
+    }
+
+    > span {
+      margin-left: var(--base);
+    }
+  }
+
+  .works {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+
+    @include respond-to(md) {
+      gap: var(--space-lg);
+    }
+
+    & > *:not(:last-child) {
+      border-bottom: 1px solid var(--color-text-primary);
+      padding-bottom: var(--space-md);
+
+      @include respond-to(md) {
+        padding-bottom: var(--space-lg);
+      }
+    }
+  }
+
+  .section {
+    margin: var(--space-lg) 0;
+
+    @include respond-to(md) {
+      margin: var(--space-xl) 0;
+    }
+  }
+}

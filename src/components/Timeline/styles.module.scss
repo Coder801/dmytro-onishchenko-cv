@@ -1,0 +1,57 @@
+@use "../../styles/mixins" as *;
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-md);
+
+  @include respond-to(md) {
+    flex-direction: row;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  & .date {
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xs);
+
+    @include respond-to(md) {
+      width: 80px;
+      padding-top: var(--space-sm);
+      flex-direction: column;
+      gap: 0;
+    }
+
+    & span:last-child {
+      text-align: left;
+
+      @include respond-to(md) {
+        text-align: right;
+      }
+    }
+  }
+
+  & .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    @include respond-to(md) {
+      width: calc(100% - 80px);
+    }
+  }
+
+  & .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+}

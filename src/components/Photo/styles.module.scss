@@ -1,0 +1,29 @@
+@use "../../styles/mixins" as *;
+
+$radius: 500px;
+
+.container {
+  display: flex;
+  width: 100%;
+
+  .photo {
+    width: 100%;
+    margin: 0 auto 15px;
+    padding: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: $radius;
+    border-color: var(--color-blue) var(--color-blue) var(--color-yellow)
+      var(--color-yellow);
+    transform: rotate(-45deg);
+  }
+
+  .image {
+    display: block;
+    position: relative !important;
+    border-radius: $radius;
+    transform: rotate(45deg);
+    width: 100%;
+    height: auto;
+  }
+}

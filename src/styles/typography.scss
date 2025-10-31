@@ -1,0 +1,51 @@
+/* ===========================
+Typography
+=========================== */
+@use "sass:list";
+@use "./variables.scss" as vars;
+@use "./mixins" as *;
+
+html {
+  font-size: calc(var(--base) * 4);
+  font-family: var(--font-sans);
+
+  @include respond-to(md) {
+    font-size: calc(var(--base) * 4.5);
+  }
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+
+/* All heading */
+@for $i from 1 through list.length(vars.$header-sizes) {
+  h#{$i} {
+    $base-size: list.nth(vars.$header-sizes, $i);
+    font-size: calc($base-size * 0.85);
+
+    @include respond-to(md) {
+      font-size: $base-size;
+    }
+  }
+}
+
+p {
+  font-size: 0.9rem;
+  margin-top: 0;
+  line-height: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+
+  @include respond-to(md) {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+strong {
+  font-weight: bold;
+}

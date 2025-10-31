@@ -1,0 +1,21 @@
+@use "../../styles/mixins" as *;
+
+.chip {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: rgb(211, 211, 211, 0.2);
+  width: auto;
+  font-size: 0.75rem;
+  padding: 0 var(--space-xs);
+  font-weight: 500;
+
+  @include respond-to(md) {
+    font-size: 0.9rem;
+    padding: 0 var(--space-sm);
+  }
+
+  &.filled {
+    background-color: rgb(211, 211, 211, 0.5);
+    color: var(--color-text-mark);
+  }
+}

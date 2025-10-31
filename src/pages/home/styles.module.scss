@@ -1,0 +1,32 @@
+@use "../../styles/mixins" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  margin: var(--space-md) auto;
+  grid-template-areas:
+    "sidebar"
+    "main";
+  max-width: 1440px;
+  min-height: 100vh;
+  gap: var(--space-md);
+
+  @include respond-to(md) {
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar main";
+    margin: var(--space-lg) auto;
+    gap: 0;
+  }
+
+  & .main {
+    grid-area: main;
+    box-sizing: border-box;
+  }
+
+  & .sidebar {
+    grid-area: sidebar;
+    box-sizing: border-box;
+  }
+}
