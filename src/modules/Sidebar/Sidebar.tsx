@@ -8,77 +8,53 @@ import { Typography } from "@/ui/Typography";
 import { Chip } from "@/ui/Chip";
 import { Divider } from "@/ui/Divider";
 
+import type { CVProfile } from "@/types/cv";
+
 import styles from "./styles.module.scss";
 
 type SidebarProps = {
   className?: string;
+  profile: CVProfile;
 };
 
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "ReactJS/NextJS",
-  "Monorepo",
-  "PWA",
-  "VueJS",
-  "NodeJS",
-  "HTML",
-  "CSS",
-  "SQL/NoSQL",
-  "MongoDB",
-  "CMS",
-  "Git",
-  "TDD",
-  "testing",
-];
-
-export const Sidebar: FC<SidebarProps> = ({ className }) => (
+export const Sidebar: FC<SidebarProps> = ({ className, profile }) => (
   <aside className={clsx(className, styles.container)}>
     <Photo className={styles.photo} />
     <Typography className={styles.name} tag="h1" uppercase weight="lighter">
-      <strong>Dmytro</strong> Onishchenko
+      <strong>{profile.name.first}</strong> {profile.name.last}
     </Typography>
-    <Typography className={styles.position} weight="lighter" tag="h2">
-      Software engineer
+    <Typography className={styles.position} weight="lighter" tag="h4">
+      {profile.position}
     </Typography>
     <Divider className={styles.divider} />
     <Typography className={styles.contact}>
-      Kyiv. Ukraine. <br />
-      +380636126197 <br />
-      donischenko801@gmail.com
+      {profile.location}
+      <br />
+      {profile.phone}
+      <br />
+      {profile.email}
     </Typography>
+
     <Title tag="h3" className={styles.subtitle}>
       Skills
     </Title>
     <Typography className={styles.skills}>
-      {skills.map((skill) => (
+      {profile.skills.map((skill) => (
         <Chip key={skill}>{skill}</Chip>
       ))}
     </Typography>
     <Title tag="h3" className={styles.subtitle}>
       Social
     </Title>
-
-    <SocialLink
-      icon="linkedin"
-      className={styles.link}
-      link="https://www.linkedin.com/in/dmitryonischenko"
-    >
-      dmitryonischenko
-    </SocialLink>
-    <SocialLink
-      icon="github"
-      className={styles.link}
-      link="https://github.com/coder801"
-    >
-      Coder801
-    </SocialLink>
-    <SocialLink
-      icon="facebook"
-      className={styles.link}
-      link="https://www.facebook.com/dmitry.onischenko.39"
-    >
-      dmitry.onischenko.39
-    </SocialLink>
+    {profile.social.map((item) => (
+      <SocialLink
+        key={`${item.icon}-${item.label}`}
+        icon={item.icon}
+        className={styles.link}
+        link={item.link}
+      >
+        {item.label}
+      </SocialLink>
+    ))}
   </aside>
 );

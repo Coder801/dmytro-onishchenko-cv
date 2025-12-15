@@ -1,0 +1,212 @@
+{
+  "profile": {
+    "name": {
+      "first": "Дмитро",
+      "last": "Оніщенко"
+    },
+    "position": "Software Engineer",
+    "location": "Київ, Україна",
+    "phone": "+380636126197",
+    "email": "donischenко801@gmail.com",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "ReactJS/NextJS",
+      "Monorepo",
+      "PWA",
+      "VueJS",
+      "NodeJS",
+      "HTML",
+      "CSS",
+      "SQL/NoSQL",
+      "MongoDB",
+      "CMS",
+      "Git",
+      "TDD",
+      "Testing"
+    ],
+    "social": [
+      {
+        "icon": "linkedin",
+        "label": "dmitryonischenko",
+        "link": "https://www.linkedin.com/in/dmitryonischenko"
+      },
+      {
+        "icon": "github",
+        "label": "Coder801",
+        "link": "https://github.com/coder801"
+      },
+      {
+        "icon": "facebook",
+        "label": "dmitry.onischenko.39",
+        "link": "https://www.facebook.com/dmitry.onischenко.39"
+      }
+    ]
+  },
+  "summary": {
+    "title": "Резюме",
+    "intro": "Front-end розробник з 10+ роками комерційного та стартап-досвіду. Створюю та підтримую великі веб-проєкти, володію сучасними JavaScript фреймворками, працюю з повним циклом розробки включно з backend. Досвідчений у командній роботі за методологіями Scrum/Kanban.",
+    "items": [
+      {
+        "label": "JS",
+        "description": "високий рівень",
+        "chips": ["ES6+"],
+        "details": [
+          "Розуміння асинхронності",
+          "Оптимізація під різні браузери",
+          "Маніпуляції DOM",
+          "Знання роботи event loop"
+        ]
+      },
+      {
+        "label": "Фреймворки",
+        "chips": [
+          "ReactJS/NextJS",
+          "React ecosystem",
+          "Redux/Flux/MobX",
+          "Thunk/Saga",
+          "React Native",
+          "Electron",
+          "Vue.js"
+        ],
+        "details": ["Архітектура модулів", "Мобільні та десктопні застосунки"]
+      },
+      {
+        "label": "Верстка",
+        "details": [
+          "HTML/CSS експертиза",
+          "Кросбраузерна та кросплатформена оптимізація",
+          "Використання препроцесорів і постпроцесорів",
+          "Сучасні методології"
+        ]
+      },
+      {
+        "label": "Backend",
+        "chips": ["Node.js", "Python", "PHP"],
+        "details": [
+          "Проєктування REST API",
+          "Клієнт-серверна взаємодія",
+          "Інтеграція сторонніх сервісів",
+          "Фреймворки: Django, NextJS, Laravel"
+        ]
+      },
+      {
+        "label": "Бази даних",
+        "details": ["Реляційні та NoSQL бази", "MySQL, PostgreSQL, MongoDB"]
+      },
+      {
+        "label": "Графіка",
+        "details": [
+          "Canvas та SVG",
+          "Фреймворки: GSAP, Snap.svg, D3",
+          "Базові знання дизайну"
+        ]
+      },
+      {
+        "label": "Інше",
+        "details": [
+          "OOP / Functional / Reactive підходи",
+          "Патерни проєктування та MV*",
+          "Принципи SOLID"
+        ]
+      }
+    ]
+  },
+  "workHistory": [
+    {
+      "company": "Starwind",
+      "position": "Senior Software Engineer",
+      "date": ["2024-04"],
+      "skills": ["NextJS/React", "Monorepo", "Microfrontend", "Typescript"],
+      "description": "Розробка веб-додатків для роботи з віртуальними машинами, мікрофронтенд-архітектура, Module Federation."
+    },
+    {
+      "company": "MetaChain",
+      "position": "Frontend Teamlead",
+      "date": ["2024-04", "2024-12"],
+      "skills": ["NextJS/React", "Web3", "PWA", "Typescript"],
+      "description": "Керівництво командою, розробка блокчейн-рішень та криптоплатформ, інтеграції з Web3 сервісами."
+    },
+    {
+      "company": "AURA",
+      "position": "Senior Software Engineer",
+      "date": ["2021-10", "2024-04"],
+      "skills": [
+        "React/Redux",
+        "JavaScript",
+        "Browser Extensions",
+        "PWA",
+        "Typescript",
+        "React-Native"
+      ],
+      "description": "Створення комплексних рішень у сфері безпеки, розробка браузерних розширень, підтримка застосунків."
+    },
+    {
+      "company": "EPAM Systems",
+      "position": "Senior Software Engineer",
+      "date": ["2020-02", "2021-10"],
+      "skills": ["React/Redux", "JavaScript", "Django", "Typescript", "NodeJS"],
+      "description": "Розробка високонавантажених веб-додатків, підтримка існуючих проєктів, взаємодія з мультидисциплінарними командами."
+    },
+    {
+      "company": "ZEO Alliance",
+      "position": "Frontend Developer",
+      "date": ["2016-08", "2020-02"],
+      "skills": ["React/Redux", "JavaScript", "Electron", "React-Native"],
+      "description": "Розробка маркетингових інтерфейсів, перехід до R&D: прототипування, дослідження нових технологій, експериментальні рішення."
+    },
+    {
+      "company": "ARIO Industrial Inc",
+      "position": "Frontend Developer",
+      "date": ["2013-04", "2016-07"],
+      "skills": ["JavaScript", "Symfony"],
+      "description": "Розробка комерційних сайтів і e-commerce рішень, адаптивні веб-додатки."
+    },
+    {
+      "company": "GeeksForLess Inc",
+      "position": "Markup Developer",
+      "date": ["2011-11", "2013-04"],
+      "skills": ["JavaScript", "HTML", "CSS"],
+      "description": "Верстка та інтеграція макетів, розробка рекламних матеріалів і кастомних компонентів."
+    },
+    {
+      "company": "GeeksForLess Inc",
+      "position": "Data Analyst",
+      "date": ["2011-04", "2011-10"],
+      "skills": ["JavaScript", "MSSQL", "RegExp"],
+      "description": "Створення агентів збору даних, ETL-процеси, робота з XML та SQL базами."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Чорноморський державний університет ім. Петра Могили",
+      "date": ["2007", "2013"],
+      "field": "Комп'ютерні науки",
+      "degree": "Асистент мережевого адміністратора"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Фіналіст Ukrainian Web Challenge IX",
+      "organization": "Ukrainian Web Challenge",
+      "description": "Номінація Frontend Developer"
+    },
+    {
+      "title": "Ментор фронтенд-курсів",
+      "organization": "PHP-Academy",
+      "description": "Підготовка студентів до комерційної розробки"
+    }
+  ],
+  "languages": [
+    {
+      "code": "ua",
+      "language": "Українська",
+      "level": "Рідна"
+    },
+    {
+      "code": "en",
+      "language": "Англійська",
+      "level": "Intermediate (B1-B2)"
+    }
+  ]
+}

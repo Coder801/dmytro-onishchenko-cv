@@ -1,0 +1,15 @@
+@use "../../styles/mixins" as *;
+
+.text {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 0.9rem;
+
+  @include respond-to(md) {
+    margin: 0 0 var(--space-md) 0;
+    font-size: 1rem;
+  }
+
+  > span {
+    margin-left: var(--base);
+  }
+}

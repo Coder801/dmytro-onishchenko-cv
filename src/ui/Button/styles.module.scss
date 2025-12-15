@@ -1,6 +1,8 @@
+@use "../../styles/mixins" as *;
+
 .button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: calc(var(--base) * 2) calc(var(--base) * 4);
+  font-size: 0.875rem;
   font-weight: bold;
   color: white;
   background: #007bff;
@@ -8,6 +10,11 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+
+  @include respond-to(md) {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 
   &:hover {
     background: #0056b3;

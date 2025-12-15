@@ -1,27 +1,181 @@
 // Typography
 // ==============================
-@mixin wrap-font-size($size, $lineHeight) {
+@use "../../styles/mixins" as *;
+
+@mixin wrap-font-size(
+  $mobile-size,
+  $mobile-line-height,
+  $sm-size,
+  $sm-line-height,
+  $md-size,
+  $md-line-height,
+  $lg-size,
+  $lg-line-height,
+  $xl-size,
+  $xl-line-height
+) {
   &-lighter {
     font-weight: 100;
-    font-size: $size;
-    line-height: $lineHeight;
+    font-size: $mobile-size;
+    line-height: $mobile-line-height;
+
+    @include respond-to(sm) {
+      font-size: $sm-size;
+      line-height: $sm-line-height;
+    }
+
+    @include respond-to(md) {
+      font-size: $md-size;
+      line-height: $md-line-height;
+    }
+
+    @include respond-to(lg) {
+      font-size: $lg-size;
+      line-height: $lg-line-height;
+    }
+
+    @include respond-to(xl) {
+      font-size: $xl-size;
+      line-height: $xl-line-height;
+    }
   }
   &-normal {
     font-weight: 400;
-    font-size: $size;
-    line-height: $lineHeight;
+    font-size: $mobile-size;
+    line-height: $mobile-line-height;
+
+    @include respond-to(sm) {
+      font-size: $sm-size;
+      line-height: $sm-line-height;
+    }
+
+    @include respond-to(md) {
+      font-size: $md-size;
+      line-height: $md-line-height;
+    }
+
+    @include respond-to(lg) {
+      font-size: $lg-size;
+      line-height: $lg-line-height;
+    }
+
+    @include respond-to(xl) {
+      font-size: $xl-size;
+      line-height: $xl-line-height;
+    }
   }
   &-bold {
     font-weight: 700;
-    font-size: $size;
-    line-height: $lineHeight;
+    font-size: $mobile-size;
+    line-height: $mobile-line-height;
+
+    @include respond-to(sm) {
+      font-size: $sm-size;
+      line-height: $sm-line-height;
+    }
+
+    @include respond-to(md) {
+      font-size: $md-size;
+      line-height: $md-line-height;
+    }
+
+    @include respond-to(lg) {
+      font-size: $lg-size;
+      line-height: $lg-line-height;
+    }
+
+    @include respond-to(xl) {
+      font-size: $xl-size;
+      line-height: $xl-line-height;
+    }
+  }
+}
+
+@mixin header-responsive-size(
+  $mobile-size,
+  $sm-size,
+  $md-size,
+  $lg-size,
+  $xl-size
+) {
+  font-size: $mobile-size;
+
+  @include respond-to(sm) {
+    font-size: $sm-size;
+  }
+
+  @include respond-to(md) {
+    font-size: $md-size;
+  }
+
+  @include respond-to(lg) {
+    font-size: $lg-size;
+  }
+
+  @include respond-to(xl) {
+    font-size: $xl-size;
   }
 }
 
 // Headers
 @for $i from 1 through 6 {
   .header-h#{$i} {
-    letter-spacing: 0.005em;
+    // h1: 2rem (32px) → 2.2rem → 2.4rem → 2.6rem → 2.8rem
+    // h2: 1.8rem (28.8px) → 2rem → 2.1rem → 2.2rem → 2.4rem
+    // h3: 1.6rem (25.6px) → 1.7rem → 1.8rem → 1.9rem → 2rem
+    // h4: 1.4rem (22.4px) → 1.5rem → 1.6rem → 1.7rem → 1.8rem
+    // h5: 1rem (16px) → 1.1rem → 1.2rem → 1.3rem → 1.4rem
+    // h6: 0.8rem (12.8px) → 0.9rem → 1rem → 1.1rem → 1.2rem
+
+    @if $i == 1 {
+      @include header-responsive-size(
+        1.75rem, // mobile: 28px
+        1.9rem,  // sm: 30.4px
+        2rem,    // md: 32px
+        2.3rem,  // lg: 36.8px
+        2.5rem   // xl: 40px
+      );
+    } @else if $i == 2 {
+      @include header-responsive-size(
+        1.55rem, // mobile: 24.8px
+        1.7rem,  // sm: 27.2px
+        1.8rem,  // md: 28.8px
+        2rem,    // lg: 32px
+        2.2rem   // xl: 35.2px
+      );
+    } @else if $i == 3 {
+      @include header-responsive-size(
+        1.4rem,  // mobile: 22.4px
+        1.5rem,  // sm: 24px
+        1.6rem,  // md: 25.6px
+        1.75rem, // lg: 28px
+        1.9rem   // xl: 30.4px
+      );
+    } @else if $i == 4 {
+      @include header-responsive-size(
+        1.25rem, // mobile: 20px
+        1.35rem, // sm: 21.6px
+        1.4rem,  // md: 22.4px
+        1.55rem, // lg: 24.8px
+        1.7rem   // xl: 27.2px
+      );
+    } @else if $i == 5 {
+      @include header-responsive-size(
+        0.9rem,  // mobile: 14.4px
+        0.95rem, // sm: 15.2px
+        1rem,    // md: 16px
+        1.15rem, // lg: 18.4px
+        1.3rem   // xl: 20.8px
+      );
+    } @else if $i == 6 {
+      @include header-responsive-size(
+        0.7rem,  // mobile: 11.2px
+        0.75rem, // sm: 12px
+        0.8rem,  // md: 12.8px
+        0.95rem, // lg: 15.2px
+        1.1rem   // xl: 17.6px
+      );
+    }
 
     &-primary {
       color: var(--header-primary);
@@ -57,16 +211,44 @@
   &-primary,
   &-secondary {
     &-xs {
-      @include wrap-font-size(12px, 16px);
+      // Mobile: 10px → sm: 11px → md: 12px → lg: 12.5px → xl: 13px
+      @include wrap-font-size(
+        10px, 14px,  // mobile
+        11px, 15px,  // sm (480px+)
+        12px, 16px,  // md (768px+)
+        12.5px, 17px, // lg (1024px+)
+        13px, 18px   // xl (1440px+)
+      );
     }
     &-s {
-      @include wrap-font-size(14px, 18px);
+      // Mobile: 12px → sm: 13px → md: 14px → lg: 14.5px → xl: 15px
+      @include wrap-font-size(
+        12px, 16px,  // mobile
+        13px, 17px,  // sm (480px+)
+        14px, 18px,  // md (768px+)
+        14.5px, 19px, // lg (1024px+)
+        15px, 20px   // xl (1440px+)
+      );
     }
     &-m {
-      @include wrap-font-size(16px, 24px);
+      // Mobile: 14px → sm: 15px → md: 16px → lg: 17px → xl: 18px
+      @include wrap-font-size(
+        14px, 20px,  // mobile
+        15px, 21px,  // sm (480px+)
+        16px, 24px,  // md (768px+)
+        17px, 25px,  // lg (1024px+)
+        18px, 26px   // xl (1440px+)
+      );
     }
     &-l {
-      @include wrap-font-size(18px, 28px);
+      // Mobile: 16px → sm: 17px → md: 18px → lg: 19px → xl: 20px
+      @include wrap-font-size(
+        16px, 22px,  // mobile
+        17px, 23px,  // sm (480px+)
+        18px, 28px,  // md (768px+)
+        19px, 29px,  // lg (1024px+)
+        20px, 30px   // xl (1440px+)
+      );
     }
   }
 }

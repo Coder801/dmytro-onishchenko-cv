@@ -1,0 +1,37 @@
+@use "../../styles/mixins" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+
+  @include respond-to(md) {
+    justify-content: flex-start;
+  }
+}
+
+.button {
+  background: transparent;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+
+  @include respond-to(md) {
+    font-size: 0.85rem;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.85;
+  }
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--color-text-primary);
+    padding-right: var(--space-xs);
+  }
+}
+
+.active {
+  font-weight: bold;
+}

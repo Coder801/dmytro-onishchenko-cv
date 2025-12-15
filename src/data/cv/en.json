@@ -1,0 +1,217 @@
+{
+  "profile": {
+    "name": {
+      "first": "Dmytro",
+      "last": "Onishchenko"
+    },
+    "position": "Software engineer",
+    "location": "Kyiv. Ukraine",
+    "phone": "+380636126197",
+    "email": "donischenko801@gmail.com",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "ReactJS/NextJS",
+      "Monorepo",
+      "PWA",
+      "VueJS",
+      "NodeJS",
+      "HTML",
+      "CSS",
+      "SQL/NoSQL",
+      "MongoDB",
+      "CMS",
+      "Git",
+      "TDD",
+      "testing"
+    ],
+    "social": [
+      {
+        "icon": "linkedin",
+        "label": "dmitryonischenko",
+        "link": "https://www.linkedin.com/in/dmitryonischenko"
+      },
+      {
+        "icon": "github",
+        "label": "Coder801",
+        "link": "https://github.com/coder801"
+      },
+      {
+        "icon": "facebook",
+        "label": "dmitry.onischenko.39",
+        "link": "https://www.facebook.com/dmitry.onischenko.39"
+      }
+    ]
+  },
+  "summary": {
+    "title": "Summary",
+    "intro": "Front-end developer with 10+ years of commercial and start-up experience. Building and supporting large-scale projects and web applications. Experience with modern (and not so) JavaScript frameworks and libraries. Full-cycle app development, including backend. Strong Agile practitioner (Scrum/Kanban).",
+    "items": [
+      {
+        "label": "JS",
+        "description": "strong skills",
+        "chips": ["ES6+"],
+        "details": [
+          "Understanding asynchronous code",
+          "Cross-browser optimization",
+          "DOM manipulation",
+          "Event loop understanding"
+        ]
+      },
+      {
+        "label": "Frameworks",
+        "chips": [
+          "ReactJS/NextJS",
+          "React ecosystem",
+          "Redux/Flux/MobX",
+          "Thunk/Saga",
+          "React Native",
+          "Electron",
+          "Vue.js"
+        ],
+        "details": [
+          "Module architecture expertise",
+          "Mobile & desktop experience (React Native, Electron)"
+        ]
+      },
+      {
+        "label": "Markup",
+        "details": [
+          "HTML/CSS expert",
+          "Cross-browser/cross-platform practices",
+          "Pre-/postprocessors",
+          "Modern methodologies integrated with JS stacks"
+        ]
+      },
+      {
+        "label": "Backend",
+        "chips": ["Node.js", "Python", "PHP"],
+        "details": [
+          "REST API design & client-server communication",
+          "3rd-party integrations",
+          "Frameworks: Django, NextJS, Laravel"
+        ]
+      },
+      {
+        "label": "Databases",
+        "details": [
+          "Relational & NoSQL understanding",
+          "Hands-on with MySQL, PostgreSQL, MongoDB"
+        ]
+      },
+      {
+        "label": "Graphic",
+        "details": [
+          "Raster & vector graphics (Canvas, SVG)",
+          "Frameworks: GSAP, Snap.svg, D3",
+          "Basic design understanding"
+        ]
+      },
+      {
+        "label": "Other",
+        "details": [
+          "OOP / Functional / Reactive methodologies",
+          "MV* patterns & design patterns",
+          "SOLID principles"
+        ]
+      }
+    ]
+  },
+  "workHistory": [
+    {
+      "company": "Starwind",
+      "position": "Senior Software Engineer",
+      "date": ["2024-04"],
+      "skills": ["NextJS/React", "Monorepo", "Microfrontend", "Typescript"],
+      "description": "Developed applications focused on virtual machines. Designed and implemented solutions using microfrontend architecture with Module Federation technologies."
+    },
+    {
+      "company": "MetaChain",
+      "position": "Frontend Teamlead",
+      "date": ["2024-04", "2024-12"],
+      "skills": ["NextJS/React", "Web3", "PWA", "Typescript"],
+      "description": "Led a team building blockchain-related applications for cryptocurrency operations. Managed creation and maintenance of crypto platforms and integrations."
+    },
+    {
+      "company": "AURA",
+      "position": "Senior Software Engineer",
+      "date": ["2021-10", "2024-04"],
+      "skills": [
+        "React/Redux",
+        "JavaScript",
+        "Browser Extensions",
+        "PWA",
+        "Typescript",
+        "React-Native"
+      ],
+      "description": "Built complex security-focused solutions and browser extensions. Owned application development and long-term maintenance."
+    },
+    {
+      "company": "EPAM Systems",
+      "position": "Senior Software Engineer",
+      "date": ["2020-02", "2021-10"],
+      "skills": ["React/Redux", "JavaScript", "Django", "Typescript", "NodeJS"],
+      "description": "Developed high-load web applications from scratch as an outsourcing developer. Supported ongoing projects and collaborated with cross-functional teams."
+    },
+    {
+      "company": "ZEO Alliance",
+      "position": "Frontend Developer",
+      "date": ["2016-08", "2020-02"],
+      "skills": ["React/Redux", "JavaScript", "Electron", "React-Native"],
+      "description": "Created user-friendly marketing interfaces and later worked on R&D initiatives: prototyping, researching new technologies, and delivering innovative solutions."
+    },
+    {
+      "company": "ARIO Industrial Inc",
+      "position": "Frontend Developer",
+      "date": ["2013-04", "2016-07"],
+      "skills": ["JavaScript", "Symfony"],
+      "description": "Focused on large-scale commercial projects and e-commerce websites, including adaptive mobile applications."
+    },
+    {
+      "company": "GeeksForLess Inc",
+      "position": "Markup developer",
+      "date": ["2011-11", "2013-04"],
+      "skills": ["JavaScript", "HTML", "CSS"],
+      "description": "Converted design mockups into clean HTML/CSS/JS code. Produced web layouts, promo materials, and logos."
+    },
+    {
+      "company": "GeeksForLess Inc",
+      "position": "Data-analyst",
+      "date": ["2011-04", "2011-10"],
+      "skills": ["JavaScript", "MSSQL", "RegExp"],
+      "description": "Built data extraction agents, performed transformation/cleaning, and loaded results into SQL databases using ETL frameworks."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Petro Mohyla Black Sea State University",
+      "date": ["2007", "2013"],
+      "field": "Computer Science",
+      "degree": "Assistant Network Administrator"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Ukrainian Web Challenge IX Finalist",
+      "organization": "Ukrainian Web Challenge",
+      "description": "Finalist in the Frontend Developer nomination."
+    },
+    {
+      "title": "Frontend Mentor",
+      "organization": "PHP-Academy",
+      "description": "Mentored students in frontend courses."
+    }
+  ],
+  "languages": [
+    {
+      "code": "ua",
+      "language": "Ukrainian",
+      "level": "Native language"
+    },
+    {
+      "code": "en",
+      "language": "English",
+      "level": "Intermediate (B1-B2)"
+    }
+  ]
+}

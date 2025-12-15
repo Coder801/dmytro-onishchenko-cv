@@ -27,7 +27,7 @@
     margin: 0 auto var(--space-md);
 
     @include respond-to(md) {
-      max-width: 78%;
+      max-width: 80%;
     }
   }
 
@@ -36,7 +36,7 @@
   }
 
   .position {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-lg);
   }
 
   .divider {
@@ -48,11 +48,17 @@
   }
 
   .contact {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
 
     @include respond-to(md) {
-      margin-bottom: var(--space-xl);
+      margin-bottom: var(--space-lg);
     }
+  }
+
+  .languageSwitcher {
+    margin-bottom: var(--space-lg);
   }
 
   .skills {

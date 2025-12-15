@@ -1,13 +1,26 @@
+@use "../../styles/mixins" as *;
+
 .container {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
+  justify-content: flex-start;
+  gap: var(--space-xs);
+  text-align-last: left;
+
+  @include respond-to(md) {
+    gap: var(--space-sm);
+    justify-content: center;
+  }
 
   .title {
     position: relative;
     overflow: hidden;
     width: 100%;
+    font-size: 0.875rem;
+
+    @include respond-to(md) {
+      font-size: 1rem;
+    }
   }
 }

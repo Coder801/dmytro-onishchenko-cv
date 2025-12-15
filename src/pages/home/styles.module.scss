@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  margin: var(--space-md) auto;
+  margin: 0 auto;
   grid-template-areas:
     "sidebar"
     "main";
@@ -13,10 +13,10 @@
   gap: var(--space-md);
 
   @include respond-to(md) {
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "sidebar main";
-    margin: var(--space-lg) auto;
+    margin: 0 auto;
     gap: 0;
   }
 

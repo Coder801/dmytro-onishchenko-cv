@@ -1,0 +1,15 @@
+{
+  "title": "Senior Frontend Engineer (React/Next.js)",
+  "company": "Acme Corp",
+  "location": "Remote",
+  "summary": "We are looking for a Senior Frontend Engineer to build high-quality web experiences.",
+  "requirements": [
+    "5+ years with JavaScript/TypeScript",
+    "3+ years with React/Next.js",
+    "Experience with SSR/SSG, performance and accessibility"
+  ],
+  "stack": ["React", "Next.js", "TypeScript", "SCSS"],
+  "notes": "This is sample JSON used in development. Replace with your own file named after the vacancy slug."
+}
+
+

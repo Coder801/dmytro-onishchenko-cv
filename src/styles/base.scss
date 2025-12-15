@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  padding: 0;
+  padding: var(--space-md);
   margin: 0;
   color: var(--color-text-secondary);
   min-height: 100vh;
@@ -18,8 +18,6 @@ body {
     var(--color-bg-secondary)
   );
   font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
