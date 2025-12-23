@@ -48,15 +48,17 @@ export const Main: FC<MainProps> = ({
       onChange={onLanguageChange}
     />
 
-    <Title tag="h1" className={styles.title}>
-      {summary.title}
-    </Title>
-    {summary.intro ? (
-      <Typography className={styles.text}>{summary.intro}</Typography>
-    ) : null}
-    {summary.items.map((item) => (
-      <SummaryItem key={item.label} item={item} />
-    ))}
+    <div className={styles.section}>
+      <Title tag="h1" className={styles.title}>
+        {summary.title}
+      </Title>
+      {summary.intro ? (
+        <Typography className={styles.text}>{summary.intro}</Typography>
+      ) : null}
+      {summary.items.map((item) => (
+        <SummaryItem key={item.label} item={item} />
+      ))}
+    </div>
 
     <div className={styles.section}>
       <Title tag="h1" className={styles.title}>

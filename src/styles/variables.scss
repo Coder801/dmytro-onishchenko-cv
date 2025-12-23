@@ -40,6 +40,9 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   --color-blue: rgb(var(--blue));
   --color-yellow: rgb(var(--yellow));
 
+  --background-chip-primary: rgba(var(--light-gray), 0.2);
+  --background-chip-secondary: rgba(var(--light-gray), 0.5);
+
   /* ✍️ Fonts */
   --font-sans: "Roboto", sans-serif;
 

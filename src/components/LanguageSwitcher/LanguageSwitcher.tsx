@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { FC, useCallback } from "react";
+import { US, UA } from "country-flag-icons/react/3x2";
 
 import { CvLanguageCode } from "@/data/cv";
 import type { LanguageSwitcherProps } from "./types";
@@ -23,6 +24,11 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
     [onChange, value]
   );
 
+  const localeFlagMaps = {
+    en: <US title="United States" className={styles.flag} />,
+    ua: <UA title="Ukraine" className={styles.flag} />,
+  };
+
   if (!options || options.length <= 1) {
     return null;
   }
@@ -36,13 +42,11 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
           <button
             key={option.code}
             type="button"
-            className={clsx(styles.button, {
-              [styles.active]: isActive,
-            })}
+            className={styles.button}
             onClick={() => handleClick(option.code)}
             disabled={isActive}
           >
-            {option.code}
+            {localeFlagMaps[option.code]}
           </button>
         );
       })}

@@ -16,22 +16,28 @@
   cursor: pointer;
   border: none;
   text-transform: uppercase;
+  cursor: default;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
 
   @include respond-to(md) {
     font-size: 0.85rem;
   }
 
   &:disabled {
-    cursor: default;
-    opacity: 0.85;
+    opacity: 1;
+    cursor: pointer;
   }
 
   &:not(:last-child) {
     border-right: 1px solid var(--color-text-primary);
     padding-right: var(--space-xs);
   }
-}
 
-.active {
-  font-weight: bold;
+  .flag {
+    width: 1.25rem;
+    height: auto;
+    margin-left: 0.25rem;
+    vertical-align: middle;
+  }
 }

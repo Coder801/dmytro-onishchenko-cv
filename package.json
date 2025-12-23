@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.10.1",
     "@svgr/webpack": "^8.1.0",
     "clsx": "^2.1.1",
+    "country-flag-icons": "^1.6.4",
     "lodash": "^4.17.21",
     "next": "15.5.4",
     "next-redux-wrapper": "^8.1.0",

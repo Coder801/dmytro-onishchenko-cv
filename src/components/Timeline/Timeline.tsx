@@ -26,7 +26,7 @@ export const Timeline: FC<TimelineProps> = ({
         {position}
       </Typography>
       <Typography tag="h5">
-        <i>{company}</i>
+        <i className={styles.company}>{company}</i>
       </Typography>
       <>{children}</>
       {skills && skills.length > 0 && (

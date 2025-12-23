@@ -1,24 +1,31 @@
 import { FC, ReactNode } from "react";
-import { Typography } from "@/ui/Typography";
+import {
+  Typography,
+  TypographyWeight,
+  TypographTagType,
+  TypographyVariant,
+} from "@/ui/Typography";
 import clsx from "clsx";
 
 import styles from "./styles.module.scss";
 
 type TitleProps = {
-  tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  tag?: TypographTagType;
   className?: string;
   children: ReactNode;
-  type?: "primary" | "secondary";
+  weight?: TypographyWeight;
+  type?: TypographyVariant;
 };
 
 export const Title: FC<TitleProps> = ({
   tag,
   children,
   type = "primary",
+  weight = "normal",
   className,
 }) => (
   <div className={clsx(styles.container, styles[type], className)}>
-    <Typography className={styles.title} tag={tag} weight="bold">
+    <Typography className={styles.title} tag={tag} weight={weight}>
       {children}
     </Typography>
   </div>

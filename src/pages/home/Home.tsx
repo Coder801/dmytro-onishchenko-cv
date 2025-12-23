@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { useRouter } from "next/router";
 import { Main } from "@/modules/Main";
 import { Sidebar } from "@/modules/Sidebar";
 import getCvData, { CV_LANGUAGES, CvLanguageCode } from "@/data/cv";
@@ -16,8 +15,6 @@ const Home = () => {
   );
 
   const cvData = getCvData(languageConfig.code);
-
-  console.log("useRouter", useRouter);
 
   return (
     <div className={styles.container}>

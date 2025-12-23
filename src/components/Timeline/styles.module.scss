@@ -18,13 +18,14 @@
   & .date {
     width: 100%;
     padding-top: 0;
+    margin-top: 0;
     display: flex;
     flex-direction: row;
     gap: var(--space-xs);
 
     @include respond-to(md) {
       width: 80px;
-      padding-top: var(--space-sm);
+      padding-top: 3px;
       flex-direction: column;
       gap: 0;
     }
@@ -53,5 +54,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
+  }
+
+  & .company {
+    font-weight: normal;
   }
 }

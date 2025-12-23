@@ -1,13 +1,13 @@
 @use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
 
 .chip {
   display: inline-block;
   border-radius: 3px;
-  background-color: rgb(211, 211, 211, 0.2);
+  background-color: var(--background-chip-primary);
   width: auto;
   font-size: 0.75rem;
   padding: 0 var(--space-xs);
-  font-weight: 500;
 
   @include respond-to(md) {
     font-size: 0.9rem;
@@ -15,7 +15,8 @@
   }
 
   &.filled {
-    background-color: rgb(211, 211, 211, 0.5);
+    font-size: 1rem;
+    background-color: var(--background-chip-secondary);
     color: var(--color-text-mark);
   }
 }
