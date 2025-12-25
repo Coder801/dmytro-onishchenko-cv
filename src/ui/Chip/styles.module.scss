@@ -4,8 +4,8 @@
 .chip {
   display: inline-block;
   border-radius: 3px;
-  background-color: var(--background-chip-primary);
   width: auto;
+  background-color: var(--background-chip-primary);
   font-size: 0.75rem;
   padding: 0 var(--space-xs);
 
@@ -14,8 +14,11 @@
     padding: 0 var(--space-sm);
   }
 
+  @media print {
+    padding: 0;
+  }
+
   &.filled {
-    font-size: 1rem;
     background-color: var(--background-chip-secondary);
     color: var(--color-text-mark);
   }

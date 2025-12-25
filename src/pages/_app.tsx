@@ -1,6 +1,7 @@
 import "@/styles/base.scss";
 import "@/styles/typography.scss";
 import { Roboto } from "next/font/google";
+import { appWithTranslation } from "next-i18next";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -36,4 +37,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

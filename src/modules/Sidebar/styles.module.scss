@@ -29,6 +29,10 @@
     @include respond-to(md) {
       max-width: 80%;
     }
+
+    @media print {
+      display: none;
+    }
   }
 
   .name {
@@ -62,15 +66,27 @@
   }
 
   .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
-    justify-content: center;
-    margin-bottom: var(--space-lg);
+    @media print {
+      display: none;
+    }
 
-    @include respond-to(md) {
-      justify-content: flex-start;
-      margin-bottom: var(--space-xl);
+    .skillsList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+
+      @include respond-to(md) {
+        justify-content: flex-start;
+        margin-bottom: var(--space-xl);
+      }
+    }
+  }
+
+  .socials {
+    @media print {
+      display: none;
     }
   }
 

@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-import type { NextConfig } from "next";
+import nextI18NextConfig from "./next-i18next.config.js";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
+  i18n: nextI18NextConfig.i18n,
   turbopack: {
     rules: {
       "*.svg": {

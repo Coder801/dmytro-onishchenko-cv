@@ -64,5 +64,9 @@
     position: absolute;
     top: 35px;
     right: 40px;
+
+    @media print {
+      display: none;
+    }
   }
 }
