@@ -1,35 +1,35 @@
 import clsx from "clsx";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Title } from "@/components/Title";
 import { Typography } from "@/ui/Typography";
 
 import { Timeline } from "@/components/Timeline";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import type { LanguageSwitcherProps } from "@/components/LanguageSwitcher";
 import { SummaryItem } from "@/components/SummaryItem";
-import { CvLanguageCode } from "@/data/cv";
-
-import { useTranslation } from "@/hooks/useTranslation";
 
 import type {
-  CVAchievementItem,
-  CVEducationItem,
-  CVSummary,
-  CVWorkHistoryItem,
-} from "@/types/cv";
+  Achievement,
+  Education,
+  Summary,
+  WorkHistory,
+  Language,
+} from "@/types/resume";
+import { Languages } from "@/types/languages";
 
 import styles from "./styles.module.scss";
 
 type MainProps = {
   className?: string;
-  summary: CVSummary;
-  workHistory: CVWorkHistoryItem[];
-  education: CVEducationItem[];
-  achievements: CVAchievementItem[];
-  languages: LanguageSwitcherProps[];
-  currentLanguage?: CvLanguageCode;
-  onLanguageChange?: (code: CvLanguageCode) => void;
+  summary: Summary;
+  workHistory: WorkHistory[];
+  education: Education[];
+  achievements: Achievement[];
+  languages: Language[];
+  availableLanguages: Languages[];
+  currentLanguage: Languages;
+  onLanguageChange?: (code: Languages) => void;
 };
 
 export const Main: FC<MainProps> = ({
@@ -39,23 +39,24 @@ export const Main: FC<MainProps> = ({
   education,
   achievements,
   languages,
+  availableLanguages,
   currentLanguage,
   onLanguageChange,
 }) => {
-  const t = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <main className={clsx(className, styles.container)}>
       <LanguageSwitcher
         className={styles.languageSwitcher}
-        options={languages as any} // eslint-disable-line @typescript-eslint/no-explicit-any
-        value={currentLanguage ?? "ua"}
+        availableLanguages={availableLanguages}
+        currentLanguage={currentLanguage}
         onChange={onLanguageChange}
       />
 
       <div className={styles.section}>
         <Title tag="h1" className={styles.title}>
-          {t.summary}
+          {t("summary")}
         </Title>
         {summary.intro ? (
           <Typography className={styles.text}>{summary.intro}</Typography>
@@ -67,7 +68,7 @@ export const Main: FC<MainProps> = ({
 
       <div className={styles.section}>
         <Title tag="h1" className={styles.title}>
-          {t.workHistory}
+          {t("workHistory")}
         </Title>
 
         <div className={clsx(styles.works, styles.section)}>
@@ -87,7 +88,7 @@ export const Main: FC<MainProps> = ({
 
       <div className={styles.section}>
         <Title tag="h2" className={styles.title}>
-          {t.education}
+          {t("education")}
         </Title>
         {education.map((item) => (
           <Timeline
@@ -103,7 +104,7 @@ export const Main: FC<MainProps> = ({
 
       <div className={styles.section}>
         <Title tag="h2" className={styles.title}>
-          {t.achievements}
+          {t("achievements")}
         </Title>
         {achievements.map((item) => (
           <Typography key={item.title}>
@@ -116,17 +117,13 @@ export const Main: FC<MainProps> = ({
 
       <div className={styles.section}>
         <Title tag="h2" className={styles.title}>
-          {t.languages}
+          {t("languages")}
         </Title>
-        {languages.map(
-          (
-            item: any // eslint-disable-line @typescript-eslint/no-explicit-any
-          ) => (
-            <Typography key={item.code}>
-              <strong>{item.label}</strong> - {item.level}
-            </Typography>
-          )
-        )}
+        {languages.map((item: Language) => (
+          <Typography key={item.code}>
+            <strong>{item.language}</strong> - {item.level}
+          </Typography>
+        ))}
       </div>
     </main>
   );

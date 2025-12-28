@@ -1,33 +1,47 @@
-import { useMemo, useState } from "react";
+import { useCallback } from "react";
+import i18n from "i18next";
 import { Main } from "@/modules/Main";
 import { Sidebar } from "@/modules/Sidebar";
-import getCvData, { CV_LANGUAGES, CvLanguageCode } from "@/data/cv";
+import { useGetProfileQuery } from "@/store/api";
+import { Languages } from "@/types/languages";
 
 import styles from "./styles.module.scss";
 
 const Home = () => {
-  const [language, setLanguage] = useState<CvLanguageCode>("en");
+  const availableLanguages = i18n.languages as Languages[];
+  const currentLanguage = i18n.language as Languages;
+  const { data, isLoading, error, refetch } =
+    useGetProfileQuery(currentLanguage);
 
-  const languageConfig = useMemo(
-    () =>
-      CV_LANGUAGES.find((lang) => lang.code === language) ?? CV_LANGUAGES[0],
-    [language]
+  const onLanguageChange = useCallback(
+    (language: Languages) => {
+      i18n.changeLanguage(language);
+      refetch();
+    },
+    [refetch]
   );
 
-  const cvData = getCvData(languageConfig.code);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error || !data) {
+    return <div>Error loading profile data.</div>;
+  }
 
   return (
     <div className={styles.container}>
-      <Sidebar className={styles.sidebar} profile={cvData.profile} />
+      <Sidebar className={styles.sidebar} profile={data.content.profile} />
       <Main
         className={styles.main}
-        summary={cvData.summary}
-        workHistory={cvData.workHistory}
-        education={cvData.education}
-        achievements={cvData.achievements}
-        languages={cvData.languages as any} // eslint-disable-line @typescript-eslint/no-explicit-any
-        currentLanguage={language}
-        onLanguageChange={setLanguage}
+        summary={data.content.summary}
+        workHistory={data.content.workHistory}
+        education={data.content.education}
+        achievements={data.content.achievements}
+        languages={data.content.languages}
+        availableLanguages={availableLanguages}
+        currentLanguage={currentLanguage}
+        onLanguageChange={onLanguageChange}
       />
     </div>
   );

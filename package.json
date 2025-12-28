@@ -9,11 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.10.1",
+    "@reduxjs/toolkit": "^2.11.2",
     "@svgr/webpack": "^8.1.0",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.6.4",
     "i18next": "^25.7.3",
+    "i18next-browser-languagedetector": "^8.2.0",
     "lodash": "^4.17.21",
     "next": "^16.1.1",
     "next-i18next": "^15.4.3",

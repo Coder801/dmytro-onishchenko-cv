@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Photo } from "@/components/Photo";
 import { Title } from "@/components/Title";
@@ -8,19 +9,18 @@ import { SocialLink } from "@/components/SocialLink";
 import { Typography } from "@/ui/Typography";
 import { Chip } from "@/ui/Chip";
 import { Divider } from "@/ui/Divider";
-import { useTranslation } from "@/hooks/useTranslation";
 
-import type { CVProfile } from "@/types/cv";
+import type { ProfileInfo } from "@/types/resume";
 
 import styles from "./styles.module.scss";
 
 type SidebarProps = {
   className?: string;
-  profile: CVProfile;
+  profile: ProfileInfo;
 };
 
 export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
-  const t = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <aside className={clsx(className, styles.container)}>
@@ -42,7 +42,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
 
       <div className={styles.skills}>
         <Title tag="h3" className={styles.subtitle}>
-          {t.skills}
+          {t("skills")}
         </Title>
         <Typography className={styles.skillsList}>
           {profile.skills.map((skill) => (
@@ -55,7 +55,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
 
       <div className={styles.socials}>
         <Title tag="h3" className={styles.subtitle}>
-          {t.social}
+          {t("social")}
         </Title>
         {profile.social.map((item) => (
           <SocialLink

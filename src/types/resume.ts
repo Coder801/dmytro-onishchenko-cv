@@ -1,19 +1,19 @@
 import type { IconNames } from "@/ui/SvgIcon/constants";
 
-export type CVSummaryItem = {
+export type SummaryItem = {
   label: string;
   description?: string;
   chips?: string[];
   details?: string[];
 };
 
-export type CVSummary = {
+export type Summary = {
   title: string;
   intro: string;
-  items: CVSummaryItem[];
+  items: SummaryItem[];
 };
 
-export type CVWorkHistoryItem = {
+export type WorkHistory = {
   company: string;
   position: string;
   date: [string, string?];
@@ -21,26 +21,26 @@ export type CVWorkHistoryItem = {
   description: string;
 };
 
-export type CVEducationItem = {
+export type Education = {
   institution: string;
   date: [string, string?];
   field: string;
   degree: string;
 };
 
-export type CVAchievementItem = {
+export type Achievement = {
   title: string;
   description?: string;
   organization?: string;
 };
 
-export type CVLanguageItem = {
+export type Language = {
   code: string;
   language: string;
   level: string;
 };
 
-export type CVProfile = {
+export type ProfileInfo = {
   name: {
     first: string;
     last: string;
@@ -57,11 +57,11 @@ export type CVProfile = {
   }>;
 };
 
-export type CVData = {
-  profile: CVProfile;
-  summary: CVSummary;
-  workHistory: CVWorkHistoryItem[];
-  education: CVEducationItem[];
-  achievements: CVAchievementItem[];
-  languages: CVLanguageItem[];
+export type Resume = {
+  profile: ProfileInfo;
+  summary: Summary;
+  workHistory: WorkHistory[];
+  education: Education[];
+  achievements: Achievement[];
+  languages: Language[];
 };

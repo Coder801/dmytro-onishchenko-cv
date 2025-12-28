@@ -12,6 +12,7 @@ $radius: 500px;
     padding: 3px;
     position: relative;
     filter: blur(5px);
+    visibility: hidden;
 
     &:before {
       content: "";
@@ -34,6 +35,7 @@ $radius: 500px;
 
     &.loaded {
       filter: blur(0px);
+      visibility: visible;
     }
   }
 

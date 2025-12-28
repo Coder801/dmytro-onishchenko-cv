@@ -1,14 +1,8 @@
-import { CvLanguageCode } from "@/data/cv";
-
-export type LanguageSwitcherOption = {
-  code: CvLanguageCode;
-  level: string;
-  language: string;
-};
+import type { Languages } from "@/types/languages";
 
 export type LanguageSwitcherProps = {
-  options: LanguageSwitcherOption[];
-  value: CvLanguageCode;
-  onChange?: (code: CvLanguageCode) => void;
+  availableLanguages: Languages[];
+  currentLanguage: Languages;
+  onChange?: (code: Languages) => void;
   className?: string;
 };

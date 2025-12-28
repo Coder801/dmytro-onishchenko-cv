@@ -1,27 +1,27 @@
 import clsx from "clsx";
-import { FC, useCallback } from "react";
+import { isEqual } from "lodash";
+import { FC, useCallback, useEffect } from "react";
 import { US, UA } from "country-flag-icons/react/3x2";
 
-import { CvLanguageCode } from "@/data/cv";
 import type { LanguageSwitcherProps } from "./types";
+import type { Languages } from "@/types/languages";
 
 import styles from "./styles.module.scss";
 
 export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
-  options,
-  value,
+  availableLanguages,
+  currentLanguage,
   onChange,
   className,
 }) => {
   const handleClick = useCallback(
-    (code: CvLanguageCode) => {
-      if (!onChange || code === value) {
+    (code: Languages) => {
+      if (!onChange || code === currentLanguage) {
         return;
       }
-
       onChange(code);
     },
-    [onChange, value]
+    [onChange, currentLanguage]
   );
 
   const localeFlagMaps = {
@@ -29,24 +29,24 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
     ua: <UA title="Ukraine" className={styles.flag} />,
   };
 
-  if (!options || options.length <= 1) {
+  if (!availableLanguages || availableLanguages.length <= 1) {
     return null;
   }
 
   return (
     <div className={clsx(styles.container, className)}>
-      {options.map((option) => {
-        const isActive = option.code === value;
+      {availableLanguages.sort().map((option: Languages) => {
+        const isActive = isEqual(option, currentLanguage);
 
         return (
           <button
-            key={option.code}
+            key={option}
             type="button"
             className={styles.button}
-            onClick={() => handleClick(option.code)}
+            onClick={() => handleClick(option)}
             disabled={isActive}
           >
-            {localeFlagMaps[option.code]}
+            {localeFlagMaps[option]}
           </button>
         );
       })}
