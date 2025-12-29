@@ -5,9 +5,9 @@ import { dotJoin } from "@/utils";
 
 import styles from "./styles.module.scss";
 
-import type { CVSummary } from "@/types/resume";
+import type { Summary } from "@/types/resume";
 
-const SummaryItem: FC<{ item: CVSummary["items"][number] }> = ({ item }) => {
+const SummaryItem: FC<{ item: Summary["items"][number] }> = ({ item }) => {
   const details = dotJoin(item.details);
 
   return (

@@ -1,3 +1,3 @@
-import { withTranslations } from "./useTranslation";
+import { useTranslation } from "./useTranslation";
 
-export { withTranslations };
+export { useTranslation };
