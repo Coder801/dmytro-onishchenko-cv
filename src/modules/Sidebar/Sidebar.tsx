@@ -9,6 +9,9 @@ import { SocialLink } from "@/components/SocialLink";
 import { Typography } from "@/ui/Typography";
 import { Chip } from "@/ui/Chip";
 import { Divider } from "@/ui/Divider";
+import { Button } from "@/ui/Button";
+
+import { downloadPdf } from "@/utils/downloadPdf";
 
 import type { ProfileInfo } from "@/types/resume";
 
@@ -67,6 +70,10 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
             {item.label}
           </SocialLink>
         ))}
+      </div>
+
+      <div className={styles.button}>
+        <Button onClick={downloadPdf}>{t("downloadPdf")}</Button>
       </div>
     </aside>
   );

@@ -30,7 +30,7 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="pdf-content">
       <Sidebar className={styles.sidebar} profile={data.content.profile} />
       <Main
         className={styles.main}
