@@ -66,10 +66,6 @@
   }
 
   .skills {
-    @media print {
-      display: none;
-    }
-
     .skillsList {
       display: flex;
       flex-wrap: wrap;
@@ -85,9 +81,6 @@
   }
 
   .socials {
-    @media print {
-      display: none;
-    }
   }
 
   .link {
@@ -96,5 +89,9 @@
 
   .button {
     margin-top: var(--space-lg);
+
+    @media print {
+      display: none;
+    }
   }
 }

@@ -4,7 +4,7 @@ export const downloadPdf = async () => {
   const res = await fetch(ENDPOINTS.PDF, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ htmlContent: document.documentElement.outerHTML }),
+    body: JSON.stringify({ currentPage: window.location.href }),
   });
 
   const blob = await res.blob();

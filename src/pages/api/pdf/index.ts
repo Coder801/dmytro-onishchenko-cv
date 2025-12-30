@@ -8,13 +8,27 @@ export default async function handler(
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
-  console.log(req.body);
+  await page.setViewport({
+    width: 1800,
+    height: 2000,
+  });
 
-  const html = req.body.htmlContent;
-  await page.setContent(html, { waitUntil: "networkidle0" });
+  await page.goto(req.body.currentPage, {
+    waitUntil: "networkidle0",
+  });
+  await page.waitForSelector("#pdf-content", { timeout: 10000 });
+
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  const contentHandle = await page.$("#pdf-content");
+  const boundingBox = await contentHandle?.boundingBox();
+  const width = boundingBox?.width || 1800;
+  const height = boundingBox?.height || 2000;
+  await contentHandle?.dispose();
 
   const pdfBuffer = await page.pdf({
-    format: "A4",
+    width: `${width}px`,
+    height: `${height}px`,
     printBackground: true,
   });
 
