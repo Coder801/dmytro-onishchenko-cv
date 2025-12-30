@@ -5,8 +5,6 @@ const nextConfig = {
     locales: ["en", "ua"],
     defaultLocale: "en",
   },
-  fallbackLng: "en",
-  nonExplicitSupportedLngs: true,
   load: "languageOnly",
   turbopack: {
     rules: {

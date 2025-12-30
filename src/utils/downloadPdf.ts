@@ -1,11 +1,22 @@
 import { ENDPOINTS } from "@/config/api";
 
 export const downloadPdf = async () => {
-  const res = await fetch(ENDPOINTS.PDF, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ currentPage: window.location.href }),
-  });
+  const pdfEndpoint = ENDPOINTS.PDF;
+  let res;
+
+  try {
+    res = await fetch(pdfEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ currentPage: window.location.href }),
+    });
+    if (!res.ok) {
+      throw new Error("Failed to generate PDF");
+    }
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    return;
+  }
 
   const blob = await res.blob();
   const url = URL.createObjectURL(blob);
