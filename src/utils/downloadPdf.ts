@@ -1,7 +1,7 @@
-import { ENDPOINTS } from "@/config/api";
+import { ENDPOINTS, PROTOCOL } from "@/config/api";
 
 export const downloadPdf = async () => {
-  const pdfEndpoint = ENDPOINTS.PDF;
+  const pdfEndpoint = `${PROTOCOL}${ENDPOINTS.PDF}`;
   let res;
 
   try {
