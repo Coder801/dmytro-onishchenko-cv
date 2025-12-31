@@ -1,7 +1,7 @@
 import { ENDPOINTS, PROTOCOL } from "@/config/api";
 import { PDF_FILE_NAME } from "@/config/constants";
 
-export const downloadPdf = async () => {
+export const downloadPdf = async (completed = () => {}) => {
   const pdfEndpoint = `${PROTOCOL}${ENDPOINTS.PDF}`;
   let res;
   const currentLanguage = localStorage.getItem("i18nextLng") || "en";
@@ -21,6 +21,8 @@ export const downloadPdf = async () => {
   } catch (error) {
     console.error("Error generating PDF:", error);
     return;
+  } finally {
+    completed();
   }
 
   const blob = await res.blob();

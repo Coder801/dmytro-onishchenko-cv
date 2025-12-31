@@ -11,6 +11,7 @@
   font-size: 0.9em;
   white-space: nowrap;
   background: none;
+  position: relative;
   width: 100%;
   cursor: pointer;
 
@@ -26,5 +27,33 @@
   &:disabled {
     background: #ccc;
     cursor: not-allowed;
+  }
+
+  &.loading {
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin-top: -7px;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 }

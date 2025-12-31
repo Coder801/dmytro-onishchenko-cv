@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Photo } from "@/components/Photo";
@@ -24,6 +24,14 @@ type SidebarProps = {
 
 export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
   const { t } = useTranslation("common");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleDownloadPdf = () => {
+    setIsLoading(true);
+    downloadPdf(() => {
+      setIsLoading(false);
+    });
+  };
 
   return (
     <aside className={clsx(className, styles.container)}>
@@ -73,7 +81,9 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
       </div>
 
       <div className={styles.button}>
-        <Button onClick={downloadPdf}>{t("downloadPdf")}</Button>
+        <Button onClick={handleDownloadPdf} isLoading={isLoading}>
+          {t("downloadPdf")}
+        </Button>
       </div>
     </aside>
   );
