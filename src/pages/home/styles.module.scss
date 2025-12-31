@@ -11,6 +11,14 @@
   max-width: 1440px;
   min-height: 100vh;
   gap: var(--space-md);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @include respond-to(md) {
     grid-template-columns: 300px 1fr;
@@ -29,4 +37,12 @@
     grid-area: sidebar;
     box-sizing: border-box;
   }
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }

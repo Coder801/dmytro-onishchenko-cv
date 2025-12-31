@@ -1,13 +1,15 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import i18n from "i18next";
 import { Main } from "@/modules/Main";
 import { Sidebar } from "@/modules/Sidebar";
+import { Preloader } from "@/ui/Preloader";
 import { useGetProfileQuery } from "@/store/api";
 import { Languages } from "@/types/languages";
 
 import styles from "./styles.module.scss";
 
 const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const availableLanguages = i18n.languages as Languages[];
   const currentLanguage = i18n.language as Languages;
   const { data, isLoading, error, refetch } =
@@ -21,8 +23,21 @@ const Home = () => {
     [refetch]
   );
 
+  useEffect(() => {
+    if (!isLoading && data) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading, data]);
+
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className={styles.preloader}>
+        <Preloader />
+      </div>
+    );
   }
 
   if (error || !data) {
@@ -30,7 +45,10 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.container} id="pdf-content">
+    <div
+      className={`${styles.container} ${isVisible ? styles.visible : ''}`}
+      id="pdf-content"
+    >
       <Sidebar className={styles.sidebar} profile={data.content.profile} />
       <Main
         className={styles.main}
