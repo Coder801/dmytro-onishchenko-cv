@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--space-md) * 2);
+  width: calc(100vw - var(--space-md) * 2);
+  position: relative;
+  background: var(--color-bg-primary);
+
+  & .content {
+    text-align: center;
+    max-width: 400px;
+    padding: var(--space-lg);
+  }
+
+  & .title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 0 var(--space-md);
+    color: var(--color-text-primary);
+  }
+
+  & .message {
+    font-size: 18px;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-lg);
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  & .button {
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

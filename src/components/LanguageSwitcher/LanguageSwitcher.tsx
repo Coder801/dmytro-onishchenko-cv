@@ -29,10 +29,6 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
     ua: <UA title="Ukraine" className={styles.flag} />,
   };
 
-  useEffect(() => {
-    console.log("Available Languages:", availableLanguages);
-  }, [availableLanguages, currentLanguage, handleClick]);
-
   if (!availableLanguages || availableLanguages.length <= 1) {
     return null;
   }
