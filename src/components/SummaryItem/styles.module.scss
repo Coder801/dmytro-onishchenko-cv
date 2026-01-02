@@ -4,6 +4,11 @@
   margin: 0 0 var(--space-sm) 0;
   font-size: 0.9rem;
 
+  .chips {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
   @include respond-to(md) {
     margin: 0 0 var(--space-md) 0;
     font-size: 1rem;

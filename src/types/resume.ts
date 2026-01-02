@@ -50,6 +50,7 @@ export type ProfileInfo = {
   phone: string;
   email: string;
   skills: string[];
+  allSkills: string[];
   social: Array<{
     icon: IconNames;
     label: string;

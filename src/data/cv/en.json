@@ -11,19 +11,85 @@
     "skills": [
       "JavaScript",
       "TypeScript",
-      "ReactJS/NextJS",
-      "Monorepo",
-      "PWA",
-      "VueJS",
-      "NodeJS",
+      "Node.js",
+      "React",
+      "Next.js",
+      "Vue.js",
+      "React Native",
+      "Python",
       "HTML",
       "CSS",
-      "SQL/NoSQL",
-      "MongoDB",
-      "CMS",
+      "PWA",
+      "Monorepo",
+      "REST API",
+      "SQL",
+      "NoSQL",
       "Git",
+      "CI/CD",
+      "Testing",
       "TDD",
-      "Testing"
+      "AI",
+      "OpenAI",
+      "Agile",
+      "Scrum"
+    ],
+    "allSkills": [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React",
+      "Next.js",
+      "Vue.js",
+      "React Native",
+      "Python",
+      "HTML",
+      "CSS",
+      "PWA",
+      "Monorepo",
+      "REST API",
+      "SQL",
+      "NoSQL",
+      "Git",
+      "CI/CD",
+      "Testing",
+      "TDD",
+      "AI",
+      "Agile",
+      "Scrum",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Django",
+      "Electron",
+      "Redux",
+      "Flux",
+      "MobX",
+      "Thunk",
+      "Saga",
+      "GSAP",
+      "SVG",
+      "OOP",
+      "Functional Programming",
+      "Reactive Programming",
+      "MV* Patterns",
+      "ES6+",
+      "Agile",
+      "NextJS",
+      "Microfrontend",
+      "Web3",
+      "Browser Extensions",
+      "Laravel",
+      "Symfony",
+      "MongoDB",
+      "MSSQL",
+      "RegExp",
+      "D3",
+      "Snap.svg",
+      "Reactive",
+      "Functional",
+      "React Native",
+      "Electron",
+      "OpenAI"
     ],
     "social": [
       {
@@ -45,17 +111,19 @@
   },
   "summary": {
     "title": "Summary",
-    "intro": "Front-end developer with 10+ years of commercial and start-up experience. Building and supporting large-scale projects and web applications. Experience with modern (and not so) JavaScript frameworks and libraries. Full-cycle app development, including backend. Strong Agile practitioner (Scrum/Kanban).",
+    "intro": "Senior Software Engineer with 10+ years of experience specializing in frontend and web applications. Experience in building, scaling, and maintaining modern web products in commercial and startup environments. Deep expertise in React and the JavaScript/TypeScript ecosystem, with hands-on full-cycle development experience including backend services and AI-assisted features. Product-oriented and highly experienced in Agile delivery (Scrum, Kanban).",
     "items": [
       {
-        "label": "JS",
-        "description": "strong skills",
-        "chips": ["ES6+"],
+        "label": "Frontend / JavaScript",
         "details": [
-          "Understanding asynchronous code",
-          "Cross-browser optimization",
-          "DOM manipulation",
-          "Event loop understanding"
+          "Expert-level understanding of core JavaScript (ES6+), asynchronous programming, event loop, browser APIs, and performance optimization. Strong TypeScript expertise. Hands-on experience with complex DOM manipulation and cross-browser compatibility"
+        ]
+      },
+      {
+        "label": "Backend",
+        "chips": ["NodeJS", "Python"],
+        "details": [
+          "REST API design and client-server communication. Experience with third-party integrations and authentication flows. Frameworks: Django, Next.js (API routes), Laravel"
         ]
       },
       {
@@ -70,32 +138,19 @@
           "Vue.js"
         ],
         "details": [
-          "Module architecture expertise",
-          "Mobile & desktop experience (React Native, Electron)"
+          "Strong module and application architecture expertise. Cross-platform development experience for mobile and desktop (React Native, Electron)"
         ]
       },
       {
-        "label": "Markup",
+        "label": "Markup & Styling",
         "details": [
-          "HTML/CSS expert",
-          "Cross-browser/cross-platform practices",
-          "Pre-/postprocessors",
-          "Modern methodologies integrated with JS stacks"
-        ]
-      },
-      {
-        "label": "Backend",
-        "chips": ["Node.js", "Python", "PHP"],
-        "details": [
-          "REST API design & client-server communication",
-          "3rd-party integrations",
-          "Frameworks: Django, NextJS, Laravel"
+          "Expert knowledge of HTML and CSS. Cross-browser and cross-platform practices. Experience with modern style methodologies, preprocessors/postprocessors, and integration with JavaScript frameworks"
         ]
       },
       {
         "label": "Databases",
         "details": [
-          "Relational & NoSQL understanding",
+          "SQL & NoSQL understanding",
           "Hands-on with MySQL, PostgreSQL, MongoDB"
         ]
       },
@@ -108,11 +163,9 @@
         ]
       },
       {
-        "label": "Other",
+        "label": "Engineering Practices",
         "details": [
-          "OOP / Functional / Reactive methodologies",
-          "MV* patterns & design patterns",
-          "SOLID principles"
+          "OOP, Functional and Reactive programming paradigms. MV* architectures, common design patterns, and SOLID principles."
         ]
       }
     ]
@@ -122,14 +175,20 @@
       "company": "Starwind",
       "position": "Senior Software Engineer",
       "date": ["2024-04"],
-      "skills": ["NextJS/React", "Monorepo", "Microfrontend", "Typescript"],
+      "skills": [
+        "NextJS/React",
+        "Monorepo",
+        "Microfrontend",
+        "Typescript",
+        "AI"
+      ],
       "description": "Developed applications focused on virtual machines. Designed and implemented solutions using microfrontend architecture with Module Federation technologies."
     },
     {
       "company": "MetaChain",
       "position": "Frontend Teamlead",
       "date": ["2024-04", "2024-12"],
-      "skills": ["NextJS/React", "Web3", "PWA", "Typescript"],
+      "skills": ["NextJS/React", "Web3", "PWA", "Typescript", "NodeJS", "AI"],
       "description": "Led a team building blockchain-related applications for cryptocurrency operations. Managed creation and maintenance of crypto platforms and integrations."
     },
     {
@@ -144,13 +203,20 @@
         "Typescript",
         "React-Native"
       ],
-      "description": "Built complex security-focused solutions and browser extensions. Owned application development and long-term maintenance."
+      "description": "Built complex security-focused solutions, desktop applications, and browser extensions. Owned application development and long-term maintenance."
     },
     {
       "company": "EPAM Systems",
       "position": "Senior Software Engineer",
       "date": ["2020-02", "2021-10"],
-      "skills": ["React/Redux", "JavaScript", "Django", "Typescript", "NodeJS"],
+      "skills": [
+        "React/Redux",
+        "JavaScript",
+        "Django",
+        "Typescript",
+        "NodeJS",
+        "Electron"
+      ],
       "description": "Developed high-load web applications from scratch as an outsourcing developer. Supported ongoing projects and collaborated with cross-functional teams."
     },
     {
@@ -164,21 +230,21 @@
       "company": "ARIO Industrial Inc",
       "position": "Frontend Developer",
       "date": ["2013-04", "2016-07"],
-      "skills": ["JavaScript", "Symfony"],
+      "skills": ["JavaScript", "Symfony", "Laravel"],
       "description": "Focused on large-scale commercial projects and e-commerce websites, including adaptive mobile applications."
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Markup developer",
       "date": ["2011-11", "2013-04"],
-      "skills": ["JavaScript", "HTML", "CSS"],
+      "skills": ["JavaScript", "HTML", "CSS", "SQL"],
       "description": "Converted design mockups into clean HTML/CSS/JS code. Produced web layouts, promo materials, and logos."
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Data-analyst",
       "date": ["2011-04", "2011-10"],
-      "skills": ["JavaScript", "MSSQL", "RegExp"],
+      "skills": ["JavaScript", "MSSQL", "SQL"],
       "description": "Built data extraction agents, performed transformation/cleaning, and loaded results into SQL databases using ETL frameworks."
     }
   ],

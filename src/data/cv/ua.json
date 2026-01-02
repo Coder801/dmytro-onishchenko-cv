@@ -1,29 +1,89 @@
 {
   "profile": {
     "name": {
-      "first": "Дмитро",
-      "last": "Оніщенко"
+      "first": "Dmytro",
+      "last": "Onishchenko"
     },
     "position": "Software Engineer",
     "location": "Київ, Україна",
     "phone": "+380636126197",
-    "email": "donischenко801@gmail.com",
+    "email": "donischenko801@gmail.com",
     "skills": [
       "JavaScript",
       "TypeScript",
-      "ReactJS/NextJS",
-      "Monorepo",
-      "PWA",
-      "VueJS",
-      "NodeJS",
+      "Node.js",
+      "React",
+      "Next.js",
+      "Vue.js",
+      "React Native",
+      "Python",
       "HTML",
       "CSS",
-      "SQL/NoSQL",
-      "MongoDB",
-      "CMS",
+      "PWA",
+      "Monorepo",
+      "REST API",
+      "SQL",
+      "NoSQL",
       "Git",
+      "CI/CD",
+      "Testing",
       "TDD",
-      "Testing"
+      "AI",
+      "OpenAI",
+      "Agile",
+      "Scrum"
+    ],
+    "allSkills": [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React",
+      "Next.js",
+      "Vue.js",
+      "React Native",
+      "Python",
+      "HTML",
+      "CSS",
+      "PWA",
+      "Monorepo",
+      "REST API",
+      "SQL",
+      "NoSQL",
+      "Git",
+      "CI/CD",
+      "Testing",
+      "TDD",
+      "AI",
+      "Agile",
+      "Scrum",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Django",
+      "Electron",
+      "Redux",
+      "Flux",
+      "MobX",
+      "Thunk",
+      "Saga",
+      "GSAP",
+      "SVG",
+      "OOP",
+      "Functional Programming",
+      "Reactive Programming",
+      "MV* Patterns",
+      "ES6+",
+      "NextJS",
+      "Microfrontend",
+      "Web3",
+      "Browser Extensions",
+      "Laravel",
+      "Symfony",
+      "MSSQL",
+      "RegExp",
+      "D3",
+      "Snap.svg",
+      "OpenAI"
     ],
     "social": [
       {
@@ -39,27 +99,29 @@
       {
         "icon": "facebook",
         "label": "dmitry.onischenko.39",
-        "link": "https://www.facebook.com/dmitry.onischenко.39"
+        "link": "https://www.facebook.com/dmitry.onischenko.39"
       }
     ]
   },
   "summary": {
-    "title": "Резюме",
-    "intro": "Front-end розробник з 10+ роками комерційного та стартап-досвіду. Створюю та підтримую великі веб-проєкти, володію сучасними JavaScript фреймворками, працюю з повним циклом розробки включно з backend. Досвідчений у командній роботі за методологіями Scrum/Kanban.",
+    "title": "Summary",
+    "intro": "Senior Software Engineer з понад 10-річним досвідом, що спеціалізується на frontend та web applications. Досвід розробки, масштабування та підтримки сучасних web-продуктів у комерційних і стартап-середовищах. Глибока експертиза в React та екосистемі JavaScript/TypeScript, а також практичний досвід повного циклу розробки, включно з backend-сервісами та AI-assisted features. Орієнтований на продукт, з великим досвідом Agile delivery (Scrum, Kanban).",
     "items": [
       {
-        "label": "JS",
-        "description": "високий рівень",
-        "chips": ["ES6+"],
+        "label": "Frontend / JavaScript",
         "details": [
-          "Розуміння асинхронності",
-          "Оптимізація під різні браузери",
-          "Маніпуляції DOM",
-          "Знання роботи event loop"
+          "Експертне розуміння основ JavaScript (ES6+), asynchronous programming, event loop, browser APIs та оптимізації продуктивності. Впевнене володіння TypeScript. Практичний досвід складної DOM-маніпуляції та забезпечення cross-browser compatibility"
         ]
       },
       {
-        "label": "Фреймворки",
+        "label": "Backend",
+        "chips": ["NodeJS", "Python"],
+        "details": [
+          "Проєктування REST API та client-server communication. Досвід інтеграції сторонніх сервісів і authentication flows. Frameworks: Django, Next.js (API routes), Laravel"
+        ]
+      },
+      {
+        "label": "Frameworks",
         "chips": [
           "ReactJS/NextJS",
           "React ecosystem",
@@ -69,45 +131,35 @@
           "Electron",
           "Vue.js"
         ],
-        "details": ["Архітектура модулів", "Мобільні та десктопні застосунки"]
-      },
-      {
-        "label": "Верстка",
         "details": [
-          "HTML/CSS експертиза",
-          "Кросбраузерна та кросплатформена оптимізація",
-          "Використання препроцесорів і постпроцесорів",
-          "Сучасні методології"
+          "Сильна експертиза в модульній та application architecture. Досвід cross-platform розробки для mobile та desktop (React Native, Electron)"
         ]
       },
       {
-        "label": "Backend",
-        "chips": ["Node.js", "Python", "PHP"],
+        "label": "Markup & Styling",
         "details": [
-          "Проєктування REST API",
-          "Клієнт-серверна взаємодія",
-          "Інтеграція сторонніх сервісів",
-          "Фреймворки: Django, NextJS, Laravel"
+          "Експертні знання HTML та CSS. Cross-browser і cross-platform практики. Досвід використання сучасних style methodologies, preprocessors/postprocessors та інтеграції з JavaScript frameworks"
         ]
       },
       {
-        "label": "Бази даних",
-        "details": ["Реляційні та NoSQL бази", "MySQL, PostgreSQL, MongoDB"]
-      },
-      {
-        "label": "Графіка",
+        "label": "Databases",
         "details": [
-          "Canvas та SVG",
-          "Фреймворки: GSAP, Snap.svg, D3",
-          "Базові знання дизайну"
+          "Розуміння SQL та NoSQL",
+          "Практичний досвід роботи з MySQL, PostgreSQL, MongoDB"
         ]
       },
       {
-        "label": "Інше",
+        "label": "Graphic",
         "details": [
-          "OOP / Functional / Reactive підходи",
-          "Патерни проєктування та MV*",
-          "Принципи SOLID"
+          "Raster та vector graphics (Canvas, SVG)",
+          "Frameworks: GSAP, Snap.svg, D3",
+          "Базове розуміння дизайну"
+        ]
+      },
+      {
+        "label": "Engineering Practices",
+        "details": [
+          "OOP, Functional та Reactive programming paradigms. MV* architectures, поширені design patterns та принципи SOLID."
         ]
       }
     ]
@@ -117,15 +169,21 @@
       "company": "Starwind",
       "position": "Senior Software Engineer",
       "date": ["2024-04"],
-      "skills": ["NextJS/React", "Monorepo", "Microfrontend", "Typescript"],
-      "description": "Розробка веб-додатків для роботи з віртуальними машинами, мікрофронтенд-архітектура, Module Federation."
+      "skills": [
+        "NextJS/React",
+        "Monorepo",
+        "Microfrontend",
+        "Typescript",
+        "AI"
+      ],
+      "description": "Розробка застосунків, орієнтованих на virtual machines. Проєктування та реалізація рішень з використанням microfrontend architecture та Module Federation."
     },
     {
       "company": "MetaChain",
       "position": "Frontend Teamlead",
       "date": ["2024-04", "2024-12"],
-      "skills": ["NextJS/React", "Web3", "PWA", "Typescript"],
-      "description": "Керівництво командою, розробка блокчейн-рішень та криптоплатформ, інтеграції з Web3 сервісами."
+      "skills": ["NextJS/React", "Web3", "PWA", "Typescript", "NodeJS", "AI"],
+      "description": "Керував командою, що розробляла blockchain-рішення для криптовалютних операцій. Відповідав за створення та підтримку crypto platforms та інтеграцій."
     },
     {
       "company": "AURA",
@@ -139,74 +197,81 @@
         "Typescript",
         "React-Native"
       ],
-      "description": "Створення комплексних рішень у сфері безпеки, розробка браузерних розширень, підтримка застосунків."
+      "description": "Розробка складних security-focused рішень, desktop applications та browser extensions. Повна відповідальність за розвиток і довгострокову підтримку продуктів."
     },
     {
       "company": "EPAM Systems",
       "position": "Senior Software Engineer",
       "date": ["2020-02", "2021-10"],
-      "skills": ["React/Redux", "JavaScript", "Django", "Typescript", "NodeJS"],
-      "description": "Розробка високонавантажених веб-додатків, підтримка існуючих проєктів, взаємодія з мультидисциплінарними командами."
+      "skills": [
+        "React/Redux",
+        "JavaScript",
+        "Django",
+        "Typescript",
+        "NodeJS",
+        "Electron"
+      ],
+      "description": "Розробка high-load web applications з нуля в аутсорсингових проєктах. Підтримка існуючих систем та співпраця з кросфункціональними командами."
     },
     {
       "company": "ZEO Alliance",
       "position": "Frontend Developer",
       "date": ["2016-08", "2020-02"],
       "skills": ["React/Redux", "JavaScript", "Electron", "React-Native"],
-      "description": "Розробка маркетингових інтерфейсів, перехід до R&D: прототипування, дослідження нових технологій, експериментальні рішення."
+      "description": "Створення user-friendly marketing interfaces, а також участь у R&D ініціативах: прототипування, дослідження нових технологій і впровадження інноваційних рішень."
     },
     {
       "company": "ARIO Industrial Inc",
       "position": "Frontend Developer",
       "date": ["2013-04", "2016-07"],
-      "skills": ["JavaScript", "Symfony"],
-      "description": "Розробка комерційних сайтів і e-commerce рішень, адаптивні веб-додатки."
+      "skills": ["JavaScript", "Symfony", "Laravel"],
+      "description": "Робота над масштабними комерційними проєктами та e-commerce websites, включно з adaptive mobile applications."
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Markup Developer",
       "date": ["2011-11", "2013-04"],
-      "skills": ["JavaScript", "HTML", "CSS"],
-      "description": "Верстка та інтеграція макетів, розробка рекламних матеріалів і кастомних компонентів."
+      "skills": ["JavaScript", "HTML", "CSS", "SQL"],
+      "description": "Перетворення design mockups у чистий HTML/CSS/JS код. Створення web layouts, promo materials та логотипів."
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Data Analyst",
       "date": ["2011-04", "2011-10"],
-      "skills": ["JavaScript", "MSSQL", "RegExp"],
-      "description": "Створення агентів збору даних, ETL-процеси, робота з XML та SQL базами."
+      "skills": ["JavaScript", "MSSQL", "SQL"],
+      "description": "Розробка data extraction agents, трансформація та очищення даних, завантаження результатів у SQL databases з використанням ETL frameworks."
     }
   ],
   "education": [
     {
-      "institution": "Чорноморський державний університет ім. Петра Могили",
+      "institution": "Petro Mohyla Black Sea State University",
       "date": ["2007", "2013"],
-      "field": "Комп'ютерні науки",
-      "degree": "Асистент мережевого адміністратора"
+      "field": "Computer Science",
+      "degree": "Assistant Network Administrator"
     }
   ],
   "achievements": [
     {
-      "title": "Фіналіст Ukrainian Web Challenge IX",
+      "title": "Ukrainian Web Challenge IX Finalist",
       "organization": "Ukrainian Web Challenge",
-      "description": "Номінація Frontend Developer"
+      "description": "Фіналіст у номінації Frontend Developer."
     },
     {
-      "title": "Ментор фронтенд-курсів",
+      "title": "Frontend Mentor",
       "organization": "PHP-Academy",
-      "description": "Підготовка студентів до комерційної розробки"
+      "description": "Ментор студентів на frontend-курсах."
     }
   ],
   "languages": [
     {
       "code": "ua",
-      "language": "Українська",
-      "level": "Рідна"
+      "language": "Ukrainian",
+      "level": "Рідна мова"
     },
     {
       "code": "en",
-      "language": "Англійська",
-      "level": "Intermediate (B1-B2)"
+      "language": "English",
+      "level": "Intermediate (B1–B2)"
     }
   ]
 }

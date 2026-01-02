@@ -1,18 +1,27 @@
 import { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import i18n from "i18next";
 import { Main } from "@/modules/Main";
 import { Sidebar } from "@/modules/Sidebar";
 import { Preloader } from "@/ui/Preloader";
 import { ErrorState } from "@/components/ErrorState";
 import { useGetProfileQuery } from "@/store/api";
+import {
+  setLanguage,
+  selectCurrentLanguage,
+} from "@/store/slices/languageSlice";
 import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
 import { useLanguageFromQuery } from "@/hooks/useLanguageFromQuery";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import type { RootState } from "@/store";
 
 import styles from "./styles.module.scss";
 
 const Home = () => {
-  const currentLanguage = i18n.language as Languages;
+  const dispatch = useDispatch();
+  const currentLanguage = useSelector((state: RootState) =>
+    selectCurrentLanguage(state)
+  );
   const { data, isLoading, error, refetch } =
     useGetProfileQuery(currentLanguage);
 
@@ -21,10 +30,11 @@ const Home = () => {
 
   const onLanguageChange = useCallback(
     (language: Languages) => {
+      dispatch(setLanguage(language));
       i18n.changeLanguage(language);
       refetch();
     },
-    [refetch]
+    [dispatch, refetch]
   );
 
   if (isLoading) {

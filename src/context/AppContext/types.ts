@@ -1,15 +1,9 @@
-import { FETCH_FAILURE, FETCH_REQUEST, FETCH_SUCCESS } from './actionTypes';
+import { FETCH_FAILURE, FETCH_REQUEST, FETCH_SUCCESS } from "./actionTypes";
 
-export type Plugin = {
-  name: string;
-  description: string;
-  path: string;
-  state: boolean;
-  isActive?: boolean;
-};
+export type Data = any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export type AppState = {
-  data: Plugin[];
+  data: Data;
   loading: boolean;
   error: string | null;
 };
