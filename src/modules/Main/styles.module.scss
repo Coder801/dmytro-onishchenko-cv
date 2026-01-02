@@ -63,7 +63,11 @@
   .languageSwitcher {
     position: absolute;
     top: 35px;
-    right: 40px;
+    right: 15px;
+
+    @include respond-to(md) {
+      right: 40px;
+    }
 
     @media print {
       display: none;
