@@ -13,6 +13,10 @@ export const downloadPdf = async (completed = () => {}) => {
       body: JSON.stringify({
         currentPage: window.location.href,
         currentLanguage,
+        size: {
+          width: 1440,
+          height: Math.max(document.body.scrollHeight),
+        },
       }),
     });
     if (!res.ok) {

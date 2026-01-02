@@ -18,6 +18,10 @@ body {
     var(--color-bg-secondary)
   );
   font-family: var(--font-sans);
+
+  @media print {
+    padding: 0;
+  }
 }
 
 * {
