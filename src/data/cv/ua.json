@@ -151,15 +151,15 @@
       {
         "label": "Graphic",
         "details": [
-          "Raster та vector graphics (Canvas, SVG)",
-          "Frameworks: GSAP, Snap.svg, D3",
+          "Растрова та векторна графіка (Canvas, SVG)",
+          "Фреймворки: GSAP, Snap.svg, D3",
           "Базове розуміння дизайну"
         ]
       },
       {
         "label": "Engineering Practices",
         "details": [
-          "OOP, Functional та Reactive programming paradigms. MV* architectures, поширені design patterns та принципи SOLID."
+          "OOP, Functional та Reactive programming paradigms. MV* architectures, поширені design patterns та принципи SOLID"
         ]
       }
     ]
