@@ -16,7 +16,7 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   --space-lg: calc(var(--base) * 5);
   --space-xl: calc(var(--base) * 6);
 
-  /* 🎨 Palette */
+  /* 🎨 Base Palette (независимые от темы) */
   --white: 254, 254, 254;
   --black: 0, 0, 0;
   --gray: 85, 85, 85;
@@ -26,8 +26,11 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   --navy: 31, 52, 84;
   --steel: 77, 98, 131;
   --blue-gray: 65, 82, 112;
+  --dark-bg: 18, 18, 18;
+  --dark-surface: 30, 30, 30;
+  --off-white: 245, 245, 245;
 
-  /* 🧩 Semantic Colors */
+  /* 🧩 Semantic Colors - Default Theme (Dark) */
   --color-bg-primary: rgb(var(--steel));
   --color-bg-secondary: rgb(var(--navy));
   --color-bg-surface: rgb(var(--white));
@@ -50,3 +53,48 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
     --h#{$i}-size: #{list.nth($header-sizes, $i)};
   }
 }
+
+/* 🌙 Dark Theme */
+// [data-theme="dark"] {
+//   --color-bg-primary: rgb(var(--dark-bg));
+//   --color-bg-secondary: rgb(var(--dark-surface));
+//   --color-bg-surface: rgb(var(--dark-surface));
+//   --color-bg-aside: rgb(var(--navy));
+
+//   --color-text-primary: rgb(var(--light-gray));
+//   --color-text-secondary: rgb(var(--off-white));
+//   --color-text-mark: rgb(var(--white));
+
+//   --background-chip-primary: rgba(var(--light-gray), 0.15);
+//   --background-chip-secondary: rgba(var(--light-gray), 0.3);
+// }
+
+/* ☀️ Light Theme */
+// [data-theme="light"] {
+//   --color-bg-primary: rgb(var(--off-white));
+//   --color-bg-secondary: rgb(var(--white));
+//   --color-bg-surface: rgb(var(--white));
+//   --color-bg-aside: rgb(var(--light-gray));
+
+//   --color-text-primary: rgb(var(--black));
+//   --color-text-secondary: rgb(var(--gray));
+//   --color-text-mark: rgb(var(--yellow));
+
+//   --background-chip-primary: rgba(var(--gray), 0.1);
+//   --background-chip-secondary: rgba(var(--gray), 0.2);
+// }
+
+/* 🎨 Blue Theme */
+// [data-theme="blue"] {
+//   --color-bg-primary: rgb(var(--navy));
+//   --color-bg-secondary: rgb(var(--steel));
+//   --color-bg-surface: rgb(var(--white));
+//   --color-bg-aside: rgb(var(--blue-gray));
+
+//   --color-text-primary: rgb(var(--light-gray));
+//   --color-text-secondary: rgb(var(--gray));
+//   --color-text-mark: rgb(var(--black));
+
+//   --background-chip-primary: rgba(var(--blue), 0.1);
+//   --background-chip-secondary: rgba(var(--blue), 0.2);
+// }

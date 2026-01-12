@@ -1,0 +1,97 @@
+@use "../../../../styles/mixins" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-aside);
+  color: var(--color-text-primary);
+  padding: calc(var(--base) * 6) calc(var(--base) * 4);
+  text-align: center;
+
+  @include respond-to(md) {
+    padding: calc(var(--base) * 10) calc(var(--base) * 5);
+    text-align: left;
+  }
+
+  .subtitle {
+    margin: 0 0 var(--space-md) 0;
+
+    @include respond-to(md) {
+      margin: 0 0 var(--space-lg) 0;
+    }
+  }
+
+  .photo {
+    margin-bottom: var(--space-md);
+    max-width: 60%;
+    margin: 0 auto var(--space-md);
+
+    @include respond-to(md) {
+      max-width: 80%;
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+
+  .name {
+    margin-bottom: var(--space-xs);
+  }
+
+  .position {
+    margin-bottom: var(--space-lg);
+  }
+
+  .divider {
+    margin: 0 0 var(--space-lg) 0;
+
+    @include respond-to(md) {
+      margin: 0 0 var(--space-xl) 0;
+    }
+  }
+
+  .contact {
+    margin-bottom: var(--space-md);
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    @include respond-to(md) {
+      margin-bottom: var(--space-lg);
+    }
+  }
+
+  .languageSwitcher {
+    margin-bottom: var(--space-lg);
+  }
+
+  .skills {
+    .skillsList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+
+      @include respond-to(md) {
+        justify-content: flex-start;
+        margin-bottom: var(--space-xl);
+      }
+    }
+  }
+
+  .socials {
+  }
+
+  .link {
+    margin-bottom: var(--space-xs);
+  }
+
+  .button {
+    margin-top: var(--space-lg);
+
+    @media print {
+      display: none;
+    }
+  }
+}

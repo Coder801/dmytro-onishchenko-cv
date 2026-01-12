@@ -3,14 +3,17 @@ import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Photo } from "@/components/Photo";
-import { SocialLink } from "@/components/SocialLink";
 import { Title } from "@/components/Title";
-import type { ProfileInfo } from "@/types/resume";
-import { Button } from "@/ui/Button";
+import { SocialLink } from "@/components/SocialLink";
+
+import { Typography } from "@/ui/Typography";
 import { Chip } from "@/ui/Chip";
 import { Divider } from "@/ui/Divider";
-import { Typography } from "@/ui/Typography";
+import { Button } from "@/ui/Button";
+
 import { downloadPdf } from "@/utils/downloadPdf";
+
+import type { ProfileInfo } from "@/types/resume";
 
 import styles from "./styles.module.scss";
 

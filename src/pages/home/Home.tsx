@@ -1,19 +1,20 @@
+import i18n from "i18next";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import i18n from "i18next";
-import { Main } from "@/modules/Main";
-import { Sidebar } from "@/modules/Sidebar";
-import { Preloader } from "@/ui/Preloader";
+
 import { ErrorState } from "@/components/ErrorState";
+import { useFadeIn } from "@/hooks/useFadeIn";
+import { useLanguageFromQuery } from "@/hooks/useLanguageFromQuery";
+import type { RootState } from "@/store";
 import { useGetProfileQuery } from "@/store/api";
 import {
-  setLanguage,
   selectCurrentLanguage,
+  setLanguage,
 } from "@/store/slices/languageSlice";
-import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
-import { useLanguageFromQuery } from "@/hooks/useLanguageFromQuery";
-import { useFadeIn } from "@/hooks/useFadeIn";
-import type { RootState } from "@/store";
+import { Default } from "@/templates/Default";
+import { River } from "@/templates/River";
+import { Languages } from "@/types/languages";
+import { Preloader } from "@/ui/Preloader";
 
 import styles from "./styles.module.scss";
 
@@ -50,23 +51,14 @@ const Home = () => {
   }
 
   return (
-    <div
-      className={`${styles.container} ${isVisible ? styles.visible : ""}`}
-      id="pdf-content"
-    >
-      <Sidebar className={styles.sidebar} profile={data.content.profile} />
-      <Main
-        className={styles.main}
-        summary={data.content.summary}
-        workHistory={data.content.workHistory}
-        education={data.content.education}
-        achievements={data.content.achievements}
-        languages={data.content.languages}
-        availableLanguages={SUPPORTED_LANGUAGES}
+    <>
+      <River
+        data={data}
+        isVisible={isVisible}
         currentLanguage={currentLanguage}
         onLanguageChange={onLanguageChange}
       />
-    </div>
+    </>
   );
 };
 
