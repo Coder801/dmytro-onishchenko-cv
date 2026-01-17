@@ -33,6 +33,36 @@
       "Agile",
       "Scrum"
     ],
+    "skillsByCategory": [
+      {
+        "category": "Frontend",
+        "skills": ["React", "Next.js", "Vue.js", "HTML", "CSS", "TypeScript", "JavaScript", "Redux", "MobX"]
+      },
+      {
+        "category": "Backend",
+        "skills": ["Node.js", "Python", "Django", "REST API", "Laravel", "Symfony"]
+      },
+      {
+        "category": "Mobile & Desktop",
+        "skills": ["React Native", "Electron", "PWA"]
+      },
+      {
+        "category": "Databases",
+        "skills": ["SQL", "NoSQL", "PostgreSQL", "MySQL", "MongoDB", "MSSQL"]
+      },
+      {
+        "category": "DevOps & Tools",
+        "skills": ["Git", "CI/CD", "Monorepo", "Testing", "TDD"]
+      },
+      {
+        "category": "AI & Web3",
+        "skills": ["AI", "OpenAI", "Web3"]
+      },
+      {
+        "category": "Methodologies",
+        "skills": ["Agile", "Scrum", "OOP", "Functional Programming"]
+      }
+    ],
     "allSkills": [
       "JavaScript",
       "TypeScript",

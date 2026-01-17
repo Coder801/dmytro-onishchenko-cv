@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
-import styles from './styles.module.scss';
+import { useEffect, useState } from "react";
 
-type Theme = 'default' | 'dark' | 'light' | 'blue';
+import styles from "./styles.module.scss";
+
+type Theme = "default" | "dark" | "light" | "blue";
 
 export const ThemeSwitcher = () => {
-  const [theme, setTheme] = useState<Theme>('default');
+  const [theme, setTheme] = useState<Theme>("default");
 
   useEffect(() => {
     // Загружаем сохраненную тему из localStorage
-    const savedTheme = localStorage.getItem('theme') as Theme;
+    const savedTheme = localStorage.getItem("theme") as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
       applyTheme(savedTheme);
@@ -16,18 +17,18 @@ export const ThemeSwitcher = () => {
   }, []);
 
   const applyTheme = (newTheme: Theme) => {
-    const root = document.documentElement;
+    const body = document.body;
 
     // Удаляем все темы
-    root.removeAttribute('data-theme');
+    body.removeAttribute("data-theme");
 
     // Применяем новую тему (если не default)
-    if (newTheme !== 'default') {
-      root.setAttribute('data-theme', newTheme);
+    if (newTheme !== "default") {
+      body.setAttribute("data-theme", newTheme);
     }
 
     // Сохраняем в localStorage
-    localStorage.setItem('theme', newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
   const handleThemeChange = (newTheme: Theme) => {
@@ -38,29 +39,37 @@ export const ThemeSwitcher = () => {
   return (
     <div className={styles.themeSwitcher}>
       <button
-        className={`${styles.themeButton} ${theme === 'default' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('default')}
+        className={`${styles.themeButton} ${
+          theme === "default" ? styles.active : ""
+        }`}
+        onClick={() => handleThemeChange("default")}
         title="Default Theme"
       >
         Default
       </button>
       <button
-        className={`${styles.themeButton} ${theme === 'dark' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('dark')}
+        className={`${styles.themeButton} ${
+          theme === "dark" ? styles.active : ""
+        }`}
+        onClick={() => handleThemeChange("dark")}
         title="Dark Theme"
       >
         🌙 Dark
       </button>
       <button
-        className={`${styles.themeButton} ${theme === 'light' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('light')}
+        className={`${styles.themeButton} ${
+          theme === "light" ? styles.active : ""
+        }`}
+        onClick={() => handleThemeChange("light")}
         title="Light Theme"
       >
         ☀️ Light
       </button>
       <button
-        className={`${styles.themeButton} ${theme === 'blue' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('blue')}
+        className={`${styles.themeButton} ${
+          theme === "blue" ? styles.active : ""
+        }`}
+        onClick={() => handleThemeChange("blue")}
         title="Blue Theme"
       >
         🎨 Blue

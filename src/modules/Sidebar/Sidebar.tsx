@@ -52,13 +52,36 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
         <Title tag="h3" className={styles.subtitle}>
           {t("skills")}
         </Title>
-        <Typography className={styles.skillsList}>
-          {profile.skills.map((skill) => (
-            <Chip key={skill} className={styles.skill}>
-              {skill}
-            </Chip>
-          ))}
-        </Typography>
+        {profile.skillsByCategory ? (
+          <div className={styles.skillsByCategory}>
+            {profile.skillsByCategory.map((category) => (
+              <div key={category.category} className={styles.category}>
+                <Typography
+                  className={styles.categoryTitle}
+                  tag="h5"
+                  weight="bold"
+                >
+                  {category.category}
+                </Typography>
+                <Typography className={styles.skillsList}>
+                  {category.skills.map((skill) => (
+                    <Chip key={skill} className={styles.skill}>
+                      {skill}
+                    </Chip>
+                  ))}
+                </Typography>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Typography className={styles.skillsList}>
+            {profile.skills.map((skill) => (
+              <Chip key={skill} className={styles.skill}>
+                {skill}
+              </Chip>
+            ))}
+          </Typography>
+        )}
       </div>
 
       <div className={styles.socials}>

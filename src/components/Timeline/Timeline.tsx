@@ -1,12 +1,12 @@
-import { FC, Fragment } from "react";
-import { first, last, size } from "lodash";
-import { Typography } from "@/ui/Typography";
-import { Chip } from "@/ui/Chip";
 import clsx from "clsx";
+import { first, last, size } from "lodash";
+import { FC, Fragment } from "react";
 
-import { TimelineProps } from "./types";
+import { Chip } from "@/ui/Chip";
+import { Typography } from "@/ui/Typography";
 
 import styles from "./styles.module.scss";
+import { TimelineProps } from "./types";
 
 export const Timeline: FC<TimelineProps> = ({
   date,
@@ -17,13 +17,13 @@ export const Timeline: FC<TimelineProps> = ({
   className,
 }) => (
   <div className={clsx(styles.container, className)}>
-    <div className={styles.date}>
-      <span>{first(date)}</span>
-      <span>{size(date) === 2 ? ` / ${last(date)}` : " / Present"}</span>
-    </div>
     <div className={styles.content}>
       <Typography tag="h4" weight="bold">
-        {position}
+        {position}{" "}
+        <div className={styles.date}>
+          <span>{first(date)}</span>
+          <span>{size(date) === 2 ? ` / ${last(date)}` : " / Present"}</span>
+        </div>
       </Typography>
       <Typography tag="h5">
         <i className={styles.company}>{company}</i>

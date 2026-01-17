@@ -89,21 +89,18 @@ export const River: FC<RiverProps> = ({
 
       <div className={styles.content}>
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("summary")}
-          </Title>
+          </Typography>
           {summary.intro ? (
             <Typography className={styles.text}>{summary.intro}</Typography>
           ) : null}
-          {summary.items.map((item: SummaryItemType) => (
-            <SummaryItem key={item.label} item={item} />
-          ))}
         </div>
 
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("skills")}
-          </Title>
+          </Typography>
           <Typography className={styles.skillsList}>
             {profile.skills.map((skill: string) => (
               <Chip key={skill} className={styles.skill}>
@@ -114,9 +111,9 @@ export const River: FC<RiverProps> = ({
         </div>
 
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("workHistory")}
-          </Title>
+          </Typography>
           <div className={styles.timeline}>
             {workHistory.map((item: WorkHistory) => (
               <Timeline
@@ -133,9 +130,9 @@ export const River: FC<RiverProps> = ({
         </div>
 
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("education")}
-          </Title>
+          </Typography>
           {education.map((item: Education) => (
             <Timeline
               key={`${item.institution}-${item.field}`}
@@ -149,9 +146,9 @@ export const River: FC<RiverProps> = ({
         </div>
 
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("achievements")}
-          </Title>
+          </Typography>
           {achievements.map((item: Achievement) => (
             <Typography key={item.title}>
               • {item.title}
@@ -162,9 +159,9 @@ export const River: FC<RiverProps> = ({
         </div>
 
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("languages")}
-          </Title>
+          </Typography>
           {languages.map((item: Language) => (
             <Typography key={item.code}>
               <strong>{item.language}</strong> - {item.level}
@@ -173,9 +170,9 @@ export const River: FC<RiverProps> = ({
         </div>
 
         <div className={styles.section}>
-          <Title tag="h2" className={styles.title}>
+          <Typography tag="h4" weight="normal" className={styles.title}>
             {t("social")}
-          </Title>
+          </Typography>
           <div className={styles.socials}>
             {profile.social.map(
               (item: { icon: IconNames; label: string; link: string }) => (

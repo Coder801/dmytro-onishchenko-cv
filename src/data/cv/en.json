@@ -33,6 +33,36 @@
       "Agile",
       "Scrum"
     ],
+    "skillsByCategory": [
+      {
+        "category": "Frontend",
+        "skills": ["React", "Next.js", "Vue.js", "HTML", "CSS", "TypeScript", "JavaScript", "Redux", "MobX"]
+      },
+      {
+        "category": "Backend",
+        "skills": ["Node.js", "Python", "Django", "REST API", "Laravel", "Symfony"]
+      },
+      {
+        "category": "Mobile & Desktop",
+        "skills": ["React Native", "Electron", "PWA"]
+      },
+      {
+        "category": "Databases",
+        "skills": ["SQL", "NoSQL", "PostgreSQL", "MySQL", "MongoDB", "MSSQL"]
+      },
+      {
+        "category": "DevOps & Tools",
+        "skills": ["Git", "CI/CD", "Monorepo", "Testing", "TDD"]
+      },
+      {
+        "category": "AI & Web3",
+        "skills": ["AI", "OpenAI", "Web3"]
+      },
+      {
+        "category": "Methodologies",
+        "skills": ["Agile", "Scrum", "OOP", "Functional Programming"]
+      }
+    ],
     "allSkills": [
       "JavaScript",
       "TypeScript",
@@ -111,64 +141,7 @@
   },
   "summary": {
     "title": "Summary",
-    "intro": "Senior Software Engineer with 10+ years of experience specializing in frontend and web applications. Experience in building, scaling, and maintaining modern web products in commercial and startup environments. Deep expertise in React and the JavaScript/TypeScript ecosystem, with hands-on full-cycle development experience including backend services and AI-assisted features. Product-oriented and highly experienced in Agile delivery (Scrum, Kanban).",
-    "items": [
-      {
-        "label": "Frontend / JavaScript",
-        "details": [
-          "Expert-level understanding of core JavaScript (ES6+), asynchronous programming, event loop, browser APIs, and performance optimization. Strong TypeScript expertise. Hands-on experience with complex DOM manipulation and cross-browser compatibility"
-        ]
-      },
-      {
-        "label": "Backend",
-        "chips": ["NodeJS", "Python"],
-        "details": [
-          "REST API design and client-server communication. Experience with third-party integrations and authentication flows. Frameworks: Django, Next.js (API routes), Laravel"
-        ]
-      },
-      {
-        "label": "Frameworks",
-        "chips": [
-          "ReactJS/NextJS",
-          "React ecosystem",
-          "Redux/Flux/MobX",
-          "Thunk/Saga",
-          "React Native",
-          "Electron",
-          "Vue.js"
-        ],
-        "details": [
-          "Strong module and application architecture expertise. Cross-platform development experience for mobile and desktop (React Native, Electron)"
-        ]
-      },
-      {
-        "label": "Markup & Styling",
-        "details": [
-          "Expert knowledge of HTML and CSS. Cross-browser and cross-platform practices. Experience with modern style methodologies, preprocessors/postprocessors, and integration with JavaScript frameworks"
-        ]
-      },
-      {
-        "label": "Databases",
-        "details": [
-          "SQL & NoSQL understanding",
-          "Hands-on with MySQL, PostgreSQL, MongoDB"
-        ]
-      },
-      {
-        "label": "Graphic",
-        "details": [
-          "Raster & vector graphics (Canvas, SVG)",
-          "Frameworks: GSAP, Snap.svg, D3",
-          "Basic design understanding"
-        ]
-      },
-      {
-        "label": "Engineering Practices",
-        "details": [
-          "OOP, Functional and Reactive programming paradigms. MV* architectures, common design patterns, and SOLID principles"
-        ]
-      }
-    ]
+    "intro": "Senior Software Engineer with 10+ years of experience focused on frontend and modern web applications. Extensive background in building, scaling, and maintaining production systems in both startup and commercial environments. Deep expertise in React and the JavaScript/TypeScript ecosystem, with strong understanding of application architecture, performance, and browser internals. Full-cycle development experience, including backend APIs, integrations, and AI-assisted features. Product-oriented engineer with a strong focus on usability, maintainability, and long-term scalability. Experienced in cross-platform development (web, mobile, desktop) and complex UI systems. Comfortable working in Agile environments (Scrum, Kanban) and collaborating closely with product, design, and engineering teams."
   },
   "workHistory": [
     {

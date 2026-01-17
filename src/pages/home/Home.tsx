@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ErrorState } from "@/components/ErrorState";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { useLanguageFromQuery } from "@/hooks/useLanguageFromQuery";
 import type { RootState } from "@/store";
@@ -52,6 +53,7 @@ const Home = () => {
 
   return (
     <>
+      {/* <ThemeSwitcher /> */}
       <River
         data={data}
         isVisible={isVisible}

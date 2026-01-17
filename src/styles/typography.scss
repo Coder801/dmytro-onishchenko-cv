@@ -2,7 +2,7 @@
 Typography
 =========================== */
 @use "sass:list";
-@use "./variables.scss" as vars;
+@use "./variables.scss" as *;
 @use "./mixins" as *;
 
 html {
@@ -21,9 +21,9 @@ textarea {
 }
 
 /* All heading */
-@for $i from 1 through list.length(vars.$header-sizes) {
+@for $i from 1 through list.length($header-sizes) {
   h#{$i} {
-    $base-size: list.nth(vars.$header-sizes, $i);
+    $base-size: list.nth($header-sizes, $i);
     font-size: calc($base-size * 0.85);
 
     @include respond-to(md) {

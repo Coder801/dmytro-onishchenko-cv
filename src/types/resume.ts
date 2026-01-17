@@ -40,6 +40,11 @@ export type Language = {
   level: string;
 };
 
+export type SkillCategory = {
+  category: string;
+  skills: string[];
+};
+
 export type ProfileInfo = {
   name: {
     first: string;
@@ -51,6 +56,7 @@ export type ProfileInfo = {
   email: string;
   skills: string[];
   allSkills: string[];
+  skillsByCategory?: SkillCategory[];
   social: Array<{
     icon: IconNames;
     label: string;

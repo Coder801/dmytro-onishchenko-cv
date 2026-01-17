@@ -66,6 +66,30 @@
   }
 
   .skills {
+    .skillsByCategory {
+      margin-bottom: var(--space-lg);
+
+      @include respond-to(md) {
+        margin-bottom: var(--space-xl);
+      }
+    }
+
+    .category {
+      margin-bottom: var(--space-md);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .categoryTitle {
+      margin-bottom: var(--space-sm);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+    }
+
     .skillsList {
       display: flex;
       flex-wrap: wrap;
@@ -75,8 +99,12 @@
 
       @include respond-to(md) {
         justify-content: flex-start;
-        margin-bottom: var(--space-xl);
+        margin-bottom: 0;
       }
+    }
+
+    .skill {
+      font-size: 0.75rem;
     }
   }
 
