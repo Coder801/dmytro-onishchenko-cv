@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Get current branch name
+BRANCH=$(git branch --show-current)
+
+# Check if we merged into master/main
+if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "main" ]; then
+  echo "🚀 Detected merge to $BRANCH - running standard-version..."
+
+  # Run standard-version to bump version and generate changelog
+  yarn run release
+
+  echo "✅ Version bumped and changelog updated!"
+fi

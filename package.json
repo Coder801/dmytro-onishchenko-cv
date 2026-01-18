@@ -1,13 +1,21 @@
 {
   "name": "donischenko-cv",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack --port 8080",
     "build": "next build --turbopack",
     "build:prod": "cross-env NODE_ENV=production next build --turbopack",
     "start": "next start --port 8080",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
+    "release:first": "standard-version --first-release",
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
@@ -42,7 +50,10 @@
     "cross-env": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "husky": "^9.1.7",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.17"
   }
 }
