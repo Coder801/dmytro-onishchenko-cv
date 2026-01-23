@@ -1,10 +1,10 @@
 @use "../../../../styles/mixins" as *;
 
 .container {
-  display: flex;
-  flex-direction: column;
   background-color: var(--color-bg-aside);
   color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
   padding: calc(var(--base) * 6) calc(var(--base) * 4);
   text-align: center;
 
@@ -22,9 +22,9 @@
   }
 
   .photo {
+    margin: 0 auto var(--space-md);
     margin-bottom: var(--space-md);
     max-width: 60%;
-    margin: 0 auto var(--space-md);
 
     @include respond-to(md) {
       max-width: 80%;
@@ -52,9 +52,9 @@
   }
 
   .contact {
-    margin-bottom: var(--space-md);
     font-size: 1rem;
     line-height: 1.5rem;
+    margin-bottom: var(--space-md);
 
     @include respond-to(md) {
       margin-bottom: var(--space-lg);
@@ -83,11 +83,11 @@
     }
 
     .categoryTitle {
-      margin-bottom: var(--space-sm);
       font-size: 0.875rem;
-      text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: var(--space-sm);
       opacity: 0.8;
+      text-transform: uppercase;
     }
 
     .skillsList {
@@ -106,9 +106,6 @@
     .skill {
       font-size: 0.75rem;
     }
-  }
-
-  .socials {
   }
 
   .link {

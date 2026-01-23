@@ -2,8 +2,8 @@
 
 .container {
   display: flex;
-  justify-content: center;
   gap: var(--space-xs);
+  justify-content: center;
 
   @include respond-to(md) {
     justify-content: flex-start;
@@ -12,20 +12,20 @@
 
 .button {
   background: transparent;
-  font-size: 0.75rem;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  opacity: 0.6;
   text-transform: uppercase;
   transition: opacity 0.3s ease;
-  opacity: 0.6;
 
   @include respond-to(md) {
     font-size: 0.85rem;
   }
 
   &:disabled {
-    opacity: 1;
     cursor: default;
+    opacity: 1;
   }
 
   &:not(:last-child) {
@@ -34,9 +34,9 @@
   }
 
   .flag {
-    width: 1.25rem;
     height: auto;
     margin-left: 0.25rem;
     vertical-align: middle;
+    width: 1.25rem;
   }
 }

@@ -15,8 +15,8 @@
   $xl-line-height
 ) {
   &-lighter {
+    font-size: $mobile-size;
     font-weight: 100;
-    font-size: $mobile-size;
     line-height: $mobile-line-height;
 
     @include respond-to(sm) {
@@ -39,9 +39,10 @@
       line-height: $xl-line-height;
     }
   }
+
   &-normal {
-    font-weight: 400;
     font-size: $mobile-size;
+    font-weight: 400;
     line-height: $mobile-line-height;
 
     @include respond-to(sm) {
@@ -64,9 +65,10 @@
       line-height: $xl-line-height;
     }
   }
+
   &-bold {
-    font-weight: 700;
     font-size: $mobile-size;
+    font-weight: 700;
     line-height: $mobile-line-height;
 
     @include respond-to(sm) {
@@ -183,9 +185,11 @@
       &-lighter {
         font-weight: 100;
       }
+
       &-normal {
         font-weight: 500;
       }
+
       &-bold {
         font-weight: 700;
       }
@@ -193,12 +197,15 @@
 
     &-secondary {
       color: var(--header-secondary);
+
       &-lighter {
         font-weight: 100;
       }
+
       &-normal {
         font-weight: 500;
       }
+
       &-bold {
         font-weight: 700;
       }
@@ -220,6 +227,7 @@
         13px, 18px   // xl (1440px+)
       );
     }
+
     &-s {
       // Mobile: 12px → sm: 13px → md: 14px → lg: 14.5px → xl: 15px
       @include wrap-font-size(
@@ -230,6 +238,7 @@
         15px, 20px   // xl (1440px+)
       );
     }
+
     &-m {
       // Mobile: 14px → sm: 15px → md: 16px → lg: 17px → xl: 18px
       @include wrap-font-size(
@@ -240,6 +249,7 @@
         18px, 26px   // xl (1440px+)
       );
     }
+
     &-l {
       // Mobile: 16px → sm: 17px → md: 18px → lg: 19px → xl: 20px
       @include wrap-font-size(

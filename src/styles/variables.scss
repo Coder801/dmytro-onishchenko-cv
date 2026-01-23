@@ -1,11 +1,13 @@
 @use "sass:list";
 
 /* SCSS Variables */
+
 /* -------------------------------- */
 
 $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
 
 /* CSS Variables */
+
 /* -------------------------------- */
 :root {
   /* 🎚️ Rhythm & Spacing */
@@ -35,16 +37,13 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   --color-bg-secondary: rgb(var(--navy));
   --color-bg-surface: rgb(var(--white));
   --color-bg-aside: rgb(var(--blue-gray));
-
   --color-text-primary: rgb(var(--light-gray));
   --color-text-secondary: rgb(var(--gray));
   --color-text-mark: rgb(var(--black));
-
   --color-blue: rgb(var(--blue));
   --color-yellow: rgb(var(--yellow));
-
-  --background-chip-primary: rgba(var(--light-gray), 0.2);
-  --background-chip-secondary: rgba(var(--light-gray), 0.5);
+  --background-chip-primary: rgb(var(--light-gray), 0.2);
+  --background-chip-secondary: rgb(var(--light-gray), 0.5);
 
   /* ✍️ Fonts */
   --font-sans: "Roboto", sans-serif;
@@ -60,13 +59,11 @@ body[data-theme="dark"] {
   --color-bg-secondary: rgb(var(--dark-surface));
   --color-bg-surface: rgb(var(--dark-surface));
   --color-bg-aside: rgb(var(--navy));
-
   --color-text-primary: rgb(var(--light-gray));
   --color-text-secondary: rgb(var(--off-white));
   --color-text-mark: rgb(var(--white));
-
-  --background-chip-primary: rgba(var(--light-gray), 0.15);
-  --background-chip-secondary: rgba(var(--light-gray), 0.3);
+  --background-chip-primary: rgb(var(--light-gray), 0.15);
+  --background-chip-secondary: rgb(var(--light-gray), 0.3);
 }
 
 /* ☀️ Light Theme */
@@ -75,13 +72,11 @@ body[data-theme="light"] {
   --color-bg-secondary: rgb(var(--white));
   --color-bg-surface: rgb(var(--white));
   --color-bg-aside: rgb(var(--light-gray));
-
   --color-text-primary: rgb(var(--black));
   --color-text-secondary: rgb(var(--gray));
   --color-text-mark: rgb(var(--yellow));
-
-  --background-chip-primary: rgba(var(--gray), 0.1);
-  --background-chip-secondary: rgba(var(--gray), 0.2);
+  --background-chip-primary: rgb(var(--gray), 0.1);
+  --background-chip-secondary: rgb(var(--gray), 0.2);
 }
 
 /* 🎨 Blue Theme */
@@ -90,11 +85,9 @@ body[data-theme="blue"] {
   --color-bg-secondary: rgb(var(--steel));
   --color-bg-surface: rgb(var(--white));
   --color-bg-aside: rgb(var(--blue-gray));
-
   --color-text-primary: rgb(var(--light-gray));
   --color-text-secondary: rgb(var(--gray));
   --color-text-mark: rgb(var(--black));
-
-  --background-chip-primary: rgba(var(--blue), 0.1);
-  --background-chip-secondary: rgba(var(--blue), 0.2);
+  --background-chip-primary: rgb(var(--blue), 0.1);
+  --background-chip-secondary: rgb(var(--blue), 0.2);
 }

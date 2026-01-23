@@ -1,22 +1,22 @@
 .themeSwitcher {
-  display: flex;
-  gap: var(--space-sm);
-  padding: var(--space-md);
   background: var(--color-bg-surface);
   border-radius: calc(var(--base) * 2);
+  display: flex;
   flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-md);
 }
 
 .themeButton {
-  padding: var(--space-sm) var(--space-md);
+  background: var(--background-chip-primary);
   border: 2px solid transparent;
   border-radius: var(--base);
-  background: var(--background-chip-primary);
   color: var(--color-text-primary);
   cursor: pointer;
-  transition: all 0.2s ease;
   font-size: 0.875rem;
   font-weight: 500;
+  padding: var(--space-sm) var(--space-md);
+  transition: all 0.2s ease;
 
   &:hover {
     background: var(--background-chip-secondary);
@@ -24,8 +24,8 @@
   }
 
   &.active {
-    border-color: var(--color-blue);
     background: var(--background-chip-secondary);
+    border-color: var(--color-blue);
   }
 
   &:active {

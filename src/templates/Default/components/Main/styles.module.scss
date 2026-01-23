@@ -1,14 +1,14 @@
 @use "../../../../styles/mixins" as *;
 
 .container {
-  position: relative;
-  width: 100%;
   background-color: var(--color-bg-surface);
   color: var(--color-text-secondary);
   padding: calc(var(--base) * 6) calc(var(--base) * 4);
+  position: relative;
+  width: 100%;
 
   @include respond-to(md) {
-    padding: calc(var(--base) * 10) calc(var(--base) * 10);
+    padding: calc(var(--base) * 10);
   }
 
   & .title {
@@ -20,12 +20,12 @@
   }
 
   & .text {
-    margin: 0 0 var(--space-sm) 0;
     font-size: 0.9rem;
+    margin: 0 0 var(--space-sm) 0;
 
     @include respond-to(md) {
-      margin: 0 0 var(--space-md) 0;
       font-size: 1rem;
+      margin: 0 0 var(--space-md) 0;
     }
 
     > span {
@@ -62,8 +62,8 @@
 
   .languageSwitcher {
     position: absolute;
-    top: 35px;
     right: 15px;
+    top: 35px;
 
     @include respond-to(md) {
       right: 40px;

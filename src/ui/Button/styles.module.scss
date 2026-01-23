@@ -1,23 +1,23 @@
 @use "../../styles/mixins" as *;
 
 .button {
-  text-decoration: none;
-  border-radius: 4px;
-  border: 3px solid lightgray;
-  padding: 10px 40px;
-  color: lightgray;
-  display: inline-block;
-  transition: 0.3s ease;
-  font-size: 0.9em;
-  white-space: nowrap;
   background: none;
-  position: relative;
-  width: 100%;
+  border: 3px solid lightgray;
+  border-radius: 4px;
+  color: lightgray;
   cursor: pointer;
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 10px 40px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s ease;
+  white-space: nowrap;
+  width: 100%;
 
   @include respond-to(md) {
-    padding: 10px 20px;
     font-size: 16px;
+    padding: 10px 20px;
   }
 
   &:hover {
@@ -31,26 +31,27 @@
 
   &.loading {
     &::after {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -7px;
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
+      animation: rotation 1s linear infinite;
       border: 2px solid #fff;
       border-bottom-color: transparent;
       border-radius: 50%;
-      display: inline-block;
       box-sizing: border-box;
-      animation: rotation 1s linear infinite;
+      content: "";
+      display: block;
+      display: inline-block;
+      height: 15px;
+      margin-top: -7px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      width: 15px;
     }
 
     @keyframes rotation {
       0% {
         transform: rotate(0deg);
       }
+
       100% {
         transform: rotate(360deg);
       }

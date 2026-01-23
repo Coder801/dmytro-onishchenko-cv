@@ -1,8 +1,8 @@
 @use "../../styles/mixins" as *;
 
 .text {
-  margin: 0 0 var(--space-sm) 0;
   font-size: 0.9rem;
+  margin: 0 0 var(--space-sm) 0;
 
   .chips {
     display: flex;
@@ -10,8 +10,8 @@
   }
 
   @include respond-to(md) {
-    margin: 0 0 var(--space-md) 0;
     font-size: 1rem;
+    margin: 0 0 var(--space-md) 0;
   }
 
   > span {

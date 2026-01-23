@@ -2,12 +2,12 @@
 @use "../../styles/variables" as *;
 
 .chip {
-  display: inline-block;
-  border-radius: 3px;
-  width: auto;
   background-color: var(--background-chip-primary);
+  border-radius: 3px;
+  display: inline-block;
   font-size: 0.75rem;
   padding: 0 var(--space-xs);
+  width: auto;
 
   @include respond-to(md) {
     font-size: 0.9rem;

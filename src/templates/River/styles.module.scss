@@ -1,16 +1,18 @@
 @use "../../styles/mixins" as *;
 
 .container {
+  background-color: var(--color-bg-surface);
   display: flex;
   flex-direction: column;
-  max-width: 1100px;
   margin: 0 auto;
+  max-width: 1100px;
   min-height: 100vh;
-  padding: var(--space-lg);
   opacity: 0;
+  padding: var(--space-lg);
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  background-color: var(--color-bg-surface);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 
   &.visible {
     opacity: 1;
@@ -23,24 +25,24 @@
 }
 
 .header {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
 
   @include respond-to(md) {
-    flex-direction: row;
     align-items: flex-start;
+    flex-direction: row;
     gap: var(--space-lg);
   }
 }
 
 .headerInfo {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: var(--space-xs);
-  flex: 1;
   text-align: center;
 
   @include respond-to(md) {
@@ -49,50 +51,52 @@
 }
 
 .name {
-  margin: 2rem 0;
   font-size: 4rem;
   font-weight: 100;
+  margin: var(--space-xs) 0;
   text-align: center;
 
   & strong {
-    font-weight: 100;
     color: var(--color-text-mark);
+    font-weight: 100;
   }
 }
 
 .position {
-  margin: 0;
   color: var(--color-text-secondary);
+  font-size: 2.5rem;
+  margin: var(--space-xs) 0;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .contact {
-  font-size: var(--font-size-sm);
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: var(--font-size-sm);
   justify-content: space-around;
-  margin-top: var(--space-xs);
+  margin-top: var(--space-sm);
 
   & p {
-    word-wrap: none;
-  }
+    @include decorative-heading;
 
-  & > *:not(:last-child)::after {
-    content: "•";
-    margin: 0 var(--space-xs);
-    color: var(--color-text-secondary);
+    flex: 1;
+    overflow-wrap: normal;
+    position: relative;
+    text-align: center;
   }
 }
 
 .headerActions {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  align-items: center;
 
   @include respond-to(md) {
-    flex-direction: row;
     align-items: flex-start;
+    flex-direction: row;
   }
 }
 
@@ -119,28 +123,15 @@
 }
 
 .title {
-  text-align: center;
-  font-weight: normal;
-  padding: 0.2rem 1rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-  margin: 0.5rem 0;
-  background-color: var(--background-chip-secondary);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include decorative-heading;
 
-  &::after,
-  &::before {
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: var(--color-text-secondary);
-    margin: var(--space-sm) 0;
-    width: 20px;
-    margin: 0 var(--space-sm);
-  }
+  background-color: var(--background-chip-secondary);
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0.5rem 0;
+  padding: 0.2rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .text {
@@ -171,10 +162,10 @@
 }
 
 .link {
-  display: flex;
   align-items: center;
-  gap: var(--space-xs);
   color: var(--color-text-primary);
+  display: flex;
+  gap: var(--space-xs);
   text-decoration: none;
   transition: color 0.2s ease;
 
@@ -185,8 +176,8 @@
 
 @media print {
   .container {
-    padding: 0;
     max-width: 100%;
+    padding: 0;
   }
 
   .headerActions {
@@ -194,6 +185,6 @@
   }
 
   .section {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }

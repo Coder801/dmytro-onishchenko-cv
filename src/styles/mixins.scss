@@ -30,7 +30,7 @@
 // Helper mixin for mobile-only styles (max-width)
 @mixin mobile-only($breakpoint: md) {
   $breakpoint-value: 767px;
-  
+
   @if $breakpoint == sm {
     $breakpoint-value: 479px;
   } @else if $breakpoint == md {
@@ -41,5 +41,30 @@
 
   @media (max-width: $breakpoint-value) {
     @content;
+  }
+}
+
+@mixin decorative-heading(
+  $line-width: 20px,
+  $line-height: 1px,
+  $line-color: var(--color-text-secondary),
+  $gap: var(--space-sm),
+  $display: flex,
+  $align-items: center,
+  $justify-content: center
+) {
+  align-items: $align-items;
+  display: $display;
+  justify-content: $justify-content;
+  position: relative;
+
+  &::before,
+  &::after {
+    background-color: $line-color;
+    content: "";
+    display: block;
+    height: $line-height;
+    margin: 0 $gap;
+    width: $line-width;
   }
 }
