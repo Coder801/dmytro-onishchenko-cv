@@ -1,8 +1,9 @@
-import { Translations } from "../types/translations";
 import { useRouter } from "next/router";
 
-import enCommon from "../locales/en/common.json";
-import uaCommon from "../locales/ua/common.json";
+import enCommon from "@/translate/translations/en/common.json";
+import uaCommon from "@/translate/translations/ua/common.json";
+
+import { Translations } from "../types/translations";
 
 const translations: Record<string, Translations> = {
   en: enCommon,

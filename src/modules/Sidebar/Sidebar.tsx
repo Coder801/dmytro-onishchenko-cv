@@ -63,7 +63,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
                 >
                   {category.category}
                 </Typography>
-                <Typography className={styles.skillsList}>
+                <Typography className={styles.skills}>
                   {category.skills.map((skill) => (
                     <Chip key={skill} className={styles.skill}>
                       {skill}
@@ -74,7 +74,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
             ))}
           </div>
         ) : (
-          <Typography className={styles.skillsList}>
+          <Typography className={styles.skills}>
             {profile.skills.map((skill) => (
               <Chip key={skill} className={styles.skill}>
                 {skill}

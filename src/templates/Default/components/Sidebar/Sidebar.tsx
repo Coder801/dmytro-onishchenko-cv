@@ -3,17 +3,14 @@ import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Photo } from "@/components/Photo";
-import { Title } from "@/components/Title";
 import { SocialLink } from "@/components/SocialLink";
-
-import { Typography } from "@/ui/Typography";
+import { Title } from "@/components/Title";
+import type { ProfileInfo } from "@/types/resume";
+import { Button } from "@/ui/Button";
 import { Chip } from "@/ui/Chip";
 import { Divider } from "@/ui/Divider";
-import { Button } from "@/ui/Button";
-
+import { Typography } from "@/ui/Typography";
 import { downloadPdf } from "@/utils/downloadPdf";
-
-import type { ProfileInfo } from "@/types/resume";
 
 import styles from "./styles.module.scss";
 
@@ -66,7 +63,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
                 >
                   {category.category}
                 </Typography>
-                <Typography className={styles.skillsList}>
+                <Typography className={styles.skills}>
                   {category.skills.map((skill) => (
                     <Chip key={skill} className={styles.skill}>
                       {skill}
@@ -77,7 +74,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
             ))}
           </div>
         ) : (
-          <Typography className={styles.skillsList}>
+          <Typography className={styles.skills}>
             {profile.skills.map((skill) => (
               <Chip key={skill} className={styles.skill}>
                 {skill}

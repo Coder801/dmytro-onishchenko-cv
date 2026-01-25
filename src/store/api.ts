@@ -1,5 +1,6 @@
-import { API_BASE } from "@/config/api";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+import { API_BASE } from "@/config/api";
 import { Resume } from "@/types/resume";
 
 export const api = createApi({

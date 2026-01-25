@@ -46,7 +46,8 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   --background-chip-secondary: rgb(var(--light-gray), 0.5);
 
   /* ✍️ Fonts */
-  --font-sans: "Roboto", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
 
   @for $i from 1 through list.length($header-sizes) {
     --h#{$i}-size: #{list.nth($header-sizes, $i)};

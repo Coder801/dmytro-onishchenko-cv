@@ -45,17 +45,14 @@
 }
 
 @mixin decorative-heading(
-  $line-width: 20px,
-  $line-height: 1px,
-  $line-color: var(--color-text-secondary),
+  $line-width: 40px,
   $gap: var(--space-sm),
-  $display: flex,
-  $align-items: center,
-  $justify-content: center
+  $line-color: var(--color-text-secondary)
 ) {
-  align-items: $align-items;
-  display: $display;
-  justify-content: $justify-content;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   position: relative;
 
   &::before,
@@ -63,8 +60,16 @@
     background-color: $line-color;
     content: "";
     display: block;
-    height: $line-height;
+    height: 1px;
     margin: 0 $gap;
     width: $line-width;
+  }
+
+  &::before {
+    margin-left: 0;
+  }
+
+  &::after {
+    margin-right: 0;
   }
 }

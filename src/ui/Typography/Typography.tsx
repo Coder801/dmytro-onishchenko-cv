@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { join, compact } from "lodash";
+import { compact, join } from "lodash";
 
 import styles from "./styles.module.scss";
 import { TypographyProps } from "./types";

@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { Typography } from "@/ui/Typography";
-import { SvgIcon } from "@/ui/SvgIcon";
 import clsx from "clsx";
+import { FC } from "react";
 
-import { SocialLinkProps } from "./types";
+import { SvgIcon } from "@/ui/SvgIcon";
+import { Typography } from "@/ui/Typography";
 
 import styles from "./styles.module.scss";
+import { SocialLinkProps } from "./types";
 
 export const SocialLink: FC<SocialLinkProps> = ({
   icon,
@@ -15,6 +15,6 @@ export const SocialLink: FC<SocialLinkProps> = ({
 }) => (
   <a href={link} className={clsx(styles.container, className)}>
     <SvgIcon name={icon} className={styles.icon} />
-    <Typography className={styles.title}>{children}</Typography>
+    <Typography className={styles.caption}>{children}</Typography>
   </a>
 );

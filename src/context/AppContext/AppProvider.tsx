@@ -6,12 +6,12 @@ import {
   useContext,
   useEffect,
   useReducer,
-} from 'react';
+} from "react";
 
-import { FETCH_FAILURE, FETCH_SUCCESS } from './actionTypes';
-import { appReducer } from './reducer';
-import { initialState } from './state';
-import { ActionType, AppState } from './types';
+import { FETCH_FAILURE, FETCH_SUCCESS } from "./actionTypes";
+import { appReducer } from "./reducer";
+import { initialState } from "./state";
+import { ActionType, AppState } from "./types";
 
 const AppContext = createContext<
   { state: AppState; dispatch: Dispatch<ActionType> } | undefined
@@ -28,7 +28,7 @@ const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
           payload: [],
         });
       } catch (error: unknown) {
-        console.error('Failed to fetch data:', error);
+        console.error("Failed to fetch data:", error);
         dispatch({ type: FETCH_FAILURE, payload: String(error) });
       }
     };
@@ -47,7 +47,7 @@ const useAppContext = () => {
   const context = useContext(AppContext);
 
   if (context === undefined) {
-    throw new Error('useAppContext must be used within an AppProvider');
+    throw new Error("useAppContext must be used within an AppProvider");
   }
   return context;
 };

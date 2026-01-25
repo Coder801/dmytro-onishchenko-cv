@@ -22,7 +22,7 @@ export const SkillsGroup: FC<SkillsGroupProps> = ({
           <Typography className={styles.categoryTitle} tag="h5" weight="bold">
             {category.category}
           </Typography>
-          <div className={styles.skillsList}>
+          <div className={styles.skills}>
             {category.skills.map((skill) => (
               <Chip key={skill} className={styles.skill}>
                 {skill}

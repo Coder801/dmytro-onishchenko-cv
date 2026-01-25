@@ -1,3 +1,4 @@
+import { useScrollFromTop } from "./useScrollFromTop";
 import { useTranslation } from "./useTranslation";
 
-export { useTranslation };
+export { useScrollFromTop, useTranslation };

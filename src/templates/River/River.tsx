@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import { clsx } from "clsx";
+import { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -7,6 +8,8 @@ import { SocialLink } from "@/components/SocialLink";
 import { SummaryItem } from "@/components/SummaryItem";
 import { Timeline } from "@/components/Timeline";
 import { Title } from "@/components/Title";
+import { Themes } from "@/config/types";
+import { useScrollFromTop } from "@/hooks";
 import { useGetProfileQuery } from "@/store/api";
 import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
 import type {
@@ -18,7 +21,6 @@ import type {
 } from "@/types/resume";
 import { Button } from "@/ui/Button";
 import { Chip } from "@/ui/Chip";
-import { Divider } from "@/ui/Divider";
 import { IconNames } from "@/ui/SvgIcon/constants";
 import { Typography } from "@/ui/Typography";
 import { downloadPdf } from "@/utils/downloadPdf";
@@ -40,6 +42,7 @@ export const River: FC<RiverProps> = ({
 }) => {
   const { t } = useTranslation("common");
   const [isLoading, setIsLoading] = useState(false);
+  const isShowDownloadButton = useScrollFromTop();
 
   const handleDownloadPdf = () => {
     setIsLoading(true);
@@ -56,8 +59,8 @@ export const River: FC<RiverProps> = ({
       className={`${styles.container} ${isVisible ? styles.visible : ""}`}
       id="pdf-content"
     >
-      <div className={styles.header}>
-        <div className={styles.headerInfo}>
+      <div className={styles.content}>
+        <div className={styles.section}>
           <Typography
             className={styles.name}
             tag="h1"
@@ -69,13 +72,15 @@ export const River: FC<RiverProps> = ({
           <Typography className={styles.position} weight="lighter" tag="h4">
             {profile.position}
           </Typography>
+          {/* <Typography tag="h4" weight="normal" className={styles.title}>
+            {t("social")}
+          </Typography> */}
           <div className={styles.contact}>
-            {[profile.location, profile.phone, profile.email].map((item) => (
+            {[profile.location, profile.email, profile.phone].map((item) => (
               <Typography key={item}>{item}</Typography>
             ))}
           </div>
-        </div>
-        {/* <div className={styles.headerActions}>
+          {/* <div className={styles.headerActions}>
           <LanguageSwitcher
             className={styles.languageSwitcher}
             availableLanguages={SUPPORTED_LANGUAGES}
@@ -83,25 +88,40 @@ export const River: FC<RiverProps> = ({
             onChange={onLanguageChange}
           />
         </div> */}
-      </div>
+        </div>
 
-      <Divider className={styles.divider} />
+        <div className={styles.section}>
+          {/* <Typography tag="h4" weight="normal" className={styles.title}>
+            {t("social")}
+          </Typography> */}
+          <div className={styles.socials}>
+            {profile.social.map(
+              (item: { icon: IconNames; label: string; link: string }) => (
+                <SocialLink
+                  key={`${item.icon}-${item.label}`}
+                  icon={item.icon}
+                  className={styles.link}
+                  link={item.link}
+                >
+                  {item.label}
+                </SocialLink>
+              )
+            )}
+          </div>
+        </div>
 
-      <div className={styles.content}>
         <div className={styles.section}>
           <Typography tag="h4" weight="normal" className={styles.title}>
             {t("summary")}
           </Typography>
-          {summary.intro ? (
-            <Typography className={styles.text}>{summary.intro}</Typography>
-          ) : null}
+          {summary.intro ? <Typography>{summary.intro}</Typography> : null}
         </div>
 
         <div className={styles.section}>
           <Typography tag="h4" weight="normal" className={styles.title}>
             {t("skills")}
           </Typography>
-          <Typography className={styles.skillsList}>
+          <Typography className={styles.skills}>
             {profile.skills.map((skill: string) => (
               <Chip key={skill} className={styles.skill}>
                 {skill}
@@ -169,24 +189,18 @@ export const River: FC<RiverProps> = ({
           ))}
         </div>
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("social")}
-          </Typography>
-          <div className={styles.socials}>
-            {profile.social.map(
-              (item: { icon: IconNames; label: string; link: string }) => (
-                <SocialLink
-                  key={`${item.icon}-${item.label}`}
-                  icon={item.icon}
-                  className={styles.link}
-                  link={item.link}
-                >
-                  {item.label}
-                </SocialLink>
-              )
-            )}
-          </div>
+        <div
+          className={clsx(styles.button, {
+            [styles.visible]: isShowDownloadButton,
+          })}
+        >
+          <Button
+            onClick={handleDownloadPdf}
+            isLoading={isLoading}
+            theme={Themes.river}
+          >
+            {t("downloadPdf")}
+          </Button>
         </div>
       </div>
     </div>

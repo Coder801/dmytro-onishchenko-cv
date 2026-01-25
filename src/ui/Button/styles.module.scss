@@ -2,13 +2,9 @@
 
 .button {
   background: none;
-  border: 3px solid lightgray;
-  border-radius: 4px;
-  color: lightgray;
+  border: 3px solid inherit;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.9em;
-  padding: 10px 40px;
   position: relative;
   text-decoration: none;
   transition: 0.3s ease;
@@ -25,7 +21,6 @@
   }
 
   &:disabled {
-    background: #ccc;
     cursor: not-allowed;
   }
 
@@ -56,5 +51,16 @@
         transform: rotate(360deg);
       }
     }
+  }
+
+  // Themes
+  &.default {
+    border-radius: 4px;
+    font-size: 0.9em;
+    padding: 10px 40px;
+  }
+
+  &.river {
+    border-radius: 0;
   }
 }

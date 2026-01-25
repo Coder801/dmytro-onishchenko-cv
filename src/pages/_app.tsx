@@ -1,24 +1,33 @@
 import "@/styles/base.scss";
 import "@/styles/typography.scss";
-import { Roboto } from "next/font/google";
-import { appWithTranslation } from "next-i18next";
-import { Provider } from "react-redux";
+import "@/translate/i18n";
 
 import type { AppProps } from "next/app";
+import { Oswald, Roboto } from "next/font/google";
 import Head from "next/head";
+import { appWithTranslation } from "next-i18next";
 import { ComponentType } from "react";
-import { store } from "@/store";
+import { Provider } from "react-redux";
+
+import { Themes } from "@/config/types";
 import { AppProvider } from "@/context/AppContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { store } from "@/store";
 
 import Home from "./home";
-
-import "@/translate/i18n";
 
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "700"],
   display: "swap",
   variable: "--font-roboto",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  variable: "--font-gluten",
 });
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -35,7 +44,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <AppProvider>
-          <PageComponent {...pageProps} className={roboto.variable} />
+          <ThemeProvider initialTheme={Themes.river}>
+            <PageComponent
+              {...pageProps}
+              className={`${roboto.variable} ${oswald.variable}`}
+            />
+          </ThemeProvider>
         </AppProvider>
       </Provider>
     </>
