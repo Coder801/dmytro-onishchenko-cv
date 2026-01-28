@@ -7,7 +7,7 @@ import { TypographyProps } from "./types";
 export const Typography = ({
   variant = "primary",
   tag = "p",
-  size = "l",
+  size = "m",
   weight = "normal",
   className,
   children,

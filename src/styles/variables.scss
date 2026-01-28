@@ -4,7 +4,7 @@
 
 /* -------------------------------- */
 
-$header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
+$header-sizes: (4rem, 2.2rem, 1.6rem, 1.4rem, 1.2rem, 1rem);
 
 /* CSS Variables */
 
@@ -18,7 +18,7 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   --space-lg: calc(var(--base) * 5);
   --space-xl: calc(var(--base) * 6);
 
-  /* 🎨 Base Palette (независимые от темы) */
+  /* 🎨 Base Palette */
   --white: 254, 254, 254;
   --black: 0, 0, 0;
   --gray: 85, 85, 85;
@@ -48,10 +48,6 @@ $header-sizes: (2rem, 1.8rem, 1.6rem, 1.4rem, 1rem, 0.8rem);
   /* ✍️ Fonts */
   --font-roboto: "Roboto", sans-serif;
   --font-oswald: "Oswald", sans-serif;
-
-  @for $i from 1 through list.length($header-sizes) {
-    --h#{$i}-size: #{list.nth($header-sizes, $i)};
-  }
 }
 
 /* 🌙 Dark Theme */

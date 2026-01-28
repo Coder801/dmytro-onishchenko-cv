@@ -1,9 +1,11 @@
 import clsx from "clsx";
-import { first, last, size } from "lodash";
-import { FC, Fragment } from "react";
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
+import { useTheme } from "@/context/ThemeContext";
 import { Chip } from "@/ui/Chip";
 import { Typography } from "@/ui/Typography";
+import { formatDate, getDatePeriod } from "@/utils";
 
 import styles from "./styles.module.scss";
 import { TimelineProps } from "./types";
@@ -15,30 +17,39 @@ export const Timeline: FC<TimelineProps> = ({
   skills,
   children,
   className,
-}) => (
-  <div className={clsx(styles.container, className)}>
-    <div className={styles.content}>
-      <Typography tag="h4" weight="bold">
-        {position}{" "}
-        <div className={styles.date}>
-          <span>{first(date)}</span>
-          <span>{size(date) === 2 ? ` / ${last(date)}` : " / Present"}</span>
-        </div>
+}) => {
+  const { theme } = useTheme();
+  const { t } = useTranslation("common");
+  const [startDate, endDate = ""] = date as [string, string?];
+
+  const formattedStartDate = formatDate(startDate, t);
+  const formattedEndDate = endDate ? formatDate(endDate, t) : t("present");
+
+  const formattedPeriod = getDatePeriod(startDate, endDate, t);
+
+  return (
+    <div className={clsx(styles.container, className, styles[theme])}>
+      <Typography tag="h3" weight="lighter" className={styles.position}>
+        <strong>{position}</strong> &nbsp;::&nbsp; {company}
       </Typography>
-      <Typography tag="h5">
-        <i className={styles.company}>{company}</i>
+
+      <Typography className={styles.date} size="s">
+        {formattedStartDate} / {formattedEndDate}
+        <span>{formattedPeriod && ` :: ${formattedPeriod}`}</span>
       </Typography>
-      <>{children}</>
-      {skills && skills.length > 0 && (
+
+      <div className={styles.description}>{children}</div>
+
+      {!!skills?.length && (
         <Typography className={styles.skills}>
-          <i>Skills:</i>
-          {skills.map((skill, index) => (
-            <Fragment key={index}>
-              <Chip variant="filled">{skill}</Chip>
-            </Fragment>
+          <i>{t("skills")}:</i>
+          {skills.map((skill) => (
+            <Chip key={skill} variant="filled">
+              {skill}
+            </Chip>
           ))}
         </Typography>
       )}
     </div>
-  </div>
-);
+  );
+};

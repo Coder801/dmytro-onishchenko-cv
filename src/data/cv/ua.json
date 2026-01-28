@@ -36,11 +36,28 @@
     "skillsByCategory": [
       {
         "category": "Frontend",
-        "skills": ["React", "Next.js", "Vue.js", "HTML", "CSS", "TypeScript", "JavaScript", "Redux", "MobX"]
+        "skills": [
+          "React",
+          "Next.js",
+          "Vue.js",
+          "HTML",
+          "CSS",
+          "TypeScript",
+          "JavaScript",
+          "Redux",
+          "MobX"
+        ]
       },
       {
         "category": "Backend",
-        "skills": ["Node.js", "Python", "Django", "REST API", "Laravel", "Symfony"]
+        "skills": [
+          "Node.js",
+          "Python",
+          "Django",
+          "REST API",
+          "Laravel",
+          "Symfony"
+        ]
       },
       {
         "category": "Mobile & Desktop",
@@ -135,7 +152,7 @@
   },
   "summary": {
     "title": "Summary",
-    "intro": "Senior Software Engineer з понад 10-річним досвідом, що спеціалізується на frontend та web applications. Досвід розробки, масштабування та підтримки сучасних web-продуктів у комерційних і стартап-середовищах. Глибока експертиза в React та екосистемі JavaScript/TypeScript, а також практичний досвід повного циклу розробки, включно з backend-сервісами та AI-assisted features. Орієнтований на продукт, з великим досвідом Agile delivery (Scrum, Kanban).",
+    "intro": "Програміст із понад 10-річним досвідом розробки та впровадження масштабованих веб- і мобільних застосунків. Моя основна сильна сторона — фронтенд і сучасна екосистема JavaScript/TypeScript. Також маю досвід full-stack розробки, роботи з API, інтеграцій зі сторонніми сервісами та участі в повному циклі розробки. Для мене важливий код, який дійсно працює: продуктивний, підтримуваний і легко масштабований. Маю досвід роботи як у стартапах, де важлива швидкість, так і у великих компаніях, де пріоритетом є стабільність. Мені подобається брати на себе відповідальність за технічні рішення та тісно співпрацювати з дизайнерами, менеджерами проєктів і іншими інженерами для створення якісних продуктів.",
     "items": [
       {
         "label": "Frontend / JavaScript",
@@ -196,7 +213,7 @@
   },
   "workHistory": [
     {
-      "company": "Starwind",
+      "company": "Starwind Inc.",
       "position": "Senior Software Engineer",
       "date": ["2024-04"],
       "skills": [
@@ -276,8 +293,8 @@
     {
       "institution": "Petro Mohyla Black Sea State University",
       "date": ["2007", "2013"],
-      "field": "Computer Science",
-      "degree": "Assistant Network Administrator"
+      "field": "Кафедра інженерії програмного забезпечення",
+      "degree": "Бакалавр комп'ютерних наук"
     }
   ],
   "achievements": [
@@ -301,7 +318,7 @@
     {
       "code": "en",
       "language": "English",
-      "level": "Intermediate (B1–B2)"
+      "level": "Upper-Intermediate"
     }
   ]
 }

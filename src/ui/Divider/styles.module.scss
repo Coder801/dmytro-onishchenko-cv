@@ -2,4 +2,9 @@
   border-bottom: 0;
   border-style: solid;
   border-top-width: 1px;
+
+  // Theme specific styles
+  &.river {
+    border-top-color: var(--color-text-primary);
+  }
 }

@@ -1,14 +1,11 @@
 import { clsx } from "clsx";
-import { FC, useEffect, useState } from "react";
+import { UA, US } from "country-flag-icons/react/3x2";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { Photo } from "@/components/Photo";
 import { SocialLink } from "@/components/SocialLink";
-import { SummaryItem } from "@/components/SummaryItem";
 import { Timeline } from "@/components/Timeline";
-import { Title } from "@/components/Title";
-import { Themes } from "@/config/types";
 import { useScrollFromTop } from "@/hooks";
 import { useGetProfileQuery } from "@/store/api";
 import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
@@ -21,6 +18,7 @@ import type {
 } from "@/types/resume";
 import { Button } from "@/ui/Button";
 import { Chip } from "@/ui/Chip";
+import { Divider } from "@/ui/Divider";
 import { IconNames } from "@/ui/SvgIcon/constants";
 import { Typography } from "@/ui/Typography";
 import { downloadPdf } from "@/utils/downloadPdf";
@@ -59,6 +57,12 @@ export const River: FC<RiverProps> = ({
       className={`${styles.container} ${isVisible ? styles.visible : ""}`}
       id="pdf-content"
     >
+      <LanguageSwitcher
+        className={styles.languageSwitcher}
+        availableLanguages={SUPPORTED_LANGUAGES}
+        currentLanguage={currentLanguage}
+        onChange={onLanguageChange}
+      />
       <div className={styles.content}>
         <div className={styles.section}>
           <Typography
@@ -69,7 +73,8 @@ export const River: FC<RiverProps> = ({
           >
             {profile.name.first} <strong>{profile.name.last}</strong>
           </Typography>
-          <Typography className={styles.position} weight="lighter" tag="h4">
+          <Divider />
+          <Typography className={styles.position} weight="lighter" tag="h2">
             {profile.position}
           </Typography>
           {/* <Typography tag="h4" weight="normal" className={styles.title}>
@@ -80,14 +85,6 @@ export const River: FC<RiverProps> = ({
               <Typography key={item}>{item}</Typography>
             ))}
           </div>
-          {/* <div className={styles.headerActions}>
-          <LanguageSwitcher
-            className={styles.languageSwitcher}
-            availableLanguages={SUPPORTED_LANGUAGES}
-            currentLanguage={currentLanguage}
-            onChange={onLanguageChange}
-          />
-        </div> */}
         </div>
 
         <div className={styles.section}>
@@ -184,6 +181,7 @@ export const River: FC<RiverProps> = ({
           </Typography>
           {languages.map((item: Language) => (
             <Typography key={item.code}>
+              <UA title="Ukraine" className={styles.flag} />
               <strong>{item.language}</strong> - {item.level}
             </Typography>
           ))}
@@ -194,11 +192,7 @@ export const River: FC<RiverProps> = ({
             [styles.visible]: isShowDownloadButton,
           })}
         >
-          <Button
-            onClick={handleDownloadPdf}
-            isLoading={isLoading}
-            theme={Themes.river}
-          >
+          <Button onClick={handleDownloadPdf} isLoading={isLoading}>
             {t("downloadPdf")}
           </Button>
         </div>

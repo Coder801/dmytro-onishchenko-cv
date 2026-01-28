@@ -7,10 +7,10 @@ Typography
 
 html {
   font-family: var(--font-roboto);
-  font-size: calc(var(--base) * 4);
+  font-size: calc(var(--base) * 5);
 
   @include respond-to(md) {
-    font-size: calc(var(--base) * 4.5);
+    font-size: calc(var(--base) * 5);
   }
 }
 
@@ -20,15 +20,21 @@ textarea {
   font-family: var(--font-roboto);
 }
 
-/* All heading */
+/* All heading - line-heights aligned to 4px grid */
 @for $i from 1 through list.length($header-sizes) {
   h#{$i} {
     $base-size: list.nth($header-sizes, $i);
 
-    font-size: calc($base-size * 0.85);
+    // Line-height multipliers for 4px grid alignment
+    $line-heights: (4rem, 2.2rem, 2rem, 1.8rem, 1.4rem, 1.2rem);
+    $mobile-line-heights: (4rem, 2rem, 1.8rem, 1.6rem, 1.2rem, 1rem);
+
+    font-size: calc($base-size * 0.8);
+    line-height: list.nth($mobile-line-heights, $i);
 
     @include respond-to(md) {
       font-size: $base-size;
+      line-height: list.nth($line-heights, $i);
     }
   }
 }
@@ -37,13 +43,13 @@ p {
   font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: 0.3px;
-  line-height: 1.5rem;
+  line-height: 1.4rem; // 28px - aligned to 4px grid
   margin-top: 0;
 
   @include respond-to(md) {
     font-size: 1rem;
     letter-spacing: 0.5px;
-    line-height: 1.6rem;
+    line-height: 1.6rem; // 32px - aligned to 4px grid
   }
 }
 

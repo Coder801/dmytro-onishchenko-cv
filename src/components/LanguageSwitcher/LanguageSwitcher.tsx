@@ -1,12 +1,13 @@
 import clsx from "clsx";
+import { UA, US } from "country-flag-icons/react/3x2";
 import { isEqual } from "lodash";
-import { FC, useCallback, useEffect } from "react";
-import { US, UA } from "country-flag-icons/react/3x2";
+import { FC, useCallback } from "react";
 
-import type { LanguageSwitcherProps } from "./types";
+import { useTheme } from "@/context/ThemeContext";
 import type { Languages } from "@/types/languages";
 
 import styles from "./styles.module.scss";
+import type { LanguageSwitcherProps } from "./types";
 
 export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
   availableLanguages,
@@ -14,6 +15,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
   onChange,
   className,
 }) => {
+  const { theme } = useTheme();
   const handleClick = useCallback(
     (code: Languages) => {
       if (!onChange || code === currentLanguage) {
@@ -34,7 +36,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
   }
 
   return (
-    <div className={clsx(styles.container, className)}>
+    <div className={clsx(styles.container, className, styles[theme])}>
       {availableLanguages.sort().map((option: Languages) => {
         const isActive = isEqual(option, currentLanguage);
 
@@ -42,7 +44,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
           <button
             key={option}
             type="button"
-            className={styles.button}
+            className={clsx(styles.button, { [styles.active]: isActive })}
             onClick={() => handleClick(option)}
             disabled={isActive}
           >

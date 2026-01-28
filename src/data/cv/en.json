@@ -36,11 +36,28 @@
     "skillsByCategory": [
       {
         "category": "Frontend",
-        "skills": ["React", "Next.js", "Vue.js", "HTML", "CSS", "TypeScript", "JavaScript", "Redux", "MobX"]
+        "skills": [
+          "React",
+          "Next.js",
+          "Vue.js",
+          "HTML",
+          "CSS",
+          "TypeScript",
+          "JavaScript",
+          "Redux",
+          "MobX"
+        ]
       },
       {
         "category": "Backend",
-        "skills": ["Node.js", "Python", "Django", "REST API", "Laravel", "Symfony"]
+        "skills": [
+          "Node.js",
+          "Python",
+          "Django",
+          "REST API",
+          "Laravel",
+          "Symfony"
+        ]
       },
       {
         "category": "Mobile & Desktop",
@@ -141,11 +158,11 @@
   },
   "summary": {
     "title": "Summary",
-    "intro": "Senior Software Engineer with 10+ years of experience focused on frontend and modern web applications. Extensive background in building, scaling, and maintaining production systems in both startup and commercial environments. Deep expertise in React and the JavaScript/TypeScript ecosystem, with strong understanding of application architecture, performance, and browser internals. Full-cycle development experience, including backend APIs, integrations, and AI-assisted features. Product-oriented engineer with a strong focus on usability, maintainability, and long-term scalability. Experienced in cross-platform development (web, mobile, desktop) and complex UI systems. Comfortable working in Agile environments (Scrum, Kanban) and collaborating closely with product, design, and engineering teams."
+    "intro": "Software Engineer with over 10+ years of experience in developing and delivering scalable web and mobile applications. My primary strength lies in frontend development, with deep expertise in the modern JavaScript/TypeScript ecosystem. I also have solid full-stack experience, including working with APIs, third-party integrations, and participation across the entire development lifecycle. I value code that truly works — performant, maintainable, and easy to extend. I have experience working both in fast-paced startups and in large organizations where stability and reliability are key. I enjoy taking ownership of technical decisions and collaborating closely with designers, project managers, and fellow engineers to build high-quality products."
   },
   "workHistory": [
     {
-      "company": "Starwind",
+      "company": "Starwind Inc.",
       "position": "Senior Software Engineer",
       "date": ["2024-04"],
       "skills": [
@@ -225,8 +242,8 @@
     {
       "institution": "Petro Mohyla Black Sea State University",
       "date": ["2007", "2013"],
-      "field": "Computer Science",
-      "degree": "Assistant Network Administrator"
+      "field": "Department of Software Engineering",
+      "degree": "Bachelor of Computer Science"
     }
   ],
   "achievements": [
@@ -250,7 +267,7 @@
     {
       "code": "en",
       "language": "English",
-      "level": "Intermediate (B1-B2)"
+      "level": "Upper-Intermediate"
     }
   ]
 }
