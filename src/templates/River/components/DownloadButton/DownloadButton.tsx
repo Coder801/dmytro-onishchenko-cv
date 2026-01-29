@@ -13,7 +13,7 @@ type DownloadButtonProps = {
   className?: string;
 };
 
-const EXPAND_DELAY_MS = 1000;
+const EXPAND_DELAY_MS = 2000;
 
 export const DownloadButton: FC<DownloadButtonProps> = ({
   onExpandWorkHistory,
