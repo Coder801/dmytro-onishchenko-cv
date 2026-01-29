@@ -30,7 +30,7 @@ export const Timeline: FC<TimelineProps> = ({
   return (
     <div className={clsx(styles.container, className, styles[theme])}>
       <Typography tag="h3" weight="lighter" className={styles.position}>
-        <strong>{position}</strong> <span>&nbsp;::&nbsp;</span> {company}
+        <strong>{position}</strong> <span>::</span> {company}
       </Typography>
 
       <Typography className={styles.date} size="s">

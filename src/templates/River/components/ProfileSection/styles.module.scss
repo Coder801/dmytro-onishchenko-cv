@@ -23,7 +23,14 @@
   margin-bottom: var(--space-sm);
 
   & p {
-    @include decorative-heading(30px);
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    @include respond-to(md) {
+      @include decorative-heading(30px);
+    }
 
     flex: 1;
     overflow-wrap: normal;
