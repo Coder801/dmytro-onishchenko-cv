@@ -1,7 +1,14 @@
 import { ENDPOINTS, PROTOCOL } from "@/config/api";
 import { PDF_FILE_NAME } from "@/config/constants";
 
-export const downloadPdf = async (completed = () => {}) => {
+type DownloadPdfOptions = {
+  showAllWorkHistory?: boolean;
+};
+
+export const downloadPdf = async (
+  completed = () => {},
+  options: DownloadPdfOptions = {}
+) => {
   const pdfEndpoint = `${PROTOCOL}${ENDPOINTS.PDF}`;
   let res;
   const currentLanguage = localStorage.getItem("i18nextLng") || "en";
@@ -11,12 +18,17 @@ export const downloadPdf = async (completed = () => {}) => {
     return;
   }
 
+  const pageUrl = new URL(window.location.href);
+  if (options.showAllWorkHistory) {
+    pageUrl.searchParams.set("showAllWorkHistory", "true");
+  }
+
   try {
     res = await fetch(pdfEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        currentPage: window.location.href,
+        currentPage: pageUrl.toString(),
         currentLanguage,
         size: {
           width: Math.max((pdfContent?.scrollWidth || 0) + 32),

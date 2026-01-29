@@ -25,13 +25,21 @@ type RiverProps = {
   onLanguageChange: (code: Languages) => void;
 };
 
+const getInitialShowAllWorkHistory = () => {
+  if (typeof window === "undefined") return false;
+  const params = new URLSearchParams(window.location.search);
+  return params.get("showAllWorkHistory") === "true";
+};
+
 export const River: FC<RiverProps> = ({
   data,
   isVisible,
   currentLanguage,
   onLanguageChange,
 }) => {
-  const [showAllWorkHistory, setShowAllWorkHistory] = useState(false);
+  const [showAllWorkHistory, setShowAllWorkHistory] = useState(
+    getInitialShowAllWorkHistory
+  );
 
   const { profile, summary, workHistory, education, achievements, languages } =
     data.content;

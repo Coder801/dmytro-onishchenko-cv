@@ -31,7 +31,7 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
     setTimeout(() => {
       downloadPdf(() => {
         setIsLoadingFull(false);
-      });
+      }, { showAllWorkHistory: true });
     }, EXPAND_DELAY_MS);
   };
 
