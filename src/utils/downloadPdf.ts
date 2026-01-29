@@ -20,9 +20,7 @@ export const downloadPdf = async (
 
   const pageUrl = new URL(window.location.href);
   if (options.showAllWorkHistory) {
-    document
-      .getElementById("work-history-hidden-items")
-      ?.style.setProperty("display", "block");
+    pageUrl.searchParams.set("showAllWorkHistory", "true");
   }
 
   try {
