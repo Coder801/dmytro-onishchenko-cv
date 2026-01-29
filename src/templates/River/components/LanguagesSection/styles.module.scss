@@ -1,6 +1,11 @@
 .container {
   display: flex;
   justify-content: space-around;
+
+  & strong {
+    color: var(--color-text-mark);
+    font-weight: normal;
+  }
 }
 
 .flag {

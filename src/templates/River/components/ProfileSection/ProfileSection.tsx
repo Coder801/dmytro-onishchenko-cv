@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import { SocialLink } from "@/components/SocialLink";
 import { Divider } from "@/ui/Divider";
 import { Typography } from "@/ui/Typography";
 
+import { ContactsSection } from "../ContactsSection";
 import styles from "./styles.module.scss";
 import { ProfileSectionProps } from "./types";
 
@@ -24,23 +24,13 @@ export const ProfileSection: FC<ProfileSectionProps> = ({
       <Typography className={styles.position} weight="lighter" tag="h2">
         {position}
       </Typography>
-      <div className={styles.contact}>
-        {[location, email, phone].map((item) => (
-          <Typography key={item}>{item}</Typography>
-        ))}
-      </div>
-      <div className={styles.socials}>
-        {socials.map((social) => (
-          <SocialLink
-            key={`${social.icon}-${social.label}`}
-            icon={social.icon}
-            className={styles.link}
-            link={social.link}
-          >
-            {social.label}
-          </SocialLink>
-        ))}
-      </div>
+      <ContactsSection
+        className={styles.contacts}
+        location={location}
+        email={email}
+        phone={phone}
+        socials={socials}
+      />
     </div>
   );
 };

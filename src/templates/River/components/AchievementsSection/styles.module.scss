@@ -1,5 +1,11 @@
+@use "../../../../styles/mixins" as *;
+
 .list {
-  margin: 0 0 0 var(--space-md);
+  margin: 0;
+
+  @include respond-to(md) {
+    margin: 0 0 0 var(--space-md);
+  }
 }
 
 .title {

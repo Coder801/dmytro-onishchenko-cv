@@ -2,7 +2,8 @@
 
 .button {
   background: none;
-  border: 3px solid inherit;
+  border-style: solid;
+  border-width: 3px;
   cursor: pointer;
   display: inline-block;
   padding: var(--space-sm) var(--space-sm);
@@ -61,7 +62,9 @@
   }
 
   &.river {
+    border: 2px solid var(--color-text-mark);
     border-radius: 0;
+    color: var(--color-text-mark);
 
     &.loading::after {
       border-color: rgb(var(--black));

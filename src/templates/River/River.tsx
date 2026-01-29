@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { useScrollFromTop } from "@/hooks";
+import { Section } from "@/components/Section";
 import { useGetProfileQuery } from "@/store/api";
 import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
 
@@ -15,6 +16,7 @@ import {
   SummarySection,
   WorkHistorySection,
 } from "./components";
+import { ContactsSection } from "./components/ContactsSection";
 import styles from "./styles.module.scss";
 
 type RiverProps = {
@@ -30,7 +32,7 @@ export const River: FC<RiverProps> = ({
   currentLanguage,
   onLanguageChange,
 }) => {
-  const isShowDownloadButton = useScrollFromTop();
+  const { t } = useTranslation("common");
   const [isShortPdf, setIsShortPdf] = useState(false);
 
   const { profile, summary, workHistory, education, achievements, languages } =
@@ -63,7 +65,17 @@ export const River: FC<RiverProps> = ({
 
         <LanguagesSection items={languages} />
 
-        <DownloadButton isVisible={isShowDownloadButton} onShortPdfChange={setIsShortPdf} />
+        <Section className={styles.contactSection} title={t("contact")}>
+          <ContactsSection
+            className={styles.contacts}
+            location={profile.location}
+            email={profile.email}
+            phone={profile.phone}
+            socials={profile.social}
+          />
+        </Section>
+
+        <DownloadButton onShortPdfChange={setIsShortPdf} />
       </div>
       <div className={styles.languageSwitcherContainer}>
         <LanguageSwitcher

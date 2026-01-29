@@ -8,11 +8,12 @@ import { downloadPdf } from "@/utils/downloadPdf";
 import styles from "./styles.module.scss";
 
 type DownloadButtonProps = {
-  isVisible: boolean;
   onShortPdfChange?: (isShort: boolean) => void;
 };
 
-export const DownloadButton: FC<DownloadButtonProps> = ({ isVisible, onShortPdfChange }) => {
+export const DownloadButton: FC<DownloadButtonProps> = ({
+  onShortPdfChange,
+}) => {
   const { t } = useTranslation("common");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,11 +34,7 @@ export const DownloadButton: FC<DownloadButtonProps> = ({ isVisible, onShortPdfC
   };
 
   return (
-    <div
-      className={clsx(styles.button, {
-        [styles.visible]: isVisible,
-      })}
-    >
+    <div className={clsx(styles.button)}>
       <Button onClick={handleDownloadShortPdf} isLoading={isLoading}>
         {t("downloadPdfShort")}
       </Button>

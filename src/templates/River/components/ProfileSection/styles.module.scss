@@ -4,15 +4,15 @@
   display: grid;
   gap: var(--space-sm);
   grid-template-areas:
-    "name name"
-    "divider divider"
-    "position position"
-    " socials contact";
-  margin-bottom: calc(var(--space-lg) * 2);
+    "name"
+    "divider"
+    "position"
+    "contact";
+  margin-bottom: calc(--space-lg);
 
   @include respond-to(md) {
     gap: var(--space-lg);
-    grid-template-areas: "name" "divider" "position" "contact" "socials";
+    margin-bottom: calc(var(--space-lg) * 2);
   }
 
   & .divider {
@@ -27,6 +27,7 @@
   & .name {
     font-size: 2.4rem;
     grid-area: name;
+    line-height: 2.8rem;
     text-align: center;
 
     & strong {
@@ -47,60 +48,12 @@
     text-transform: uppercase;
   }
 
-  & .contact {
-    display: grid;
-    gap: var(--space-xl);
+  & .contacts {
+    display: none;
     grid-area: contact;
-    grid-template-columns: 1fr;
 
     @include respond-to(md) {
-      grid-template-columns: 1fr 2fr 1fr;
-    }
-
-    & p {
-      flex: 1;
-      line-height: unset;
-      margin: 0;
-      overflow-wrap: normal;
-      position: relative;
-      text-align: right;
-      white-space: nowrap;
-
-      &::before,
-      &::after {
-        display: none;
-      }
-
-      @include respond-to(md) {
-        @include decorative-heading(30px);
-
-        text-align: center;
-      }
-    }
-  }
-
-  & .socials {
-    display: grid;
-    gap: var(--space-xs);
-    grid-area: socials;
-    margin-bottom: 0;
-
-    & .link {
-      align-items: center;
-      display: flex;
-      gap: var(--space-xs);
-      text-decoration: none;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: var(--color-primary);
-      }
-    }
-
-    @include respond-to(md) {
-      display: flex;
-      gap: var(--space-xl);
-      justify-content: center;
+      display: block;
     }
   }
 }
