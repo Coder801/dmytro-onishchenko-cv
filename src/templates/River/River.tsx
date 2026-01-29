@@ -1,13 +1,12 @@
 import { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { Section } from "@/components/Section";
 import { useGetProfileQuery } from "@/store/api";
 import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
 
 import {
   AchievementsSection,
+  ContactsSection,
   DownloadButton,
   EducationSection,
   LanguagesSection,
@@ -16,7 +15,6 @@ import {
   SummarySection,
   WorkHistorySection,
 } from "./components";
-import { ContactsSection } from "./components/ContactsSection";
 import styles from "./styles.module.scss";
 
 type RiverProps = {
@@ -32,7 +30,6 @@ export const River: FC<RiverProps> = ({
   currentLanguage,
   onLanguageChange,
 }) => {
-  const { t } = useTranslation("common");
   const [isShortPdf, setIsShortPdf] = useState(false);
 
   const { profile, summary, workHistory, education, achievements, languages } =
@@ -53,6 +50,13 @@ export const River: FC<RiverProps> = ({
           socials={profile.social}
         />
 
+        <ContactsSection
+          location={profile.location}
+          email={profile.email}
+          phone={profile.phone}
+          socials={profile.social}
+        />
+
         <SummarySection intro={summary.intro} />
 
         <SkillsSection skills={profile.skills} />
@@ -65,15 +69,14 @@ export const River: FC<RiverProps> = ({
 
         <LanguagesSection items={languages} />
 
-        <Section className={styles.contactSection} title={t("contact")}>
+        {/* <Section className={styles.contactSection} title={t("contact")}>
           <ContactsSection
-            className={styles.contacts}
             location={profile.location}
             email={profile.email}
             phone={profile.phone}
             socials={profile.social}
           />
-        </Section>
+        </Section> */}
 
         <DownloadButton onShortPdfChange={setIsShortPdf} />
       </div>

@@ -89,6 +89,14 @@ body {
   }
 }
 
+.contactSection {
+  display: grid;
+
+  @include respond-to(md) {
+    display: none;
+  }
+}
+
 @media print {
   .container {
     max-width: 100%;

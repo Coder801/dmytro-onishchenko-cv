@@ -65,6 +65,7 @@
 
       @include respond-to(md) {
         flex-direction: row;
+        justify-content: flex-end;
       }
 
       & .period {

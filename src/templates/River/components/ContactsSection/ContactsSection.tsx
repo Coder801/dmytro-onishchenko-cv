@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { FC } from "react";
 
+// import { useTranslation } from "react-i18next";
+import { Section } from "@/components/Section/Section";
 import { SocialLink } from "@/components/SocialLink";
 import { Typography } from "@/ui/Typography";
 
@@ -14,8 +16,10 @@ export const ContactsSection: FC<ContactsSectionProps> = ({
   socials,
   className,
 }) => {
+  // const { t } = useTranslation("common");
+
   return (
-    <div className={clsx(styles.section, className)}>
+    <Section className={clsx(styles.section, className)}>
       <div className={styles.contact}>
         {[location, email, phone].map((item) => (
           <Typography key={item}>{item}</Typography>
@@ -33,6 +37,6 @@ export const ContactsSection: FC<ContactsSectionProps> = ({
           </SocialLink>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };

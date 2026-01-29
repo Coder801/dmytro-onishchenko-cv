@@ -1,11 +1,21 @@
 @use "../../../../styles/mixins" as *;
 
 .section {
-  gap: var(--space-xl);
+  display: grid;
+  gap: 0;
+  grid-template-areas: "socials contact";
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: var(--space-sm);
+
+  @include respond-to(md) {
+    gap: var(--space-xl);
+    grid-template-areas: "contact" "socials";
+    grid-template-columns: 1fr;
+  }
 
   & .contact {
     display: grid;
-    gap: var(--space-sm);
+    gap: 0;
     grid-area: contact;
     grid-template-columns: 1fr;
 
@@ -15,7 +25,11 @@
     }
 
     & p {
+      align-items: center;
+      display: flex;
       flex: 1;
+      font-size: 0.65rem;
+      justify-content: flex-end;
       line-height: unset;
       margin: 0;
       position: relative;
@@ -29,8 +43,8 @@
       @include respond-to(md) {
         @include decorative-heading(30px);
 
+        font-size: 1rem;
         overflow-wrap: normal;
-        text-align: center;
         white-space: nowrap;
       }
     }
@@ -38,9 +52,16 @@
 
   & .socials {
     display: grid;
-    gap: var(--space-xs);
+    gap: 0;
     grid-area: socials;
     margin-bottom: 0;
+
+    @include respond-to(md) {
+      display: flex;
+      font-size: 1rem;
+      gap: var(--space-xl);
+      justify-content: center;
+    }
 
     & .link {
       align-items: center;
@@ -49,15 +70,25 @@
       text-decoration: none;
       transition: color 0.2s ease;
 
+      & p {
+        font-size: 0.65rem;
+
+        @include respond-to(md) {
+          font-size: 1rem;
+        }
+      }
+
+      & > div {
+        width: 16px;
+
+        @include respond-to(md) {
+          width: 32px;
+        }
+      }
+
       &:hover {
         color: var(--color-primary);
       }
-    }
-
-    @include respond-to(md) {
-      display: flex;
-      gap: var(--space-xl);
-      justify-content: center;
     }
   }
 }

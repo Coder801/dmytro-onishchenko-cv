@@ -1,4 +1,5 @@
 export { AchievementsSection } from "./AchievementsSection";
+export { ContactsSection } from "./ContactsSection";
 export { DownloadButton } from "./DownloadButton";
 export { EducationSection } from "./EducationSection";
 export { LanguagesSection } from "./LanguagesSection";
