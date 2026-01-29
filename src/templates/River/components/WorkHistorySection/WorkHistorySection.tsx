@@ -19,7 +19,6 @@ type WorkHistorySectionProps = {
 };
 
 const INITIAL_ITEMS_COUNT = 3;
-const SHOW_DELAY_MS = 1000;
 
 export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
   items,
@@ -40,11 +39,7 @@ export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
   const hasMoreItems = hiddenItems.length > 0;
 
   const handleShowMore = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setShowAll(true);
-    }, SHOW_DELAY_MS);
+    setShowAll(true);
   };
 
   const renderTimelineItem = (item: WorkHistory) => {

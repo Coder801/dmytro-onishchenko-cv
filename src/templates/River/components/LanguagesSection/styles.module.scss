@@ -2,13 +2,17 @@
   display: flex;
   justify-content: space-around;
 
+  @media print {
+    margin-bottom: -100px;
+  }
+
   & strong {
     color: var(--color-text-mark);
     font-weight: normal;
   }
-}
 
-.flag {
-  margin-right: var(--space-xs);
-  width: 24px;
+  .flag {
+    margin-right: var(--space-xs);
+    width: 24px;
+  }
 }
