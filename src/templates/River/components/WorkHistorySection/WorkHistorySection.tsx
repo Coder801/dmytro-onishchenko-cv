@@ -72,7 +72,7 @@ export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
       <div className={styles.timeline}>
         {initialItems.map(renderTimelineItem)}
       </div>
-      <div className={styles.timeline}>
+      <div className={styles.timeline} id="work-history-hidden-items">
         {hasMoreItems && (
           <div
             className={clsx(styles.hiddenItems, {

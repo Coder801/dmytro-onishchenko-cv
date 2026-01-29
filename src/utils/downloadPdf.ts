@@ -7,7 +7,7 @@ type DownloadPdfOptions = {
 
 export const downloadPdf = async (
   completed = () => {},
-  options: DownloadPdfOptions = {}
+  options: DownloadPdfOptions = {},
 ) => {
   const pdfEndpoint = `${PROTOCOL}${ENDPOINTS.PDF}`;
   let res;
@@ -20,7 +20,9 @@ export const downloadPdf = async (
 
   const pageUrl = new URL(window.location.href);
   if (options.showAllWorkHistory) {
-    pageUrl.searchParams.set("showAllWorkHistory", "true");
+    document
+      .getElementById("work-history-hidden-items")
+      ?.style.setProperty("display", "block");
   }
 
   try {
