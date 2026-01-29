@@ -42,6 +42,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Provider store={store}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name="version"
+            content={`${process.env.APP_VERSION}-${process.env.GIT_HASH}`}
+          />
           <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
           <link
             rel="icon"
