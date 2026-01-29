@@ -22,8 +22,10 @@
 }
 
 .hiddenItems {
+  border-top: 1px solid var(--color-text-primary);
   display: none;
   grid-template-rows: 0fr;
+  padding-top: var(--space-lg);
   transition: grid-template-rows 0.5s ease-out;
 
   &.expanded {
