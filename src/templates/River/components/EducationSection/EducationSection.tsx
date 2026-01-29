@@ -6,6 +6,8 @@ import { Timeline } from "@/components/Timeline";
 import type { Education } from "@/types/resume";
 import { Typography } from "@/ui/Typography";
 
+import styles from "./styles.module.scss";
+
 type EducationSectionProps = {
   items: Education[];
 };
@@ -21,6 +23,7 @@ export const EducationSection: FC<EducationSectionProps> = ({ items }) => {
           date={item.date}
           position={item.institution}
           company={item.field}
+          className={styles.timeline}
         >
           <Typography>{item.degree}</Typography>
         </Timeline>

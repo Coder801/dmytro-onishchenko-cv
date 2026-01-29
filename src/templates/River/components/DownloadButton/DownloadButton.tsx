@@ -29,7 +29,11 @@ export const DownloadButton: FC<DownloadButtonProps> = ({ isVisible }) => {
       })}
     >
       <Button onClick={handleDownloadPdf} isLoading={isLoading}>
-        {t("downloadPdf")}
+        {t("downloadPdfShort")}
+      </Button>
+
+      <Button onClick={handleDownloadPdf} isLoading={isLoading}>
+        {t("downloadPdfFull")}
       </Button>
     </div>
   );

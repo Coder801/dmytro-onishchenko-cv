@@ -5,6 +5,7 @@
   border: 3px solid inherit;
   cursor: pointer;
   display: inline-block;
+  padding: var(--space-sm) var(--space-sm);
   position: relative;
   text-decoration: none;
   transition: 0.3s ease;
@@ -12,8 +13,7 @@
   width: 100%;
 
   @include respond-to(md) {
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 0.8rem;
   }
 
   &:hover {
@@ -62,5 +62,9 @@
 
   &.river {
     border-radius: 0;
+
+    &.loading::after {
+      border-color: rgb(var(--black));
+    }
   }
 }

@@ -4,6 +4,5 @@ export { EducationSection } from "./EducationSection";
 export { LanguagesSection } from "./LanguagesSection";
 export { ProfileSection } from "./ProfileSection";
 export { SkillsSection } from "./SkillsSection";
-export { SocialsSection } from "./SocialsSection";
 export { SummarySection } from "./SummarySection";
 export { WorkHistorySection } from "./WorkHistorySection";

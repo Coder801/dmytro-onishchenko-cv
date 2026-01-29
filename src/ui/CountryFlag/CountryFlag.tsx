@@ -1,4 +1,4 @@
-import { UA, US } from "country-flag-icons/react/3x2";
+import { GB, UA } from "country-flag-icons/react/3x2";
 import { FC } from "react";
 
 import type { Languages } from "@/types/languages";
@@ -10,7 +10,7 @@ type CountryFlagProps = {
 
 const FLAG_MAP = {
   ua: UA,
-  en: US,
+  en: GB,
 } as const;
 
 export const CountryFlag: FC<CountryFlagProps> = ({ code, className }) => {

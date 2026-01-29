@@ -12,7 +12,6 @@ import {
   LanguagesSection,
   ProfileSection,
   SkillsSection,
-  SocialsSection,
   SummarySection,
   WorkHistorySection,
 } from "./components";
@@ -37,27 +36,16 @@ export const River: FC<RiverProps> = ({
     data.content;
 
   return (
-    <div
-      className={`${styles.container} ${isVisible ? styles.visible : ""}`}
-      id="pdf-content"
-    >
-      <LanguageSwitcher
-        className={styles.languageSwitcher}
-        availableLanguages={SUPPORTED_LANGUAGES}
-        currentLanguage={currentLanguage}
-        onChange={onLanguageChange}
-      />
-
-      <div className={styles.content}>
+    <div className={styles.container} id="pdf-content">
+      <div className={`${styles.content} ${isVisible ? styles.visible : ""}`}>
         <ProfileSection
           name={profile.name}
           position={profile.position}
           location={profile.location}
           email={profile.email}
           phone={profile.phone}
+          socials={profile.social}
         />
-
-        <SocialsSection items={profile.social} />
 
         <SummarySection intro={summary.intro} />
 
@@ -72,6 +60,14 @@ export const River: FC<RiverProps> = ({
         <LanguagesSection items={languages} />
 
         <DownloadButton isVisible={isShowDownloadButton} />
+      </div>
+      <div className={styles.languageSwitcherContainer}>
+        <LanguageSwitcher
+          className={styles.languageSwitcher}
+          availableLanguages={SUPPORTED_LANGUAGES}
+          currentLanguage={currentLanguage}
+          onChange={onLanguageChange}
+        />
       </div>
     </div>
   );

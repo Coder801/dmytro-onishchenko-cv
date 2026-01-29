@@ -18,8 +18,9 @@
 }
 
 .contact {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-bottom: var(--space-sm);
 
   & p {
     @include decorative-heading(30px);
@@ -29,5 +30,25 @@
     position: relative;
     text-align: center;
     white-space: nowrap;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xl);
+  justify-content: center;
+  margin-bottom: calc(var(--space-lg) * 2);
+
+  & .link {
+    align-items: center;
+    display: flex;
+    gap: var(--space-xs);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
   }
 }

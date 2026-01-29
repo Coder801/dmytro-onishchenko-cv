@@ -1,20 +1,11 @@
 import { FC } from "react";
 
+import { SocialLink } from "@/components/SocialLink";
 import { Divider } from "@/ui/Divider";
 import { Typography } from "@/ui/Typography";
 
 import styles from "./styles.module.scss";
-
-type ProfileSectionProps = {
-  name: {
-    first: string;
-    last: string;
-  };
-  position: string;
-  location: string;
-  email: string;
-  phone: string;
-};
+import { ProfileSectionProps } from "./types";
 
 export const ProfileSection: FC<ProfileSectionProps> = ({
   name,
@@ -22,6 +13,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({
   location,
   email,
   phone,
+  socials,
 }) => {
   return (
     <div className={styles.section}>
@@ -35,6 +27,18 @@ export const ProfileSection: FC<ProfileSectionProps> = ({
       <div className={styles.contact}>
         {[location, email, phone].map((item) => (
           <Typography key={item}>{item}</Typography>
+        ))}
+      </div>
+      <div className={styles.socials}>
+        {socials.map((social) => (
+          <SocialLink
+            key={`${social.icon}-${social.label}`}
+            icon={social.icon}
+            className={styles.link}
+            link={social.link}
+          >
+            {social.label}
+          </SocialLink>
         ))}
       </div>
     </div>

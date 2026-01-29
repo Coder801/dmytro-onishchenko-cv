@@ -7,6 +7,8 @@
   "achievements": "Досягнення",
   "languages": "Мови",
   "downloadPdf": "Завантажити PDF",
+  "downloadPdfShort": "Завантажити PDF (останні 3 роботи)",
+  "downloadPdfFull": "Завантажити PDF (повний)",
   "present": "Теперішній час",
   "months": {
     "1": "Січ",

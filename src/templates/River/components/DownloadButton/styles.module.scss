@@ -2,11 +2,10 @@
   background-color: var(--color-bg-surface);
   bottom: 0;
   box-sizing: border-box;
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr 1fr;
   left: 0;
-  padding: var(--space-lg);
+  margin-top: var(--space-lg);
   width: 100%;
-
-  &.visible {
-    display: block;
-  }
 }

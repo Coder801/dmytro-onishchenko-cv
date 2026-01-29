@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { UA, US } from "country-flag-icons/react/3x2";
 import { isEqual } from "lodash";
 import { FC, useCallback } from "react";
 

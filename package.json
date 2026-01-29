@@ -39,6 +39,7 @@
     "react-dom": "19.1.0",
     "react-i18next": "^16.5.0",
     "react-redux": "^9.2.0",
+    "react-sticky-box": "^2.0.5",
     "sass": "^1.93.2",
     "skott": "^0.35.6",
     "winston": "^3.19.0"
