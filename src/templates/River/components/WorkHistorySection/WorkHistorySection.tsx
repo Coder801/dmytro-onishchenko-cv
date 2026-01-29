@@ -13,11 +13,15 @@ import styles from "./styles.module.scss";
 
 type WorkHistorySectionProps = {
   items: WorkHistory[];
+  isShortPdf?: boolean;
 };
 
 const SHOWING_DETAILS_COUNT = 2;
 
-export const WorkHistorySection: FC<WorkHistorySectionProps> = ({ items }) => {
+export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
+  items,
+  isShortPdf,
+}) => {
   const { t } = useTranslation("common");
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
 
@@ -37,7 +41,7 @@ export const WorkHistorySection: FC<WorkHistorySectionProps> = ({ items }) => {
 
   return (
     <Section title={t("workHistory")}>
-      <div className={styles.timeline}>
+      <div className={clsx(styles.timeline, { [styles.shortPdf]: isShortPdf })}>
         {items.map((item, index) => {
           const isCollapsible = gt(index, SHOWING_DETAILS_COUNT);
           const isExpanded = expandedItems.has(index);

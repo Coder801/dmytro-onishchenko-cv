@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useScrollFromTop } from "@/hooks";
@@ -31,13 +31,17 @@ export const River: FC<RiverProps> = ({
   onLanguageChange,
 }) => {
   const isShowDownloadButton = useScrollFromTop();
+  const [isShortPdf, setIsShortPdf] = useState(false);
 
   const { profile, summary, workHistory, education, achievements, languages } =
     data.content;
 
   return (
-    <div className={styles.container} id="pdf-content">
-      <div className={`${styles.content} ${isVisible ? styles.visible : ""}`}>
+    <div
+      className={`${styles.container} ${isVisible ? styles.visible : ""}`}
+      id="pdf-content"
+    >
+      <div className={styles.content}>
         <ProfileSection
           name={profile.name}
           position={profile.position}
@@ -51,7 +55,7 @@ export const River: FC<RiverProps> = ({
 
         <SkillsSection skills={profile.skills} />
 
-        <WorkHistorySection items={workHistory} />
+        <WorkHistorySection items={workHistory} isShortPdf={isShortPdf} />
 
         <EducationSection items={education} />
 
@@ -59,7 +63,7 @@ export const River: FC<RiverProps> = ({
 
         <LanguagesSection items={languages} />
 
-        <DownloadButton isVisible={isShowDownloadButton} />
+        <DownloadButton isVisible={isShowDownloadButton} onShortPdfChange={setIsShortPdf} />
       </div>
       <div className={styles.languageSwitcherContainer}>
         <LanguageSwitcher
