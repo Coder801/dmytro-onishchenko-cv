@@ -18,7 +18,7 @@ body {
   width: 100%;
 
   @media print {
-    background-color: var(--color-bg-surface);
+    background: var(--color-bg-surface);
   }
 
   p,
