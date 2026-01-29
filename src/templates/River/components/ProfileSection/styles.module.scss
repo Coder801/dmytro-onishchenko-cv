@@ -1,61 +1,106 @@
 @use "../../../../styles/mixins" as *;
 
-.name {
-  margin: var(--space-xl) 0;
-  text-align: center;
-
-  & strong {
-    color: var(--color-text-mark);
-    font-weight: inherit;
-  }
-}
-
-.position {
-  color: var(--color-text-secondary);
-  padding: var(--space-xl) 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.contact {
+.section {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  margin-bottom: var(--space-sm);
+  gap: var(--space-sm);
+  grid-template-areas:
+    "name name"
+    "divider divider"
+    "position position"
+    " socials contact";
+  margin-bottom: calc(var(--space-lg) * 2);
 
-  & p {
-    flex: 1;
-    overflow-wrap: normal;
-    position: relative;
+  @include respond-to(md) {
+    gap: var(--space-lg);
+    grid-template-areas: "name" "divider" "position" "contact" "socials";
+  }
+
+  & .divider {
+    grid-area: divider;
+    margin: 0 0 var(--space-xs) 0;
+
+    @include respond-to(md) {
+      margin: var(--space-md) 0;
+    }
+  }
+
+  & .name {
+    font-size: 2.4rem;
+    grid-area: name;
     text-align: center;
-    white-space: nowrap;
 
-    &::before,
-    &::after {
-      display: none;
+    & strong {
+      color: var(--color-text-mark);
+      font-weight: inherit;
     }
 
     @include respond-to(md) {
-      @include decorative-heading(30px);
+      font-size: 3.2rem;
     }
   }
-}
 
-.socials {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-xl);
-  justify-content: center;
-  margin-bottom: calc(var(--space-lg) * 2);
+  & .position {
+    color: var(--color-text-secondary);
+    grid-area: position;
+    margin-bottom: var(--space-sm);
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-  & .link {
-    align-items: center;
-    display: flex;
+  & .contact {
+    display: grid;
+    gap: var(--space-xl);
+    grid-area: contact;
+    grid-template-columns: 1fr;
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    & p {
+      flex: 1;
+      line-height: unset;
+      margin: 0;
+      overflow-wrap: normal;
+      position: relative;
+      text-align: right;
+      white-space: nowrap;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      @include respond-to(md) {
+        @include decorative-heading(30px);
+
+        text-align: center;
+      }
+    }
+  }
+
+  & .socials {
+    display: grid;
     gap: var(--space-xs);
-    text-decoration: none;
-    transition: color 0.2s ease;
+    grid-area: socials;
+    margin-bottom: 0;
 
-    &:hover {
-      color: var(--color-primary);
+    & .link {
+      align-items: center;
+      display: flex;
+      gap: var(--space-xs);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    @include respond-to(md) {
+      display: flex;
+      gap: var(--space-xl);
+      justify-content: center;
     }
   }
 }

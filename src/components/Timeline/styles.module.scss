@@ -55,14 +55,29 @@
     }
 
     & .date {
-      align-items: flex-start;
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
       justify-content: flex-end;
       overflow-wrap: none;
       padding-top: var(--space-sm);
       white-space: nowrap;
 
-      & span {
+      @include respond-to(md) {
+        flex-direction: row;
+      }
+
+      & .period {
         color: var(--color-text-mark);
+
+        &::before {
+          content: " :: ";
+          display: none;
+
+          @include respond-to(md) {
+            display: inline;
+          }
+        }
       }
     }
 

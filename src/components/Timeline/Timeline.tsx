@@ -35,7 +35,9 @@ export const Timeline: FC<TimelineProps> = ({
 
       <Typography className={styles.date} size="s">
         {formattedStartDate} / {formattedEndDate}
-        <span>{formattedPeriod && ` :: ${formattedPeriod}`}</span>
+        {formattedPeriod && (
+          <span className={styles.period}>{formattedPeriod}</span>
+        )}
       </Typography>
 
       <div className={styles.description}>{children}</div>

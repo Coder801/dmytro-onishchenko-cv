@@ -20,7 +20,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({
       <Typography className={styles.name} tag="h1" uppercase weight="lighter">
         {name.first} <strong>{name.last}</strong>
       </Typography>
-      <Divider />
+      <Divider className={styles.divider} />
       <Typography className={styles.position} weight="lighter" tag="h2">
         {position}
       </Typography>
