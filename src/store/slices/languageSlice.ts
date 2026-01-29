@@ -8,6 +8,14 @@ interface LanguageState {
 
 const getInitialLanguage = (): Languages => {
   if (typeof window !== "undefined") {
+    // Check URL param first
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get("lang");
+    if (langParam && SUPPORTED_LANGUAGES.includes(langParam as Languages)) {
+      return langParam as Languages;
+    }
+
+    // Fall back to localStorage
     const stored = localStorage.getItem("i18nextLng");
     if (stored && SUPPORTED_LANGUAGES.includes(stored as Languages)) {
       return stored as Languages;
