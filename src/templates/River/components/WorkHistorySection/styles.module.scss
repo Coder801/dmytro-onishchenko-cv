@@ -7,39 +7,6 @@
     border-bottom: 1px solid var(--color-text-primary);
     padding-bottom: var(--space-lg);
   }
-
-  &.shortPdf > :nth-child(n + 4) {
-    display: none;
-  }
-}
-
-.moreDetails {
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  opacity: 0.8;
-  text-transform: lowercase;
-
-  @media print {
-    display: none;
-  }
-}
-
-.achievementsWrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease-out;
-
-  &.expanded {
-    grid-template-rows: 1fr;
-  }
-}
-
-.achievementsInner {
-  overflow: hidden;
-
-  @media print {
-    overflow: visible;
-  }
 }
 
 .subtitle {
@@ -51,5 +18,33 @@
 
   @media print {
     margin: 0;
+  }
+}
+
+.hiddenItems {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-out;
+
+  &.expanded {
+    grid-template-rows: 1fr;
+  }
+}
+
+.hiddenItemsInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  overflow: hidden;
+
+  & > :not(:last-child) {
+    border-bottom: 1px solid var(--color-text-primary);
+    padding-bottom: var(--space-lg);
+  }
+}
+
+.showMoreButton {
+  @media print {
+    display: none;
   }
 }

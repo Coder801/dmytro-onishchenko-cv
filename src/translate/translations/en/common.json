@@ -35,5 +35,7 @@
   "lessThanAMonth": "Less than a month",
   "keyAchievements": "Key Achievements",
   "moreDetails": "More details",
-  "contact": "Contacts"
+  "contact": "Contacts",
+  "showMore": "Show more",
+  "loading": "Loading..."
 }

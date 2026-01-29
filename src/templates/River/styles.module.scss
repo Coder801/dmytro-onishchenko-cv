@@ -80,6 +80,8 @@ body {
 
 .content {
   background-color: var(--color-bg-surface);
+  display: flex;
+  flex-direction: column;
   gap: var(--space-xl);
   padding: var(--space-lg);
   z-index: 1;
@@ -87,13 +89,21 @@ body {
   @include respond-to(md) {
     padding: var(--space-xl);
   }
-}
 
-.contactSection {
-  display: grid;
+  & > div {
+    order: 1;
+  }
 
-  @include respond-to(md) {
-    display: none;
+  .contactsSection {
+    order: 3;
+
+    @include respond-to(md) {
+      order: 1;
+    }
+  }
+
+  .downloadButton {
+    order: 10;
   }
 }
 

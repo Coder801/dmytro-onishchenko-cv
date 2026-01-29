@@ -1,6 +1,16 @@
 @use "../../../../styles/mixins" as *;
 
 .section {
+  & h4 {
+    display: block;
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+}
+
+.container {
   display: grid;
   gap: 0;
   grid-template-areas: "socials contact";
@@ -40,6 +50,10 @@
         display: none;
       }
 
+      @include respond-to(sm) {
+        font-size: 0.8rem;
+      }
+
       @include respond-to(md) {
         @include decorative-heading(30px);
 
@@ -73,6 +87,10 @@
       & p {
         font-size: 0.65rem;
 
+        @include respond-to(sm) {
+          font-size: 0.8rem;
+        }
+
         @include respond-to(md) {
           font-size: 1rem;
         }
@@ -82,7 +100,7 @@
         width: 16px;
 
         @include respond-to(md) {
-          width: 32px;
+          width: 30px;
         }
       }
 

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { FC, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -30,27 +31,21 @@ export const River: FC<RiverProps> = ({
   currentLanguage,
   onLanguageChange,
 }) => {
-  const [isShortPdf, setIsShortPdf] = useState(false);
+  const [showAllWorkHistory, setShowAllWorkHistory] = useState(false);
 
   const { profile, summary, workHistory, education, achievements, languages } =
     data.content;
 
   return (
     <div
-      className={`${styles.container} ${isVisible ? styles.visible : ""}`}
+      className={clsx(styles.container, { [styles.visible]: isVisible })}
       id="pdf-content"
     >
       <div className={styles.content}>
-        <ProfileSection
-          name={profile.name}
-          position={profile.position}
-          location={profile.location}
-          email={profile.email}
-          phone={profile.phone}
-          socials={profile.social}
-        />
+        <ProfileSection name={profile.name} position={profile.position} />
 
         <ContactsSection
+          className={styles.contactsSection}
           location={profile.location}
           email={profile.email}
           phone={profile.phone}
@@ -61,7 +56,11 @@ export const River: FC<RiverProps> = ({
 
         <SkillsSection skills={profile.skills} />
 
-        <WorkHistorySection items={workHistory} isShortPdf={isShortPdf} />
+        <WorkHistorySection
+          items={workHistory}
+          showAll={showAllWorkHistory}
+          onShowAllChange={setShowAllWorkHistory}
+        />
 
         <EducationSection items={education} />
 
@@ -69,16 +68,10 @@ export const River: FC<RiverProps> = ({
 
         <LanguagesSection items={languages} />
 
-        {/* <Section className={styles.contactSection} title={t("contact")}>
-          <ContactsSection
-            location={profile.location}
-            email={profile.email}
-            phone={profile.phone}
-            socials={profile.social}
-          />
-        </Section> */}
-
-        <DownloadButton onShortPdfChange={setIsShortPdf} />
+        <DownloadButton
+          className={styles.downloadButton}
+          onExpandWorkHistory={() => setShowAllWorkHistory(true)}
+        />
       </div>
       <div className={styles.languageSwitcherContainer}>
         <LanguageSwitcher

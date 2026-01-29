@@ -1,11 +1,12 @@
 import clsx from "clsx";
-import { gt, isEmpty } from "lodash";
+import { isEmpty, toString } from "lodash";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Section } from "@/components/Section";
 import { Timeline } from "@/components/Timeline";
 import type { WorkHistory } from "@/types/resume";
+import { Button } from "@/ui/Button";
 import { List } from "@/ui/List";
 import { Typography } from "@/ui/Typography";
 
@@ -13,89 +14,92 @@ import styles from "./styles.module.scss";
 
 type WorkHistorySectionProps = {
   items: WorkHistory[];
-  isShortPdf?: boolean;
+  showAll?: boolean;
+  onShowAllChange?: (value: boolean) => void;
 };
 
-const SHOWING_DETAILS_COUNT = 2;
+const INITIAL_ITEMS_COUNT = 3;
+const SHOW_DELAY_MS = 1000;
 
 export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
   items,
-  isShortPdf,
+  showAll: showAllProp,
+  onShowAllChange,
 }) => {
   const { t } = useTranslation("common");
-  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+  const [showAllLocal, setShowAllLocal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const toggleDetails = (index: number) => {
-    setExpandedItems(
-      (prev) =>
-        new Set(
-          prev.has(index)
-            ? [...prev].filter((i) => i !== index)
-            : [...prev, index]
-        )
+  const showAll = showAllProp ?? showAllLocal;
+  const setShowAll = onShowAllChange ?? setShowAllLocal;
+
+  const hiddenItemsCount = toString(items.length - INITIAL_ITEMS_COUNT);
+
+  const initialItems = items.slice(0, INITIAL_ITEMS_COUNT);
+  const hiddenItems = items.slice(INITIAL_ITEMS_COUNT);
+  const hasMoreItems = hiddenItems.length > 0;
+
+  const handleShowMore = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setShowAll(true);
+    }, SHOW_DELAY_MS);
+  };
+
+  const renderTimelineItem = (item: WorkHistory) => {
+    const hasAchievements = !isEmpty(item.keyAchievements);
+
+    return (
+      <Timeline
+        key={`${item.company}-${item.position}`}
+        date={item.date}
+        position={item.position}
+        company={item.company}
+        skills={item.skills}
+      >
+        <Typography>{item.description}</Typography>
+
+        {hasAchievements && (
+          <div className={styles.achievements}>
+            <Typography className={styles.subtitle}>
+              {t("keyAchievements")}:
+            </Typography>
+            <List className={styles.list} items={item.keyAchievements || []} />
+          </div>
+        )}
+      </Timeline>
     );
   };
 
-  const trimDot = (text: string) =>
-    text.endsWith(".") ? text.slice(0, -1) : text;
-
   return (
     <Section title={t("workHistory")}>
-      <div className={clsx(styles.timeline, { [styles.shortPdf]: isShortPdf })}>
-        {items.map((item, index) => {
-          const isCollapsible = gt(index, SHOWING_DETAILS_COUNT);
-          const isExpanded = expandedItems.has(index);
-          const hasAchievements = !isEmpty(item.keyAchievements);
+      <div className={styles.timeline}>
+        {initialItems.map(renderTimelineItem)}
 
-          const achievementsBlock = hasAchievements && (
-            <div className={styles.achievements}>
-              <Typography className={styles.subtitle}>
-                {t("keyAchievements")}:
-              </Typography>
-              <List
-                className={styles.list}
-                items={item.keyAchievements || []}
-              />
+        {hasMoreItems && (
+          <div
+            className={clsx(styles.hiddenItems, {
+              [styles.expanded]: showAll,
+            })}
+          >
+            <div className={styles.hiddenItemsInner}>
+              {hiddenItems.map(renderTimelineItem)}
             </div>
-          );
-
-          return (
-            <Timeline
-              key={`${item.company}-${item.position}`}
-              date={item.date}
-              position={item.position}
-              company={item.company}
-              skills={item.skills}
-            >
-              <Typography>
-                {isExpanded ? item.description : trimDot(item.description)}{" "}
-                {isCollapsible && !isExpanded && (
-                  <span
-                    className={styles.moreDetails}
-                    onClick={() => toggleDetails(index)}
-                  >
-                    ... {t("moreDetails")}
-                  </span>
-                )}
-              </Typography>
-
-              {!isCollapsible && achievementsBlock}
-
-              {isCollapsible && hasAchievements && (
-                <div
-                  className={clsx(styles.achievementsWrapper, {
-                    [styles.expanded]: isExpanded,
-                  })}
-                >
-                  <div className={styles.achievementsInner}>
-                    {achievementsBlock}
-                  </div>
-                </div>
-              )}
-            </Timeline>
-          );
-        })}
+          </div>
+        )}
       </div>
+
+      {hasMoreItems && !showAll && (
+        <Button
+          className={styles.showMoreButton}
+          onClick={handleShowMore}
+          disabled={isLoading}
+          isLoading={isLoading}
+        >
+          {isLoading ? t("loading") : `${t("showMore")} (${hiddenItemsCount})`}
+        </Button>
+      )}
     </Section>
   );
 };
