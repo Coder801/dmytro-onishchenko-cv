@@ -17,6 +17,10 @@ body {
   padding: var(--space-md);
   width: 100%;
 
+  @media print {
+    background-color: var(--color-bg-surface);
+  }
+
   p,
   li {
     font-family: var(--font-roboto);
