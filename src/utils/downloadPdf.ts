@@ -14,7 +14,10 @@ export const downloadPdf = async (completed = () => {}) => {
         currentPage: window.location.href,
         currentLanguage,
         size: {
-          width: 1232,
+          width: Math.max(
+            (document.getElementById("pdf-content")?.scrollWidth || 0) + 32,
+            document.body.scrollWidth
+          ),
           height: Math.max(document.body.scrollHeight),
         },
       }),

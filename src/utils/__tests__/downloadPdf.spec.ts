@@ -38,10 +38,22 @@ describe("downloadPdf", () => {
       writable: true,
     });
 
-    // Mock document.body.scrollHeight
+    // Mock document.body.scrollHeight and scrollWidth
     Object.defineProperty(document.body, "scrollHeight", {
       value: 2000,
       writable: true,
+    });
+    Object.defineProperty(document.body, "scrollWidth", {
+      value: 1000,
+      writable: true,
+    });
+
+    // Mock document.getElementById for pdf-content
+    vi.spyOn(document, "getElementById").mockImplementation((id: string) => {
+      if (id === "pdf-content") {
+        return { scrollWidth: 800 } as HTMLElement;
+      }
+      return null;
     });
 
     // Mock document.createElement
@@ -79,7 +91,7 @@ describe("downloadPdf", () => {
           currentPage: "https://example.com/page",
           currentLanguage: "en",
           size: {
-            width: 1232,
+            width: 1000,
             height: 2000,
           },
         }),
@@ -229,6 +241,58 @@ describe("downloadPdf", () => {
       `${PROTOCOL}${ENDPOINTS.PDF}`,
       expect.objectContaining({
         body: expect.stringContaining('"height":5000'),
+      })
+    );
+  });
+
+  it("should use pdf-content width + 32 when larger than body scrollWidth", async () => {
+    vi.spyOn(document, "getElementById").mockImplementation((id: string) => {
+      if (id === "pdf-content") {
+        return { scrollWidth: 1500 } as HTMLElement;
+      }
+      return null;
+    });
+
+    const mockBlob = new Blob(["pdf content"], { type: "application/pdf" });
+    const mockResponse = {
+      ok: true,
+      blob: vi.fn().mockResolvedValue(mockBlob),
+    };
+    mockFetch.mockResolvedValue(mockResponse);
+
+    await downloadPdf();
+
+    // pdf-content width (1500) + 32 = 1532 > body.scrollWidth (1000)
+    expect(mockFetch).toHaveBeenCalledWith(
+      `${PROTOCOL}${ENDPOINTS.PDF}`,
+      expect.objectContaining({
+        body: expect.stringContaining('"width":1532'),
+      })
+    );
+  });
+
+  it("should use body scrollWidth when pdf-content element is not found", async () => {
+    vi.spyOn(document, "getElementById").mockReturnValue(null);
+
+    Object.defineProperty(document.body, "scrollWidth", {
+      value: 1200,
+      writable: true,
+    });
+
+    const mockBlob = new Blob(["pdf content"], { type: "application/pdf" });
+    const mockResponse = {
+      ok: true,
+      blob: vi.fn().mockResolvedValue(mockBlob),
+    };
+    mockFetch.mockResolvedValue(mockResponse);
+
+    await downloadPdf();
+
+    // No pdf-content element, so width = max(0 + 32, 1200) = 1200
+    expect(mockFetch).toHaveBeenCalledWith(
+      `${PROTOCOL}${ENDPOINTS.PDF}`,
+      expect.objectContaining({
+        body: expect.stringContaining('"width":1200'),
       })
     );
   });
