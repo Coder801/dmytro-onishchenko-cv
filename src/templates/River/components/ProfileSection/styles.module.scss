@@ -23,6 +23,12 @@
   margin-bottom: var(--space-sm);
 
   & p {
+    flex: 1;
+    overflow-wrap: normal;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+
     &::before,
     &::after {
       display: none;
@@ -31,12 +37,6 @@
     @include respond-to(md) {
       @include decorative-heading(30px);
     }
-
-    flex: 1;
-    overflow-wrap: normal;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
   }
 }
 
