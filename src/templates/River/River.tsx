@@ -71,6 +71,7 @@ export const River: FC<RiverProps> = ({
         <DownloadButton
           className={styles.downloadButton}
           onExpandWorkHistory={() => setShowAllWorkHistory(true)}
+          onCollapseWorkHistory={() => setShowAllWorkHistory(false)}
         />
       </div>
       <div className={styles.languageSwitcherContainer}>

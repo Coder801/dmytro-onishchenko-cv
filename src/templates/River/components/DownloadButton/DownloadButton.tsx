@@ -9,6 +9,7 @@ import styles from "./styles.module.scss";
 
 type DownloadButtonProps = {
   onExpandWorkHistory?: () => void;
+  onCollapseWorkHistory?: () => void;
   className?: string;
 };
 
@@ -16,35 +17,47 @@ const EXPAND_DELAY_MS = 1000;
 
 export const DownloadButton: FC<DownloadButtonProps> = ({
   onExpandWorkHistory,
+  onCollapseWorkHistory,
   className,
 }) => {
   const { t } = useTranslation("common");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingFull, setIsLoadingFull] = useState(false);
+  const [isLoadingShort, setIsLoadingShort] = useState(false);
+  const isDisabled = isLoadingFull || isLoadingShort;
 
   const handleDownloadPdfFull = () => {
-    setIsLoading(true);
+    setIsLoadingFull(true);
     onExpandWorkHistory?.();
     setTimeout(() => {
       downloadPdf(() => {
-        setIsLoading(false);
+        setIsLoadingFull(false);
       });
     }, EXPAND_DELAY_MS);
   };
 
   const handleDownloadPdfShort = () => {
-    setIsLoading(true);
+    setIsLoadingShort(true);
+    onCollapseWorkHistory?.();
     downloadPdf(() => {
-      setIsLoading(false);
+      setIsLoadingShort(false);
     });
   };
 
   return (
     <div className={clsx(styles.button, className)}>
-      <Button onClick={handleDownloadPdfShort} isLoading={isLoading}>
+      <Button
+        onClick={handleDownloadPdfShort}
+        disabled={isDisabled}
+        isLoading={isLoadingShort}
+      >
         {t("downloadPdfShort")}
       </Button>
 
-      <Button onClick={handleDownloadPdfFull} isLoading={isLoading}>
+      <Button
+        onClick={handleDownloadPdfFull}
+        disabled={isDisabled}
+        isLoading={isLoadingFull}
+      >
         {t("downloadPdfFull")}
       </Button>
     </div>
