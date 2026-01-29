@@ -8,4 +8,8 @@
   left: 0;
   margin-top: var(--space-lg);
   width: 100%;
+
+  @media print {
+    display: none;
+  }
 }

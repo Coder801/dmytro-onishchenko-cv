@@ -22,11 +22,12 @@
 }
 
 .hiddenItems {
-  display: grid;
+  display: none;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-out;
 
   &.expanded {
+    display: block;
     grid-template-rows: 1fr;
   }
 }
