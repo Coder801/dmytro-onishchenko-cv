@@ -38,20 +38,10 @@ describe("downloadPdf", () => {
       writable: true,
     });
 
-    // Mock document.body.scrollHeight and scrollWidth
-    Object.defineProperty(document.body, "scrollHeight", {
-      value: 2000,
-      writable: true,
-    });
-    Object.defineProperty(document.body, "scrollWidth", {
-      value: 1000,
-      writable: true,
-    });
-
     // Mock document.getElementById for pdf-content
     vi.spyOn(document, "getElementById").mockImplementation((id: string) => {
       if (id === "pdf-content") {
-        return { scrollWidth: 800 } as HTMLElement;
+        return { scrollWidth: 800, scrollHeight: 1500 } as HTMLElement;
       }
       return null;
     });
@@ -91,8 +81,8 @@ describe("downloadPdf", () => {
           currentPage: "https://example.com/page",
           currentLanguage: "en",
           size: {
-            width: 1000,
-            height: 2000,
+            width: 832,
+            height: 1532,
           },
         }),
       })
@@ -127,36 +117,21 @@ describe("downloadPdf", () => {
     );
   });
 
-  it("should call completed callback on success", async () => {
-    const mockBlob = new Blob(["pdf content"], { type: "application/pdf" });
-    const mockResponse = {
-      ok: true,
-      blob: vi.fn().mockResolvedValue(mockBlob),
-    };
-    mockFetch.mockResolvedValue(mockResponse);
+  it("should return early and log error when pdf-content element is not found", async () => {
+    vi.spyOn(document, "getElementById").mockReturnValue(null);
 
-    const completedCallback = vi.fn();
-
-    await downloadPdf(completedCallback);
-
-    expect(completedCallback).toHaveBeenCalled();
-  });
-
-  it("should call completed callback even on fetch failure", async () => {
-    mockFetch.mockRejectedValue(new Error("Network error"));
-
-    const completedCallback = vi.fn();
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});
 
-    await downloadPdf(completedCallback);
+    await downloadPdf();
 
-    expect(completedCallback).toHaveBeenCalled();
     expect(consoleErrorSpy).toHaveBeenCalledWith(
-      "Error generating PDF:",
-      expect.any(Error)
+      "PDF content element not found"
     );
+    expect(mockFetch).not.toHaveBeenCalled();
+    expect(mockCreateObjectURL).not.toHaveBeenCalled();
+    expect(mockClick).not.toHaveBeenCalled();
 
     consoleErrorSpy.mockRestore();
   });
@@ -167,14 +142,12 @@ describe("downloadPdf", () => {
     };
     mockFetch.mockResolvedValue(mockResponse);
 
-    const completedCallback = vi.fn();
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});
 
-    await downloadPdf(completedCallback);
+    await downloadPdf();
 
-    expect(completedCallback).toHaveBeenCalled();
     expect(consoleErrorSpy).toHaveBeenCalledWith(
       "Error generating PDF:",
       expect.objectContaining({ message: "Failed to generate PDF" })
@@ -194,6 +167,10 @@ describe("downloadPdf", () => {
 
     await downloadPdf();
 
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      "Error generating PDF:",
+      expect.any(Error)
+    );
     expect(mockCreateObjectURL).not.toHaveBeenCalled();
     expect(mockClick).not.toHaveBeenCalled();
     expect(mockRevokeObjectURL).not.toHaveBeenCalled();
@@ -222,33 +199,10 @@ describe("downloadPdf", () => {
     expect(mockAnchor.href).toBe("blob:mock-url");
   });
 
-  it("should use correct document scroll height", async () => {
-    Object.defineProperty(document.body, "scrollHeight", {
-      value: 5000,
-      writable: true,
-    });
-
-    const mockBlob = new Blob(["pdf content"], { type: "application/pdf" });
-    const mockResponse = {
-      ok: true,
-      blob: vi.fn().mockResolvedValue(mockBlob),
-    };
-    mockFetch.mockResolvedValue(mockResponse);
-
-    await downloadPdf();
-
-    expect(mockFetch).toHaveBeenCalledWith(
-      `${PROTOCOL}${ENDPOINTS.PDF}`,
-      expect.objectContaining({
-        body: expect.stringContaining('"height":5000'),
-      })
-    );
-  });
-
-  it("should use pdf-content width + 32 when larger than body scrollWidth", async () => {
+  it("should use pdf-content dimensions with padding", async () => {
     vi.spyOn(document, "getElementById").mockImplementation((id: string) => {
       if (id === "pdf-content") {
-        return { scrollWidth: 1500 } as HTMLElement;
+        return { scrollWidth: 1000, scrollHeight: 2000 } as HTMLElement;
       }
       return null;
     });
@@ -262,37 +216,16 @@ describe("downloadPdf", () => {
 
     await downloadPdf();
 
-    // pdf-content width (1500) + 32 = 1532 > body.scrollWidth (1000)
     expect(mockFetch).toHaveBeenCalledWith(
       `${PROTOCOL}${ENDPOINTS.PDF}`,
       expect.objectContaining({
-        body: expect.stringContaining('"width":1532'),
+        body: expect.stringContaining('"width":1032'),
       })
     );
-  });
-
-  it("should use body scrollWidth when pdf-content element is not found", async () => {
-    vi.spyOn(document, "getElementById").mockReturnValue(null);
-
-    Object.defineProperty(document.body, "scrollWidth", {
-      value: 1200,
-      writable: true,
-    });
-
-    const mockBlob = new Blob(["pdf content"], { type: "application/pdf" });
-    const mockResponse = {
-      ok: true,
-      blob: vi.fn().mockResolvedValue(mockBlob),
-    };
-    mockFetch.mockResolvedValue(mockResponse);
-
-    await downloadPdf();
-
-    // No pdf-content element, so width = max(0 + 32, 1200) = 1200
     expect(mockFetch).toHaveBeenCalledWith(
       `${PROTOCOL}${ENDPOINTS.PDF}`,
       expect.objectContaining({
-        body: expect.stringContaining('"width":1200'),
+        body: expect.stringContaining('"height":2032'),
       })
     );
   });

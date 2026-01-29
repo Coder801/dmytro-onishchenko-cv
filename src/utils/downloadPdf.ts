@@ -5,6 +5,11 @@ export const downloadPdf = async (completed = () => {}) => {
   const pdfEndpoint = `${PROTOCOL}${ENDPOINTS.PDF}`;
   let res;
   const currentLanguage = localStorage.getItem("i18nextLng") || "en";
+  const pdfContent = document.getElementById("pdf-content");
+  if (!pdfContent) {
+    console.error("PDF content element not found");
+    return;
+  }
 
   try {
     res = await fetch(pdfEndpoint, {
@@ -14,11 +19,8 @@ export const downloadPdf = async (completed = () => {}) => {
         currentPage: window.location.href,
         currentLanguage,
         size: {
-          width: Math.max(
-            (document.getElementById("pdf-content")?.scrollWidth || 0) + 32,
-            document.body.scrollWidth
-          ),
-          height: Math.max(document.body.scrollHeight),
+          width: Math.max((pdfContent?.scrollWidth || 0) + 32),
+          height: Math.max((pdfContent?.scrollHeight || 0) + 32),
         },
       }),
     });
