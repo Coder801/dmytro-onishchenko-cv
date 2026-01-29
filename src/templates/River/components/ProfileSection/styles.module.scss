@@ -1,0 +1,33 @@
+@use "../../../../styles/mixins" as *;
+
+.name {
+  margin: var(--space-xl) 0;
+  text-align: center;
+
+  & strong {
+    color: var(--color-text-mark);
+    font-weight: inherit;
+  }
+}
+
+.position {
+  color: var(--color-text-secondary);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+
+  & p {
+    @include decorative-heading(30px);
+
+    flex: 1;
+    overflow-wrap: normal;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

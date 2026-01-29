@@ -1,0 +1,16 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.title {
+  background-color: var(--background-chip-secondary);
+  font-family: var(--font-oswald);
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin: 0.5rem 0;
+  padding: 0.3rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}

@@ -1,13 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Languages } from "@/types/languages";
+import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
 import { RootState } from "../index";
 
 interface LanguageState {
   current: Languages;
 }
 
+const getInitialLanguage = (): Languages => {
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("i18nextLng");
+    if (stored && SUPPORTED_LANGUAGES.includes(stored as Languages)) {
+      return stored as Languages;
+    }
+  }
+  return "en";
+};
+
 const initialState: LanguageState = {
-  current: "en",
+  current: getInitialLanguage(),
 };
 
 export const languageSlice = createSlice({

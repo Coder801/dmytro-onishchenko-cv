@@ -5,6 +5,7 @@ import { FC, useCallback } from "react";
 
 import { useTheme } from "@/context/ThemeContext";
 import type { Languages } from "@/types/languages";
+import { CountryFlag } from "@/ui/CountryFlag";
 
 import styles from "./styles.module.scss";
 import type { LanguageSwitcherProps } from "./types";
@@ -26,11 +27,6 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
     [onChange, currentLanguage]
   );
 
-  const localeFlagMaps = {
-    en: <US title="United States" className={styles.flag} />,
-    ua: <UA title="Ukraine" className={styles.flag} />,
-  };
-
   if (!availableLanguages || availableLanguages.length <= 1) {
     return null;
   }
@@ -48,7 +44,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
             onClick={() => handleClick(option)}
             disabled={isActive}
           >
-            {localeFlagMaps[option]}
+            <CountryFlag code={option} className={styles.flag} />
           </button>
         );
       })}

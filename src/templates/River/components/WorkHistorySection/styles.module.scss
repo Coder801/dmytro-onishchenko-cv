@@ -1,0 +1,43 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+
+  & > :not(:last-child) {
+    border-bottom: 1px solid var(--color-text-primary);
+    padding-bottom: var(--space-lg);
+  }
+}
+
+.moreDetails {
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  opacity: 0.8;
+  text-transform: lowercase;
+
+  @media print {
+    display: none;
+  }
+}
+
+.achievementsWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+
+  &.expanded {
+    grid-template-rows: 1fr;
+  }
+}
+
+.achievementsInner {
+  overflow: hidden;
+}
+
+.subtitle {
+  margin-top: var(--space-md);
+}
+
+.list {
+  margin: 0 0 0 var(--space-md);
+}

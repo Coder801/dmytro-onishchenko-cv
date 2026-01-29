@@ -19,6 +19,7 @@ export type WorkHistory = {
   date: [string, string?];
   skills?: string[];
   description: string;
+  keyAchievements?: string[];
 };
 
 export type Education = {

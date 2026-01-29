@@ -1,28 +1,21 @@
-import { clsx } from "clsx";
-import { UA, US } from "country-flag-icons/react/3x2";
-import { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { FC } from "react";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { SocialLink } from "@/components/SocialLink";
-import { Timeline } from "@/components/Timeline";
 import { useScrollFromTop } from "@/hooks";
 import { useGetProfileQuery } from "@/store/api";
 import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
-import type {
-  Achievement,
-  Education,
-  Language,
-  SummaryItem as SummaryItemType,
-  WorkHistory,
-} from "@/types/resume";
-import { Button } from "@/ui/Button";
-import { Chip } from "@/ui/Chip";
-import { Divider } from "@/ui/Divider";
-import { IconNames } from "@/ui/SvgIcon/constants";
-import { Typography } from "@/ui/Typography";
-import { downloadPdf } from "@/utils/downloadPdf";
 
+import {
+  AchievementsSection,
+  DownloadButton,
+  EducationSection,
+  LanguagesSection,
+  ProfileSection,
+  SkillsSection,
+  SocialsSection,
+  SummarySection,
+  WorkHistorySection,
+} from "./components";
 import styles from "./styles.module.scss";
 
 type RiverProps = {
@@ -38,16 +31,7 @@ export const River: FC<RiverProps> = ({
   currentLanguage,
   onLanguageChange,
 }) => {
-  const { t } = useTranslation("common");
-  const [isLoading, setIsLoading] = useState(false);
   const isShowDownloadButton = useScrollFromTop();
-
-  const handleDownloadPdf = () => {
-    setIsLoading(true);
-    downloadPdf(() => {
-      setIsLoading(false);
-    });
-  };
 
   const { profile, summary, workHistory, education, achievements, languages } =
     data.content;
@@ -63,139 +47,31 @@ export const River: FC<RiverProps> = ({
         currentLanguage={currentLanguage}
         onChange={onLanguageChange}
       />
+
       <div className={styles.content}>
-        <div className={styles.section}>
-          <Typography
-            className={styles.name}
-            tag="h1"
-            uppercase
-            weight="lighter"
-          >
-            {profile.name.first} <strong>{profile.name.last}</strong>
-          </Typography>
-          <Divider />
-          <Typography className={styles.position} weight="lighter" tag="h2">
-            {profile.position}
-          </Typography>
-          {/* <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("social")}
-          </Typography> */}
-          <div className={styles.contact}>
-            {[profile.location, profile.email, profile.phone].map((item) => (
-              <Typography key={item}>{item}</Typography>
-            ))}
-          </div>
-        </div>
+        <ProfileSection
+          name={profile.name}
+          position={profile.position}
+          location={profile.location}
+          email={profile.email}
+          phone={profile.phone}
+        />
 
-        <div className={styles.section}>
-          {/* <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("social")}
-          </Typography> */}
-          <div className={styles.socials}>
-            {profile.social.map(
-              (item: { icon: IconNames; label: string; link: string }) => (
-                <SocialLink
-                  key={`${item.icon}-${item.label}`}
-                  icon={item.icon}
-                  className={styles.link}
-                  link={item.link}
-                >
-                  {item.label}
-                </SocialLink>
-              )
-            )}
-          </div>
-        </div>
+        <SocialsSection items={profile.social} />
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("summary")}
-          </Typography>
-          {summary.intro ? <Typography>{summary.intro}</Typography> : null}
-        </div>
+        <SummarySection intro={summary.intro} />
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("skills")}
-          </Typography>
-          <Typography className={styles.skills}>
-            {profile.skills.map((skill: string) => (
-              <Chip key={skill} className={styles.skill}>
-                {skill}
-              </Chip>
-            ))}
-          </Typography>
-        </div>
+        <SkillsSection skills={profile.skills} />
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("workHistory")}
-          </Typography>
-          <div className={styles.timeline}>
-            {workHistory.map((item: WorkHistory) => (
-              <Timeline
-                key={`${item.company}-${item.position}`}
-                date={item.date}
-                position={item.position}
-                company={item.company}
-                skills={item.skills}
-              >
-                <Typography>{item.description}</Typography>
-              </Timeline>
-            ))}
-          </div>
-        </div>
+        <WorkHistorySection items={workHistory} />
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("education")}
-          </Typography>
-          {education.map((item: Education) => (
-            <Timeline
-              key={`${item.institution}-${item.field}`}
-              date={item.date}
-              position={item.institution}
-              company={item.field}
-            >
-              <Typography>{item.degree}</Typography>
-            </Timeline>
-          ))}
-        </div>
+        <EducationSection items={education} />
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("achievements")}
-          </Typography>
-          {achievements.map((item: Achievement) => (
-            <Typography key={item.title}>
-              • {item.title}
-              {item.organization ? ` (${item.organization})` : ""}
-              {item.description ? ` — ${item.description}` : ""}
-            </Typography>
-          ))}
-        </div>
+        <AchievementsSection items={achievements} />
 
-        <div className={styles.section}>
-          <Typography tag="h4" weight="normal" className={styles.title}>
-            {t("languages")}
-          </Typography>
-          {languages.map((item: Language) => (
-            <Typography key={item.code}>
-              <UA title="Ukraine" className={styles.flag} />
-              <strong>{item.language}</strong> - {item.level}
-            </Typography>
-          ))}
-        </div>
+        <LanguagesSection items={languages} />
 
-        <div
-          className={clsx(styles.button, {
-            [styles.visible]: isShowDownloadButton,
-          })}
-        >
-          <Button onClick={handleDownloadPdf} isLoading={isLoading}>
-            {t("downloadPdf")}
-          </Button>
-        </div>
+        <DownloadButton isVisible={isShowDownloadButton} />
       </div>
     </div>
   );

@@ -56,72 +56,13 @@ body {
 
 .content {
   background-color: var(--color-bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
   padding: var(--space-lg);
 
   @include respond-to(md) {
     padding: var(--space-xl);
-  }
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-// ------------------------------
-// Component Styles
-// ------------------------------
-
-.name {
-  margin: var(--space-xl) 0;
-  text-align: center;
-
-  & strong {
-    color: var(--color-text-mark);
-    font-weight: inherit;
-  }
-}
-
-.position {
-  color: var(--color-text-secondary);
-  padding: var(--space-md) 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.contact {
-  display: flex;
-  flex-direction: row;
-
-  & p {
-    @include decorative-heading(30px);
-
-    flex: 1;
-    overflow-wrap: normal;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-  }
-}
-
-.socials {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-xl);
-  justify-content: center;
-  margin-bottom: var(--space-lg);
-
-  & .link {
-    align-items: center;
-    display: flex;
-    gap: var(--space-xs);
-    text-decoration: none;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: var(--color-primary);
-    }
   }
 }
 
@@ -137,70 +78,9 @@ body {
   }
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
-.title {
-  background-color: var(--background-chip-secondary);
-  font-family: var(--font-oswald);
-  font-size: 1.1rem;
-  font-weight: normal;
-  margin: 0.5rem 0;
-  padding: 0.3rem 1rem;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.skills {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  justify-content: center;
-
-  & .skill {
-    display: inline-flex;
-  }
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-
-  & > :not(:last-child) {
-    border-bottom: 1px solid var(--color-text-primary);
-    padding-bottom: var(--space-lg);
-  }
-}
-
-.button {
-  background-color: var(--color-bg-surface);
-  bottom: 0;
-  box-sizing: border-box;
-  left: 0;
-  padding: var(--space-lg);
-  width: 100%;
-
-  &.visible {
-    display: block;
-  }
-}
-
 @media print {
   .container {
     max-width: 100%;
     padding: 0;
-  }
-
-  .headerActions {
-    display: none;
-  }
-
-  .section {
-    break-inside: avoid;
   }
 }

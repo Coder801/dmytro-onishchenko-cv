@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flag {
+  margin-right: var(--space-xs);
+  width: 24px;
+}

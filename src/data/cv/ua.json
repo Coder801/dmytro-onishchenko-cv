@@ -1,8 +1,8 @@
 {
   "profile": {
     "name": {
-      "first": "Dmytro",
-      "last": "Onishchenko"
+      "first": "Дмитро",
+      "last": "Оніщенко"
     },
     "position": "Software Engineer",
     "location": "Київ, Україна",
@@ -11,11 +11,11 @@
     "skills": [
       "JavaScript",
       "TypeScript",
-      "Node.js",
+      "NodeJS",
       "React",
-      "Next.js",
-      "Vue.js",
       "React Native",
+      "NextJS",
+      "VueJS",
       "Python",
       "HTML",
       "CSS",
@@ -23,70 +23,21 @@
       "Monorepo",
       "REST API",
       "SQL",
-      "NoSQL",
       "Git",
       "CI/CD",
       "Testing",
       "TDD",
       "AI",
       "OpenAI",
-      "Agile",
-      "Scrum"
-    ],
-    "skillsByCategory": [
-      {
-        "category": "Frontend",
-        "skills": [
-          "React",
-          "Next.js",
-          "Vue.js",
-          "HTML",
-          "CSS",
-          "TypeScript",
-          "JavaScript",
-          "Redux",
-          "MobX"
-        ]
-      },
-      {
-        "category": "Backend",
-        "skills": [
-          "Node.js",
-          "Python",
-          "Django",
-          "REST API",
-          "Laravel",
-          "Symfony"
-        ]
-      },
-      {
-        "category": "Mobile & Desktop",
-        "skills": ["React Native", "Electron", "PWA"]
-      },
-      {
-        "category": "Databases",
-        "skills": ["SQL", "NoSQL", "PostgreSQL", "MySQL", "MongoDB", "MSSQL"]
-      },
-      {
-        "category": "DevOps & Tools",
-        "skills": ["Git", "CI/CD", "Monorepo", "Testing", "TDD"]
-      },
-      {
-        "category": "AI & Web3",
-        "skills": ["AI", "OpenAI", "Web3"]
-      },
-      {
-        "category": "Methodologies",
-        "skills": ["Agile", "Scrum", "OOP", "Functional Programming"]
-      }
+      "Agile"
     ],
     "allSkills": [
       "JavaScript",
       "TypeScript",
-      "Node.js",
+      "NodeJS",
       "React",
-      "Next.js",
-      "Vue.js",
+      "NextJS",
+      "VueJS",
       "React Native",
       "Python",
       "HTML",
@@ -164,7 +115,7 @@
         "label": "Backend",
         "chips": ["NodeJS", "Python"],
         "details": [
-          "Проєктування REST API та client-server communication. Досвід інтеграції сторонніх сервісів і authentication flows. Frameworks: Django, Next.js (API routes), Laravel"
+          "Проєктування REST API та client-server communication. Досвід інтеграції сторонніх сервісів і authentication flows. Frameworks: Django, NextJS (API routes), Laravel"
         ]
       },
       {
@@ -176,7 +127,7 @@
           "Thunk/Saga",
           "React Native",
           "Electron",
-          "Vue.js"
+          "VueJS"
         ],
         "details": [
           "Сильна експертиза в модульній та application architecture. Досвід cross-platform розробки для mobile та desktop (React Native, Electron)"
@@ -223,14 +174,26 @@
         "Typescript",
         "AI"
       ],
-      "description": "Розробка застосунків, орієнтованих на virtual machines. Проєктування та реалізація рішень з використанням microfrontend architecture та Module Federation."
+      "description": "Розробляв та підтримував UI для платформи моніторингу та управління хмарними серверами та віртуальними машинами. Працював над проектом на React/NextJS. Проектував та впроваджував мікрофронтенд-архітектуру.",
+      "keyAchievements": [
+        "Впровадив мікрофронтенди з Module Federation, включно з окремим проектом для інтеграції та розвитку архітектури.",
+        "Провів рефакторинг та стандартизацію кодової бази, покращив читабельність та підтримку коду.",
+        "Розробив та впровадив unit та integration тести з нуля, збільшивши покриття та зменшивши кількість регресій.",
+        "Брав участь у R&D процесах для оцінки нових технологій та підходів, що впливають на продукт."
+      ]
     },
     {
       "company": "MetaChain",
       "position": "Frontend Teamlead",
       "date": ["2024-04", "2024-12"],
-      "skills": ["NextJS/React", "Web3", "PWA", "Typescript", "NodeJS", "AI"],
-      "description": "Керував командою, що розробляла blockchain-рішення для криптовалютних операцій. Відповідав за створення та підтримку crypto platforms та інтеграцій."
+      "skills": ["NextJS/React", "Web3", "Ethers", "AI", "NodeJS"],
+
+      "description": "Розробив з нуля та довів до production повнофункціональний web3-застосунок у межах проєкту з фіксованими термінами. Виконував роль технічного ліда фронтенд-напряму, координував роботу команди з 3 frontend-розробників та 1 backend-розробника. Відповідав за архітектуру клієнтської частини, інтеграцію з блокчейн-інфраструктурою та дотримання термінів постачання.",
+      "keyAchievements": [
+        "Спроєктував і реалізував архітектуру застосунку з нуля.",
+        "Керував frontend-командою (3 FE + 1 BE), розподіляв задачі, проводив code review та технічні синки.",
+        "Реалізував інтеграцію з web3-стеком, включно зі смарт-контрактами та взаємодією з блокчейном."
+      ]
     },
     {
       "company": "AURA",
@@ -238,60 +201,85 @@
       "date": ["2021-10", "2024-04"],
       "skills": [
         "React/Redux",
-        "JavaScript",
         "Browser Extensions",
         "PWA",
-        "Typescript",
+        "JS/TS",
         "React-Native"
       ],
-      "description": "Розробка складних security-focused рішень, desktop applications та browser extensions. Повна відповідальність за розвиток і довгострокову підтримку продуктів."
+      "description": "Працював над створенням продукту у сфері захисту персональних даних. Розробляв UI для web-, mobile- та desktop-додатків з урахуванням zero-knowledge підходу, обмежень доступу до даних та підвищених вимог до безпеки на клієнтській стороні.",
+      "keyAchievements": [
+        "Брав участь у розробці продукту, орієнтованого на безпеку та захист персональних даних користувачів.",
+        "Брав участь у створенні браузерних розширень для інтеграції з основним продуктом.",
+        "Окремо брав участь у розробці desktop-додатку на базі Electron, включаючи адаптацію веб-логіки під desktop-середовище.",
+        "Брав участь у розробці мобільного додатку з використанням React Native."
+      ]
     },
     {
       "company": "EPAM Systems",
       "position": "Senior Software Engineer",
       "date": ["2020-02", "2021-10"],
-      "skills": [
-        "React/Redux",
-        "JavaScript",
-        "Django",
-        "Typescript",
-        "NodeJS",
-        "Electron"
-      ],
-      "description": "Розробка high-load web applications з нуля в аутсорсингових проєктах. Підтримка існуючих систем та співпраця з кросфункціональними командами."
+      "skills": ["React/Redux", "JS/TS", "Symfony", "Django", "NodeJS"],
+      "description": "Працював в аутсорсинговій компанії над кількома клієнтськими проєктами у різних доменних областях, включаючи банкінг, e-commerce та internal tools. Адаптувався до різних технічних стеків та процесів розробки.",
+      "keyAchievements": [
+        "Брав участь у розробці та підтримці кількох незалежних продуктів з різними вимогами та технічними стеками.",
+        "Працював з існуючим кодом, проводив рефакторинг та оптимізацію для підвищення стабільності й продуктивності.",
+        "Ефективно взаємодіяв з командами розробників з різних країн."
+      ]
     },
     {
       "company": "ZEO Alliance",
       "position": "Frontend Developer",
       "date": ["2016-08", "2020-02"],
-      "skills": ["React/Redux", "JavaScript", "Electron", "React-Native"],
-      "description": "Створення user-friendly marketing interfaces, а також участь у R&D ініціативах: прототипування, дослідження нових технологій і впровадження інноваційних рішень."
+      "skills": ["React", "JavaScript", "Sentry", "TypeScript", "React-Native"],
+      "description": "Розробляв та підтримував UI для платформи моніторингу та управління хмарними серверами та віртуальними машинами. Працював над проектом на React/NextJS. Проектував та впроваджував мікрофронтенд-архітектуру.",
+      "keyAchievements": [
+        "Впровадив мікрофронтенди з Module Federation, включно з окремим проектом для інтеграції та розвитку архітектури.",
+        "Провів рефакторинг та стандартизацію кодової бази, покращив читабельність та підтримку коду.",
+        "Розробив та впровадив unit та integration тести з нуля, збільшивши покриття та зменшивши кількість регресій.",
+        "Брав участь у R&D процесах для оцінки нових технологій та підходів, що впливають на продукт."
+      ]
     },
     {
       "company": "ARIO Industrial Inc",
       "position": "Frontend Developer",
       "date": ["2013-04", "2016-07"],
       "skills": ["JavaScript", "Symfony", "Laravel"],
-      "description": "Робота над масштабними комерційними проєктами та e-commerce websites, включно з adaptive mobile applications."
+      "description": "Робота над масштабними комерційними проєктами та e-commerce вебсайтами, включно з адаптивними мобільними додатками.",
+      "keyAchievements": [
+        "Розробляв та підтримував high-traffic вебсайти і e-commerce платформи з адаптивними інтерфейсами.",
+        "Створював та оптимізовував мобільні адаптивні додатки для покращення UX і швидкодії.",
+        "Співпрацював з продуктовими та дизайнерськими командами для впровадження нових функцій і покращення конверсії."
+      ]
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Markup Developer",
       "date": ["2011-11", "2013-04"],
       "skills": ["JavaScript", "HTML", "CSS", "SQL"],
-      "description": "Перетворення design mockups у чистий HTML/CSS/JS код. Створення web layouts, promo materials та логотипів."
+
+      "description": "Конвертував дизайн-макети у чистий HTML/CSS/JS код. Створював веб-розмітку, промо-матеріали та логотипи.",
+      "keyAchievements": [
+        "Перетворював дизайн-макети у pixel-perfect веб-сторінки з адаптивним дизайном.",
+        "Розробляв веб-розмітку та інтерактивні елементи для промо-кампаній.",
+        "Створював логотипи та графічні матеріали для бренду і маркетингових матеріалів."
+      ]
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Data Analyst",
       "date": ["2011-04", "2011-10"],
-      "skills": ["JavaScript", "MSSQL", "SQL"],
-      "description": "Розробка data extraction agents, трансформація та очищення даних, завантаження результатів у SQL databases з використанням ETL frameworks."
+      "skills": ["JavaScript", "MSSQL", "SQL", "RegExp"],
+      "description": "Створював агенти для збору даних, виконував трансформацію та очистку даних, а також завантажував результати у SQL бази даних за допомогою ETL-фреймворків.",
+      "keyAchievements": [
+        "Розробляв ETL-процеси для автоматичного збору та обробки даних з різних джерел.",
+        "Виконував очищення та трансформацію даних для підвищення якості та консистентності.",
+        "Імпортував оброблені дані у SQL бази даних, оптимізуючи швидкість та продуктивність ETL-процесів."
+      ]
     }
   ],
   "education": [
     {
-      "institution": "Petro Mohyla Black Sea State University",
+      "institution": "Чорноморський національний  імені Петра Могили",
       "date": ["2007", "2013"],
       "field": "Кафедра інженерії програмного забезпечення",
       "degree": "Бакалавр комп'ютерних наук"
@@ -307,6 +295,11 @@
       "title": "Frontend Mentor",
       "organization": "PHP-Academy",
       "description": "Ментор студентів на frontend-курсах."
+    },
+    {
+      "title": "Hackathon Contributor",
+      "organization": "Killhouse (3ОШБр)",
+      "description": "Закынчив курси з управлыння та збыркы дроныв. Брав участь у хакатоні з розробки ПЗ для дронів."
     }
   ],
   "languages": [

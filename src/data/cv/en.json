@@ -11,11 +11,11 @@
     "skills": [
       "JavaScript",
       "TypeScript",
-      "Node.js",
+      "NodeJS",
       "React",
-      "Next.js",
-      "Vue.js",
       "React Native",
+      "NextJS",
+      "VueJS",
       "Python",
       "HTML",
       "CSS",
@@ -23,70 +23,21 @@
       "Monorepo",
       "REST API",
       "SQL",
-      "NoSQL",
       "Git",
       "CI/CD",
       "Testing",
       "TDD",
       "AI",
       "OpenAI",
-      "Agile",
-      "Scrum"
-    ],
-    "skillsByCategory": [
-      {
-        "category": "Frontend",
-        "skills": [
-          "React",
-          "Next.js",
-          "Vue.js",
-          "HTML",
-          "CSS",
-          "TypeScript",
-          "JavaScript",
-          "Redux",
-          "MobX"
-        ]
-      },
-      {
-        "category": "Backend",
-        "skills": [
-          "Node.js",
-          "Python",
-          "Django",
-          "REST API",
-          "Laravel",
-          "Symfony"
-        ]
-      },
-      {
-        "category": "Mobile & Desktop",
-        "skills": ["React Native", "Electron", "PWA"]
-      },
-      {
-        "category": "Databases",
-        "skills": ["SQL", "NoSQL", "PostgreSQL", "MySQL", "MongoDB", "MSSQL"]
-      },
-      {
-        "category": "DevOps & Tools",
-        "skills": ["Git", "CI/CD", "Monorepo", "Testing", "TDD"]
-      },
-      {
-        "category": "AI & Web3",
-        "skills": ["AI", "OpenAI", "Web3"]
-      },
-      {
-        "category": "Methodologies",
-        "skills": ["Agile", "Scrum", "OOP", "Functional Programming"]
-      }
+      "Agile"
     ],
     "allSkills": [
       "JavaScript",
       "TypeScript",
-      "Node.js",
+      "NodeJS",
       "React",
-      "Next.js",
-      "Vue.js",
+      "NextJS",
+      "VueJS",
       "React Native",
       "Python",
       "HTML",
@@ -168,74 +119,109 @@
       "skills": [
         "NextJS/React",
         "Monorepo",
-        "Microfrontend",
         "Typescript",
-        "AI"
+        "AI",
+        "Module Federation"
       ],
-      "description": "Developed applications focused on virtual machines. Designed and implemented solutions using microfrontend architecture with Module Federation technologies."
+      "description": "Developed and maintained the UI for a platform for monitoring and managing cloud servers and virtual machines. Worked on the project using NextJS/React. Designed and implemented a microfrontend architecture.",
+      "keyAchievements": [
+        "Implemented microfrontends with Module Federation, including a dedicated project for integration and architecture development.",
+        "Performed codebase refactoring and standardization, improving readability and maintainability.",
+        "Developed and implemented unit and integration tests from scratch, increasing coverage and reducing regressions.",
+        "Participated in R&D processes to evaluate new technologies and approaches impacting the product."
+      ]
     },
     {
       "company": "MetaChain",
       "position": "Frontend Teamlead",
       "date": ["2024-04", "2024-12"],
-      "skills": ["NextJS/React", "Web3", "PWA", "Typescript", "NodeJS", "AI"],
-      "description": "Led a team building blockchain-related applications for cryptocurrency operations. Managed creation and maintenance of crypto platforms and integrations."
+      "skills": ["NextJS/React", "VueJS", "Web3", "Ethers", "AI", "NodeJS"],
+      "description": "Developed a full-featured web3 application from scratch and delivered it to production within a fixed-time project. Acted as a frontend technical lead, coordinating a team of 3 frontend developers and 1 backend developer. Was responsible for the client-side architecture, blockchain infrastructure integration, and meeting delivery deadlines.",
+      "keyAchievements": [
+        "Designed and implemented the application architecture from the ground up.",
+        "Led the frontend team (3 FE + 1 BE), distributed tasks, conducted code reviews, and facilitated technical syncs.",
+        "Implemented integration with the web3 stack, including smart contracts and blockchain interactions."
+      ]
     },
     {
       "company": "AURA",
       "position": "Senior Software Engineer",
       "date": ["2021-10", "2024-04"],
       "skills": [
-        "React/Redux",
-        "JavaScript",
-        "Browser Extensions",
         "PWA",
-        "Typescript",
-        "React-Native"
+        "Electron",
+        "Browser Extensions",
+        "React/Redux",
+        "React Native"
       ],
-      "description": "Built complex security-focused solutions, desktop applications, and browser extensions. Owned application development and long-term maintenance."
+
+      "description": "Worked on the development of a product focused on personal data protection. Developed UI for web, mobile, and desktop applications with a zero-knowledge approach, data access restrictions, and increased client-side security requirements.",
+      "keyAchievements": [
+        "Contributed to the development of a product focused on user data security and privacy protection.",
+        "Participated in the development of browser extensions to integrate with the core product.",
+        "Independently contributed to the development of a desktop application based on Electron, including adapting web logic for the desktop environment.",
+        "Participated in the development of a mobile application using React Native."
+      ]
     },
     {
       "company": "EPAM Systems",
       "position": "Senior Software Engineer",
       "date": ["2020-02", "2021-10"],
-      "skills": [
-        "React/Redux",
-        "JavaScript",
-        "Django",
-        "Typescript",
-        "NodeJS",
-        "Electron"
-      ],
-      "description": "Developed high-load web applications from scratch as an outsourcing developer. Supported ongoing projects and collaborated with cross-functional teams."
+      "skills": ["React/Redux", "JS/TS", "Symfony", "Django", "NodeJS"],
+      "description": "Worked in an outsourcing company on multiple client projects across different domains, including banking, e-commerce, and internal tools. Adapted to various technology stacks and development processes.",
+      "keyAchievements": [
+        "Contributed to the development and maintenance of multiple independent products with different requirements and technology stacks.",
+        "Worked with existing codebases, performing refactoring and optimizations to improve stability and performance.",
+        "Effectively collaborated with developer teams across different countries."
+      ]
     },
     {
       "company": "ZEO Alliance",
       "position": "Frontend Developer",
       "date": ["2016-08", "2020-02"],
-      "skills": ["React/Redux", "JavaScript", "Electron", "React-Native"],
-      "description": "Created user-friendly marketing interfaces and later worked on R&D initiatives: prototyping, researching new technologies, and delivering innovative solutions."
+      "skills": ["React", "JavaScript", "Sentry", "TypeScript", "React-Native"],
+      "description": "Worked in marketing and R&D teams on high-load web interfaces for the product. Collaborated with product teams, contributed to building metrics, running A/B tests, and analyzing user data to improve key performance indicators (KPIs).",
+      "keyAchievements": [
+        "Developed and maintained web interfaces using React, TypeScript, and modern frontend tooling.",
+        "Implemented a metrics and analytics system to track user activity and evaluate the effectiveness of new features.",
+        "Collaborated with R&D and product teams to integrate new features and test hypotheses."
+      ]
     },
     {
       "company": "ARIO Industrial Inc",
       "position": "Frontend Developer",
       "date": ["2013-04", "2016-07"],
       "skills": ["JavaScript", "Symfony", "Laravel"],
-      "description": "Focused on large-scale commercial projects and e-commerce websites, including adaptive mobile applications."
+      "description": "Worked on large-scale commercial projects and e-commerce websites, including adaptive mobile applications.",
+      "keyAchievements": [
+        "Developed and maintained high-traffic websites and e-commerce platforms with responsive interfaces.",
+        "Built and optimized adaptive mobile applications to enhance UX and performance.",
+        "Collaborated with product and design teams to implement new features and improve conversion rates."
+      ]
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Markup developer",
       "date": ["2011-11", "2013-04"],
       "skills": ["JavaScript", "HTML", "CSS", "SQL"],
-      "description": "Converted design mockups into clean HTML/CSS/JS code. Produced web layouts, promo materials, and logos."
+      "description": "Converted design mockups into clean HTML/CSS/JS code. Produced web layouts, promotional materials, and logos.",
+      "keyAchievements": [
+        "Translated design mockups into pixel-perfect, responsive web pages using HTML, CSS, and JS.",
+        "Developed web layouts and interactive elements for marketing campaigns.",
+        "Created logos and visual assets for branding and promotional materials."
+      ]
     },
     {
       "company": "GeeksForLess Inc",
       "position": "Data-analyst",
       "date": ["2011-04", "2011-10"],
-      "skills": ["JavaScript", "MSSQL", "SQL"],
-      "description": "Built data extraction agents, performed transformation/cleaning, and loaded results into SQL databases using ETL frameworks."
+      "skills": ["JavaScript", "MSSQL", "SQL", "RegExp"],
+      "description": "Built data extraction agents, performed data transformation and cleaning, and loaded results into SQL databases using ETL frameworks.",
+      "keyAchievements": [
+        "Developed ETL pipelines for automated extraction and processing of data from multiple sources.",
+        "Performed data cleaning and transformation to improve quality and consistency.",
+        "Loaded processed data into SQL databases, optimizing ETL performance and reliability."
+      ]
     }
   ],
   "education": [
@@ -256,6 +242,11 @@
       "title": "Frontend Mentor",
       "organization": "PHP-Academy",
       "description": "Mentored students in frontend courses."
+    },
+    {
+      "title": "Hackathon Contributor",
+      "organization": "Killhouse (3rd OShBr)",
+      "description": "Completed courses on drone management and assembly. Participated in a hackathon focused on developing software for drones."
     }
   ],
   "languages": [

@@ -30,5 +30,7 @@
     "month": "mo",
     "months": "mos"
   },
-  "lessThanAMonth": "Less than a month"
+  "lessThanAMonth": "Less than a month",
+  "keyAchievements": "Key Achievements",
+  "moreDetails": "More details"
 }
