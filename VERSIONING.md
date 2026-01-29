@@ -1,36 +1,36 @@
-# Автоматическое версионирование и логирование изменений
+# Automatic Versioning and Changelog
 
-Этот проект использует автоматическое версионирование с помощью `standard-version` и `husky`.
+This project uses automatic versioning with `standard-version` and `husky`.
 
-## Как это работает
+## How It Works
 
-### Автоматическое версионирование при мердже
+### Automatic Versioning on Merge
 
-При мердже в ветку `master` или `main` автоматически:
-1. Увеличивается версия в `package.json` (согласно Semantic Versioning)
-2. Генерируется/обновляется `CHANGELOG.md` с описанием изменений
-3. Создается git tag с новой версией
-4. Создается коммит с изменениями
+When merging into `master` or `main` branch, the following happens automatically:
+1. Version in `package.json` is incremented (according to Semantic Versioning)
+2. `CHANGELOG.md` is generated/updated with change descriptions
+3. A git tag with the new version is created
+4. A commit with the changes is created
 
 ### Conventional Commits
 
-Для правильной работы системы используйте формат Conventional Commits:
+For the system to work properly, use the Conventional Commits format:
 
 ```
 <type>(<scope>): <subject>
 ```
 
-**Типы коммитов:**
-- `feat`: новая функциональность (увеличивает MINOR версию)
-- `fix`: исправление бага (увеличивает PATCH версию)
-- `docs`: изменения в документации
-- `style`: форматирование кода (без изменения логики)
-- `refactor`: рефакторинг кода
-- `perf`: улучшение производительности
-- `test`: добавление/изменение тестов
-- `chore`: вспомогательные задачи (обновление зависимостей и т.д.)
+**Commit Types:**
+- `feat`: new functionality (increments MINOR version)
+- `fix`: bug fix (increments PATCH version)
+- `docs`: documentation changes
+- `style`: code formatting (no logic changes)
+- `refactor`: code refactoring
+- `perf`: performance improvements
+- `test`: adding/modifying tests
+- `chore`: auxiliary tasks (dependency updates, etc.)
 
-**Примеры:**
+**Examples:**
 ```bash
 git commit -m "feat: add dark mode toggle"
 git commit -m "fix: resolve navigation bug on mobile"
@@ -40,7 +40,7 @@ git commit -m "refactor(auth): simplify authentication logic"
 
 ### Breaking Changes
 
-Для MAJOR версии добавьте `BREAKING CHANGE:` в тело коммита:
+For MAJOR version, add `BREAKING CHANGE:` to the commit body:
 
 ```bash
 git commit -m "feat: redesign API structure
@@ -48,85 +48,85 @@ git commit -m "feat: redesign API structure
 BREAKING CHANGE: API endpoints have been restructured"
 ```
 
-## Доступные команды
+## Available Commands
 
-### Автоматическое определение версии
+### Automatic Version Detection
 ```bash
 yarn release
 ```
-Автоматически определяет тип версии на основе коммитов.
+Automatically determines the version type based on commits.
 
-### Ручное указание версии
+### Manual Version Specification
 
 ```bash
-# Patch версия (0.1.0 -> 0.1.1)
+# Patch version (0.1.0 -> 0.1.1)
 yarn release:patch
 
-# Minor версия (0.1.0 -> 0.2.0)
+# Minor version (0.1.0 -> 0.2.0)
 yarn release:minor
 
-# Major версия (0.1.0 -> 1.0.0)
+# Major version (0.1.0 -> 1.0.0)
 yarn release:major
 ```
 
-### Первый релиз
+### First Release
 ```bash
 yarn release:first
 ```
-Создает первый релиз без изменения версии (только CHANGELOG и tag).
+Creates the first release without changing the version (only CHANGELOG and tag).
 
-### Dry-run (тест без изменений)
+### Dry-run (test without changes)
 ```bash
 yarn release --dry-run
 ```
 
 ## Semantic Versioning
 
-Формат: `MAJOR.MINOR.PATCH`
+Format: `MAJOR.MINOR.PATCH`
 
-- **MAJOR** (1.0.0): Breaking changes - несовместимые изменения API
-- **MINOR** (0.1.0): Новая функциональность (обратно совместимая)
-- **PATCH** (0.0.1): Исправления багов
+- **MAJOR** (1.0.0): Breaking changes - incompatible API changes
+- **MINOR** (0.1.0): New functionality (backward compatible)
+- **PATCH** (0.0.1): Bug fixes
 
 ## Workflow
 
-1. Создайте feature ветку:
+1. Create a feature branch:
    ```bash
    git checkout -b feature/my-feature
    ```
 
-2. Делайте коммиты в формате Conventional Commits:
+2. Make commits in Conventional Commits format:
    ```bash
    git commit -m "feat: add new feature"
    git commit -m "fix: resolve bug"
    ```
 
-3. Сделайте мердж в master:
+3. Merge into master:
    ```bash
    git checkout master
    git merge feature/my-feature
    ```
 
-4. **Автоматически** сработает hook `post-merge`, который:
-   - Обновит версию в `package.json`
-   - Сгенерирует/обновит `CHANGELOG.md`
-   - Создаст git tag
-   - Создаст коммит с изменениями
+4. The `post-merge` hook will **automatically**:
+   - Update the version in `package.json`
+   - Generate/update `CHANGELOG.md`
+   - Create a git tag
+   - Create a commit with the changes
 
-5. Запушьте изменения с тегами:
+5. Push changes with tags:
    ```bash
    git push --follow-tags origin master
    ```
 
-## Файлы конфигурации
+## Configuration Files
 
-- `.versionrc.json` - конфигурация standard-version
-- `.husky/post-merge` - git hook для автоматического версионирования
-- `CHANGELOG.md` - автоматически генерируемый файл с историей изменений
+- `.versionrc.json` - standard-version configuration
+- `.husky/post-merge` - git hook for automatic versioning
+- `CHANGELOG.md` - automatically generated changelog file
 
-## Примечания
+## Notes
 
-- Hook срабатывает только при мердже в `master` или `main`
-- Все коммиты должны следовать формату Conventional Commits
-- CHANGELOG автоматически группирует изменения по типам
-- Версия в package.json обновляется согласно Semantic Versioning
+- The hook only triggers on merge into `master` or `main`
+- All commits must follow the Conventional Commits format
+- CHANGELOG automatically groups changes by type
+- Version in package.json is updated according to Semantic Versioning

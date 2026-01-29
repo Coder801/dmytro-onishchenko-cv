@@ -1,18 +1,18 @@
-# Система тем
+# Theme System
 
-## Как это работает
+## How It Works
 
-Система тем использует CSS Custom Properties (CSS переменные) для динамического переключения цветов.
+The theme system uses CSS Custom Properties (CSS variables) for dynamic color switching.
 
-### Структура
+### Structure
 
-1. **Базовая палитра** (`:root`) - содержит все цветовые константы в RGB формате
-2. **Семантические переменные** - переменные с понятными именами, которые используются в компонентах
-3. **Темы** - селекторы `[data-theme="название"]`, которые переопределяют семантические переменные
+1. **Base Palette** (`:root`) - contains all color constants in RGB format
+2. **Semantic Variables** - variables with meaningful names used in components
+3. **Themes** - selectors `[data-theme="name"]` that override semantic variables
 
-## Использование
+## Usage
 
-### В компонентах React
+### In React Components
 
 ```tsx
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
@@ -21,15 +21,15 @@ function App() {
   return (
     <div>
       <ThemeSwitcher />
-      {/* остальной контент */}
+      {/* rest of content */}
     </div>
   );
 }
 ```
 
-### В SCSS/CSS
+### In SCSS/CSS
 
-Всегда используйте семантические переменные:
+Always use semantic variables:
 
 ```scss
 .myComponent {
@@ -39,33 +39,33 @@ function App() {
 }
 ```
 
-**Не используйте** напрямую базовые переменные:
+**Do not use** base variables directly:
 ```scss
-// ❌ Плохо - цвет не изменится при смене темы
+// ❌ Bad - color won't change when theme switches
 .myComponent {
   background: rgb(var(--white));
 }
 
-// ✅ Хорошо - цвет изменится автоматически
+// ✅ Good - color will change automatically
 .myComponent {
   background: var(--color-bg-surface);
 }
 ```
 
-## Доступные темы
+## Available Themes
 
-1. **Default** - оригинальная тема (синие тона)
-2. **Dark** - темная тема (черный фон)
-3. **Light** - светлая тема (белый фон)
-4. **Blue** - синяя тема
+1. **Default** - original theme (blue tones)
+2. **Dark** - dark theme (black background)
+3. **Light** - light theme (white background)
+4. **Blue** - blue theme
 
-## Добавление новой темы
+## Adding a New Theme
 
-1. Откройте `src/styles/variables.scss`
-2. Добавьте новый блок:
+1. Open `src/styles/variables.scss`
+2. Add a new block:
 
 ```scss
-/* 🎨 Моя новая тема */
+/* 🎨 My New Theme */
 [data-theme="my-theme"] {
   --color-bg-primary: rgb(var(--navy));
   --color-bg-secondary: rgb(var(--steel));
@@ -81,12 +81,12 @@ function App() {
 }
 ```
 
-3. Добавьте кнопку в `ThemeSwitcher.tsx`:
+3. Add a button in `ThemeSwitcher.tsx`:
 
 ```tsx
 type Theme = 'default' | 'dark' | 'light' | 'blue' | 'my-theme';
 
-// В JSX:
+// In JSX:
 <button
   className={`${styles.themeButton} ${theme === 'my-theme' ? styles.active : ''}`}
   onClick={() => handleThemeChange('my-theme')}
@@ -96,40 +96,40 @@ type Theme = 'default' | 'dark' | 'light' | 'blue' | 'my-theme';
 </button>
 ```
 
-## Семантические переменные
+## Semantic Variables
 
-### Фоны
-- `--color-bg-primary` - основной фон приложения
-- `--color-bg-secondary` - вторичный фон (секции, карточки)
-- `--color-bg-surface` - поверхность (модальные окна, попапы)
-- `--color-bg-aside` - боковая панель
+### Backgrounds
+- `--color-bg-primary` - main application background
+- `--color-bg-secondary` - secondary background (sections, cards)
+- `--color-bg-surface` - surface (modals, popups)
+- `--color-bg-aside` - sidebar
 
-### Текст
-- `--color-text-primary` - основной текст
-- `--color-text-secondary` - вторичный текст
-- `--color-text-mark` - выделенный текст (маркировка)
+### Text
+- `--color-text-primary` - primary text
+- `--color-text-secondary` - secondary text
+- `--color-text-mark` - highlighted text (marking)
 
-### Акценты
-- `--color-blue` - синий акцент
-- `--color-yellow` - желтый акцент
+### Accents
+- `--color-blue` - blue accent
+- `--color-yellow` - yellow accent
 
-### Chips и теги
-- `--background-chip-primary` - основной фон для chips
-- `--background-chip-secondary` - вторичный фон для chips (hover)
+### Chips and Tags
+- `--background-chip-primary` - primary background for chips
+- `--background-chip-secondary` - secondary background for chips (hover)
 
-## Программное переключение темы
+## Programmatic Theme Switching
 
 ```tsx
-// Применить тему
+// Apply theme
 document.documentElement.setAttribute('data-theme', 'dark');
 
-// Вернуться к default теме
+// Return to default theme
 document.documentElement.removeAttribute('data-theme');
 
-// Сохранить в localStorage
+// Save to localStorage
 localStorage.setItem('theme', 'dark');
 
-// Загрузить из localStorage
+// Load from localStorage
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   document.documentElement.setAttribute('data-theme', savedTheme);

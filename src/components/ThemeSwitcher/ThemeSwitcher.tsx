@@ -8,7 +8,6 @@ export const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<Theme>("default");
 
   useEffect(() => {
-    // Загружаем сохраненную тему из localStorage
     const savedTheme = localStorage.getItem("theme") as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
@@ -19,15 +18,12 @@ export const ThemeSwitcher = () => {
   const applyTheme = (newTheme: Theme) => {
     const body = document.body;
 
-    // Удаляем все темы
     body.removeAttribute("data-theme");
 
-    // Применяем новую тему (если не default)
     if (newTheme !== "default") {
       body.setAttribute("data-theme", newTheme);
     }
 
-    // Сохраняем в localStorage
     localStorage.setItem("theme", newTheme);
   };
 

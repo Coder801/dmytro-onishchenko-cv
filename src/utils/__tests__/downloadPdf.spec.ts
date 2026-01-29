@@ -79,7 +79,7 @@ describe("downloadPdf", () => {
           currentPage: "https://example.com/page",
           currentLanguage: "en",
           size: {
-            width: 1440,
+            width: 1232,
             height: 2000,
           },
         }),
