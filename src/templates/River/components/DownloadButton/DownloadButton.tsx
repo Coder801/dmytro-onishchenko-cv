@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/ui/Button";
+import { trackEvent } from "@/utils";
 import { downloadPdf } from "@/utils/downloadPdf";
 
 import styles from "./styles.module.scss";
@@ -23,6 +24,11 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
 
   const handleDownloadPdfFull = () => {
     setIsLoadingFull(true);
+    trackEvent({
+      action: "download_pdf",
+      category: "PDF",
+      label: "full",
+    });
     downloadPdf(() => {
       setIsLoadingFull(false);
     }, { showAllWorkHistory: true });
@@ -30,6 +36,11 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
 
   const handleDownloadPdfShort = () => {
     setIsLoadingShort(true);
+    trackEvent({
+      action: "download_pdf",
+      category: "PDF",
+      label: "short",
+    });
     onCollapseWorkHistory?.();
     downloadPdf(() => {
       setIsLoadingShort(false);

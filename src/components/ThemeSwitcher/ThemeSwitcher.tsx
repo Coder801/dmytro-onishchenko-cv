@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { trackEvent } from "@/utils";
+
 import styles from "./styles.module.scss";
 
 type Theme = "default" | "dark" | "light" | "blue";
@@ -30,6 +32,11 @@ export const ThemeSwitcher = () => {
   const handleThemeChange = (newTheme: Theme) => {
     setTheme(newTheme);
     applyTheme(newTheme);
+    trackEvent({
+      action: "theme_change",
+      category: "Theme",
+      label: newTheme,
+    });
   };
 
   return (

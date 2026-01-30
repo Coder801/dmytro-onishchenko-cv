@@ -10,6 +10,7 @@ import { Button } from "@/ui/Button";
 import { Chip } from "@/ui/Chip";
 import { Divider } from "@/ui/Divider";
 import { Typography } from "@/ui/Typography";
+import { trackEvent } from "@/utils";
 import { downloadPdf } from "@/utils/downloadPdf";
 
 import styles from "./styles.module.scss";
@@ -25,6 +26,11 @@ export const Sidebar: FC<SidebarProps> = ({ className, profile }) => {
 
   const handleDownloadPdf = () => {
     setIsLoading(true);
+    trackEvent({
+      action: "download_pdf",
+      category: "PDF",
+      label: "sidebar",
+    });
     downloadPdf(() => {
       setIsLoading(false);
     });

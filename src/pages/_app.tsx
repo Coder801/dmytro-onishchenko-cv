@@ -9,6 +9,7 @@ import { appWithTranslation } from "next-i18next";
 import { ComponentType } from "react";
 import { Provider } from "react-redux";
 
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Themes } from "@/config/types";
 import { AppProvider } from "@/context/AppContext";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <>
+      <GoogleAnalytics />
       <Provider store={store}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />

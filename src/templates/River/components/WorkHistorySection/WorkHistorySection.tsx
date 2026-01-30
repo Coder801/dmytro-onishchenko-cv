@@ -9,6 +9,7 @@ import type { WorkHistory } from "@/types/resume";
 import { Button } from "@/ui/Button";
 import { List } from "@/ui/List";
 import { Typography } from "@/ui/Typography";
+import { trackEvent } from "@/utils";
 
 import styles from "./styles.module.scss";
 
@@ -38,6 +39,11 @@ export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
 
   const handleShowMore = () => {
     setIsLoading(true);
+    trackEvent({
+      action: "show_more_work_history",
+      category: "Navigation",
+      label: hiddenItemsCount,
+    });
     setTimeout(() => {
       setIsLoading(false);
       setShowAll(true);

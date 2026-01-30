@@ -5,6 +5,7 @@ import { FC, useCallback } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import type { Languages } from "@/types/languages";
 import { CountryFlag } from "@/ui/CountryFlag";
+import { trackEvent } from "@/utils";
 
 import styles from "./styles.module.scss";
 import type { LanguageSwitcherProps } from "./types";
@@ -22,6 +23,11 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
         return;
       }
       onChange(code);
+      trackEvent({
+        action: "language_change",
+        category: "Language",
+        label: code,
+      });
     },
     [onChange, currentLanguage]
   );
