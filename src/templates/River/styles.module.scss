@@ -47,10 +47,11 @@ body {
   display: flex;
   margin: 0 auto;
   max-width: 1200px;
+  opacity: 0;
   transform: translateY(30px);
   transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
   width: 100%;
 
   &.visible {
@@ -96,22 +97,6 @@ body {
 
   @include respond-to(md) {
     padding: var(--space-xl);
-  }
-
-  & > div {
-    order: 1;
-  }
-
-  .contactsSection {
-    order: 3;
-
-    @include respond-to(md) {
-      order: 1;
-    }
-  }
-
-  .downloadButton {
-    order: 10;
   }
 }
 

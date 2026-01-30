@@ -78,8 +78,7 @@ describe("downloadPdf", () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          currentPage: "https://example.com/page",
-          currentLanguage: "en",
+          currentPage: "https://example.com/page?lang=en",
           size: {
             width: 832,
             height: 1532,
@@ -112,7 +111,7 @@ describe("downloadPdf", () => {
     expect(mockFetch).toHaveBeenCalledWith(
       `${PROTOCOL}${ENDPOINTS.PDF}`,
       expect.objectContaining({
-        body: expect.stringContaining('"currentLanguage":"fr"'),
+        body: expect.stringContaining("lang=fr"),
       })
     );
   });

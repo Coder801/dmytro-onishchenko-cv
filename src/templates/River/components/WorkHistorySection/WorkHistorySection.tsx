@@ -15,22 +15,20 @@ import styles from "./styles.module.scss";
 type WorkHistorySectionProps = {
   items: WorkHistory[];
   showAll?: boolean;
-  onShowAllChange?: (value: boolean) => void;
 };
 
 const INITIAL_ITEMS_COUNT = 3;
+const SHOW_DELAY_MS = 1000;
 
 export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
   items,
   showAll: showAllProp,
-  onShowAllChange,
 }) => {
   const { t } = useTranslation("common");
-  const [showAllLocal, setShowAllLocal] = useState(false);
+  const [showAllLocal, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const showAll = showAllProp ?? showAllLocal;
-  const setShowAll = onShowAllChange ?? setShowAllLocal;
+  const showAll = showAllProp || showAllLocal;
 
   const hiddenItemsCount = toString(items.length - INITIAL_ITEMS_COUNT);
 
@@ -39,7 +37,11 @@ export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
   const hasMoreItems = hiddenItems.length > 0;
 
   const handleShowMore = () => {
-    setShowAll(true);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setShowAll(true);
+    }, SHOW_DELAY_MS);
   };
 
   const renderTimelineItem = (item: WorkHistory) => {
@@ -72,7 +74,7 @@ export const WorkHistorySection: FC<WorkHistorySectionProps> = ({
       <div className={styles.timeline}>
         {initialItems.map(renderTimelineItem)}
       </div>
-      <div className={styles.timeline} id="work-history-hidden-items">
+      <div className={styles.timeline}>
         {hasMoreItems && (
           <div
             className={clsx(styles.hiddenItems, {

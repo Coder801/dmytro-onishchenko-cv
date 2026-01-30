@@ -20,6 +20,7 @@
       "Python",
       "HTML",
       "CSS",
+      "PostCSS/Sass",
       "PWA",
       "Monorepo",
       "REST API",
@@ -29,7 +30,8 @@
       "MongoDB",
       "Git",
       "CI/CD",
-      "Testing",
+      "Unit/Integration Testing",
+      "Web3",
       "TDD",
       "AI",
       "OpenAI",
@@ -112,7 +114,7 @@
   },
   "summary": {
     "title": "Summary",
-    "intro": "Software Engineer with over 10+ years of experience in developing and delivering scalable web and mobile applications. My primary strength lies in frontend development, with deep expertise in the modern JavaScript/TypeScript ecosystem. I also have solid full-stack experience, including working with APIs, third-party integrations, and participation across the entire development lifecycle. I value code that truly works — performant, maintainable, and easy to extend. I have experience working both in fast-paced startups and in large organizations where stability and reliability are key. I enjoy taking ownership of technical decisions and collaborating closely with designers, project managers, and fellow engineers to build high-quality products."
+    "intro": "Програміст із понад 10-річним досвідом розробки та впровадження масштабованих веб та мобільних застосунків. Моя основна сильна сторона — фронтенд і сучасна екосистема JavaScript/TypeScript. Також маю досвід full-stack розробки, роботи з API, інтеграцій зі сторонніми сервісами та участі в повному циклі розробки. Для мене важливий код, який дійсно працює: продуктивний, підтримуваний і легко масштабований. Маю досвід роботи як у стартапах, так і у великих продуктових та аутсорс компаніях. Мені подобається брати на себе відповідальність за технічні рішення та тісно співпрацювати з дизайнерами, менеджерами проєктів і іншими інженерами для створення якісних продуктів."
   },
   "workHistory": [
     {
@@ -187,6 +189,7 @@
       "keyAchievements": [
         "Developed and maintained web interfaces using React, TypeScript, and modern frontend tooling.",
         "Implemented a metrics and analytics system to track user activity and evaluate the effectiveness of new features.",
+        "Optimized the email campaign preparation process, reducing the time to launch mailings.",
         "Collaborated with R&D and product teams to integrate new features and test hypotheses."
       ]
     },
@@ -244,7 +247,7 @@
     {
       "title": "Frontend Mentor",
       "organization": "PHP-Academy",
-      "description": "Mentored students in frontend courses."
+      "description": "Mentored students in frontend courses. Graduated over 50 students."
     },
     {
       "title": "Hackathon Contributor",

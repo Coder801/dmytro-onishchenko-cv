@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ErrorState } from "@/components/ErrorState";
@@ -19,8 +19,11 @@ import { Preloader } from "@/ui/Preloader";
 
 import styles from "./styles.module.scss";
 
+const FADE_DURATION = 400;
+
 const Home = () => {
   const dispatch = useDispatch();
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const currentLanguage = useSelector((state: RootState) =>
     selectCurrentLanguage(state)
   );
@@ -28,13 +31,19 @@ const Home = () => {
     useGetProfileQuery(currentLanguage);
 
   useLanguageFromQuery();
-  const isVisible = useFadeIn(!isLoading && !!data);
+  const isVisible = useFadeIn(!isLoading && !!data && !isTransitioning);
 
   const onLanguageChange = useCallback(
     (language: Languages) => {
-      dispatch(setLanguage(language));
-      i18n.changeLanguage(language);
-      refetch();
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        dispatch(setLanguage(language));
+        i18n.changeLanguage(language);
+        refetch().finally(() => {
+          setIsTransitioning(false);
+        });
+      }, FADE_DURATION);
     },
     [dispatch, refetch]
   );

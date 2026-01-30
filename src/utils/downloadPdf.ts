@@ -19,9 +19,12 @@ export const downloadPdf = async (
   }
 
   const pageUrl = new URL(window.location.href);
+
   if (options.showAllWorkHistory) {
     pageUrl.searchParams.set("showAllWorkHistory", "true");
   }
+
+  pageUrl.searchParams.set("lang", currentLanguage);
 
   try {
     res = await fetch(pdfEndpoint, {
@@ -29,7 +32,6 @@ export const downloadPdf = async (
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         currentPage: pageUrl.toString(),
-        currentLanguage,
         size: {
           width: Math.max((pdfContent?.scrollWidth || 0) + 32),
           height: Math.max((pdfContent?.scrollHeight || 0) + 32),

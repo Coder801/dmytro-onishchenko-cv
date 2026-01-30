@@ -25,21 +25,16 @@ type RiverProps = {
   onLanguageChange: (code: Languages) => void;
 };
 
-const getInitialShowAllWorkHistory = () => {
-  if (typeof window === "undefined") return false;
-  const params = new URLSearchParams(window.location.search);
-  return params.get("showAllWorkHistory") === "true";
-};
-
 export const River: FC<RiverProps> = ({
   data,
   isVisible,
   currentLanguage,
   onLanguageChange,
 }) => {
-  const [showAllWorkHistory, setShowAllWorkHistory] = useState(
-    getInitialShowAllWorkHistory
-  );
+  const [showAllWorkHistory, setShowAllWorkHistory] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("showAllWorkHistory") === "true";
+  });
 
   const { profile, summary, workHistory, education, achievements, languages } =
     data.content;
@@ -64,11 +59,7 @@ export const River: FC<RiverProps> = ({
 
         <SkillsSection skills={profile.skills} />
 
-        <WorkHistorySection
-          items={workHistory}
-          showAll={showAllWorkHistory}
-          onShowAllChange={setShowAllWorkHistory}
-        />
+        <WorkHistorySection items={workHistory} showAll={showAllWorkHistory} />
 
         <EducationSection items={education} />
 
@@ -78,7 +69,6 @@ export const River: FC<RiverProps> = ({
 
         <DownloadButton
           className={styles.downloadButton}
-          onExpandWorkHistory={() => setShowAllWorkHistory(true)}
           onCollapseWorkHistory={() => setShowAllWorkHistory(false)}
         />
       </div>

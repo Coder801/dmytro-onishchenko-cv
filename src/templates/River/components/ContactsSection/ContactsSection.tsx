@@ -19,7 +19,7 @@ export const ContactsSection: FC<ContactsSectionProps> = ({
   const { t } = useTranslation("common");
 
   return (
-    <Section title={t("contacts")} className={clsx(styles.section, className)}>
+    <Section className={clsx(styles.section, className)}>
       <div className={styles.container}>
         <div className={styles.contact}>
           {[location, email, phone].map((item) => (

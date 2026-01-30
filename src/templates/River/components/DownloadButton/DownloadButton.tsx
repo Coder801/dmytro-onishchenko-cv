@@ -8,15 +8,11 @@ import { downloadPdf } from "@/utils/downloadPdf";
 import styles from "./styles.module.scss";
 
 type DownloadButtonProps = {
-  onExpandWorkHistory?: () => void;
   onCollapseWorkHistory?: () => void;
   className?: string;
 };
 
-const EXPAND_DELAY_MS = 2000;
-
 export const DownloadButton: FC<DownloadButtonProps> = ({
-  onExpandWorkHistory,
   onCollapseWorkHistory,
   className,
 }) => {
@@ -27,12 +23,9 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
 
   const handleDownloadPdfFull = () => {
     setIsLoadingFull(true);
-    onExpandWorkHistory?.();
-    setTimeout(() => {
-      downloadPdf(() => {
-        setIsLoadingFull(false);
-      }, { showAllWorkHistory: true });
-    }, EXPAND_DELAY_MS);
+    downloadPdf(() => {
+      setIsLoadingFull(false);
+    }, { showAllWorkHistory: true });
   };
 
   const handleDownloadPdfShort = () => {

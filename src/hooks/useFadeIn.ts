@@ -7,6 +7,8 @@ export const useFadeIn = (isReady: boolean, delay = 100) => {
     if (isReady) {
       const timer = setTimeout(() => setIsVisible(true), delay);
       return () => clearTimeout(timer);
+    } else {
+      setIsVisible(false);
     }
   }, [isReady, delay]);
 

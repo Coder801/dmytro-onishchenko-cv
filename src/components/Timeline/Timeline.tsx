@@ -44,7 +44,7 @@ export const Timeline: FC<TimelineProps> = ({
 
       {!!skills?.length && (
         <Typography className={styles.skills}>
-          <i>{t("skills")}:</i>
+          <span className={styles.skillsLabel}>{t("skills")}:</span>
           {skills.map((skill) => (
             <Chip key={skill} variant="filled">
               {skill}
