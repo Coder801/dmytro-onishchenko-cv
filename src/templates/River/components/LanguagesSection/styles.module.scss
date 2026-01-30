@@ -1,5 +1,7 @@
 .container {
-  display: flex;
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr 1fr;
   justify-content: space-around;
 
   @media print {

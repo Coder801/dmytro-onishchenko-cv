@@ -14,14 +14,6 @@
   margin-top: var(--space-md);
 }
 
-.list {
-  margin: 0 0 0 var(--space-md);
-
-  @media print {
-    margin: 0;
-  }
-}
-
 .hiddenItems {
   border-top: 1px solid var(--color-text-primary);
   display: none;

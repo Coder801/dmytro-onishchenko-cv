@@ -2,6 +2,8 @@ import clsx from "clsx";
 import { isEmpty } from "lodash";
 import { FC, ReactNode } from "react";
 
+import { Typography } from "@/ui/Typography";
+
 import styles from "./styles.module.scss";
 
 enum ListType {
@@ -26,7 +28,9 @@ export const List: FC<ListProps> = ({
     !isEmpty(items) && (
       <Tag className={clsx(styles.list, styles[type], className)}>
         {items.map((item, index) => (
-          <li key={typeof item === "string" ? item : index}>{item}</li>
+          <li key={typeof item === "string" ? item : index}>
+            <Typography>{item}</Typography>
+          </li>
         ))}
       </Tag>
     )

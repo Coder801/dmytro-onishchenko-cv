@@ -7,8 +7,8 @@
   "achievements": "Achievements",
   "languages": "Languages",
   "downloadPdf": "Download PDF",
-  "downloadPdfShort": "Download PDF (last 3 jobs)",
-  "downloadPdfFull": "Download PDF (full)",
+  "downloadLastThreeJobs": "Last 3 jobs",
+  "downloadFullCv": "Full",
   "present": "Present",
   "months": {
     "1": "Jan",

@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import { useTheme } from "@/context/ThemeContext";
 
 import styles from "./styles.module.scss";
 
 type ButtonProps = {
-  children: string;
+  children: string | ReactNode;
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";

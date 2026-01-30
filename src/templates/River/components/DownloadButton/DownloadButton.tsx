@@ -29,9 +29,12 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
       category: "PDF",
       label: "full",
     });
-    downloadPdf(() => {
-      setIsLoadingFull(false);
-    }, { showAllWorkHistory: true });
+    downloadPdf(
+      () => {
+        setIsLoadingFull(false);
+      },
+      { showAllWorkHistory: true },
+    );
   };
 
   const handleDownloadPdfShort = () => {
@@ -48,21 +51,23 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
   };
 
   return (
-    <div className={clsx(styles.button, className)}>
+    <div className={clsx(styles.buttons, className)}>
       <Button
         onClick={handleDownloadPdfShort}
         disabled={isDisabled}
         isLoading={isLoadingShort}
+        className={styles.button}
       >
-        {t("downloadPdfShort")}
+        {t("downloadPdf")} <span>({t("downloadLastThreeJobs")})</span>
       </Button>
 
       <Button
         onClick={handleDownloadPdfFull}
         disabled={isDisabled}
         isLoading={isLoadingFull}
+        className={styles.button}
       >
-        {t("downloadPdfFull")}
+        {t("downloadPdf")} <span>({t("downloadFullCv")})</span>
       </Button>
     </div>
   );

@@ -1,14 +1,20 @@
-.button {
+@use "../../../../styles/mixins" as *;
+
+.buttons {
   background-color: var(--color-bg-surface);
-  bottom: 0;
-  box-sizing: border-box;
   display: grid;
   gap: var(--space-md);
   grid-template-columns: 1fr 1fr;
-  left: 0;
-  width: 100%;
 
   @media print {
     display: none;
+  }
+
+  & .button > span {
+    display: block;
+
+    @include respond-to(md) {
+      display: inline;
+    }
   }
 }
