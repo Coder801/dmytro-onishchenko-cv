@@ -119,9 +119,9 @@
   },
   "workHistory": [
     {
-      "company": "Starwind Inc.",
+      "company": "DataCore Software",
       "position": "Senior Software Engineer",
-      "date": ["2024-04"],
+      "date": ["2026-01", "2026-09"],
       "skills": [
         "NextJS/React",
         "Monorepo",
@@ -129,12 +129,29 @@
         "AI",
         "Module Federation"
       ],
-      "description": "Developed and maintained the UI for a platform for monitoring and managing cloud servers and virtual machines. Worked on the project using NextJS/React. Designed and implemented a microfrontend architecture.",
+      "description": "Continued driving the UI development for a platform for monitoring and managing cloud servers and virtual machines after the team transitioned to DataCore Software. Focused on scaling the microfrontend architecture and introducing AI-assisted development practices into the workflow.",
+      "keyAchievements": [
+        "Performed codebase refactoring and standardization, improving readability and maintainability.",
+        "Made a major contribution to automating the development workflow with AI, designing agent architectures and skills that increased development and bug-fixing throughput by 70%.",
+        "Participated in R&D processes to evaluate new technologies and approaches impacting the product."
+      ]
+    },
+    {
+      "company": "Starwind Inc.",
+      "position": "Senior Software Engineer",
+      "date": ["2025-01", "2026-01"],
+      "skills": [
+        "NextJS/React",
+        "Monorepo",
+        "Typescript",
+        "AI",
+        "Module Federation"
+      ],
+      "description": "Developed and maintained the UI for a platform for monitoring and managing cloud servers and virtual machines. Worked on the project using NextJS/React, building out the product's microfrontend architecture from the ground up.",
       "keyAchievements": [
         "Implemented microfrontends with Module Federation, including a dedicated project for integration and architecture development.",
         "Performed codebase refactoring and standardization, improving readability and maintainability.",
-        "Developed and implemented unit and integration tests from scratch, increasing coverage and reducing regressions.",
-        "Participated in R&D processes to evaluate new technologies and approaches impacting the product."
+        "Made a significant contribution to test coverage, building a large share of unit and end-to-end tests from scratch and reducing regressions."
       ]
     },
     {
