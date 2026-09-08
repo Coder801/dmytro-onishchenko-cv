@@ -164,7 +164,7 @@
         "Designed and implemented the application architecture from the ground up.",
         "Led the frontend team (3 FE + 1 BE), distributed tasks, conducted code reviews, and facilitated technical syncs.",
         "Implemented integration with the web3 stack, including smart contracts and blockchain interactions.",
-        "Occasionally worked on backend services and API maintenance (Node.js, PostgreSQL) to support product needs."
+        "Worked on backend services and API maintenance (Node.js, PostgreSQL) to support product needs."
       ]
     },
     {
@@ -191,7 +191,13 @@
       "company": "EPAM Systems",
       "position": "Senior Software Engineer",
       "date": ["2020-02", "2021-10"],
-      "skills": ["React/Redux", "JavaScript/TypeScript", "Symfony", "Django", "NodeJS"],
+      "skills": [
+        "React/Redux",
+        "JavaScript/TypeScript",
+        "Symfony",
+        "Django",
+        "NodeJS"
+      ],
       "description": "Worked in an outsourcing company on multiple client projects across different domains, including banking, e-commerce, and internal tools. Adapted to various technology stacks and development processes.",
       "keyAchievements": [
         "Contributed to the development and maintenance of multiple independent products with different requirements and technology stacks.",
