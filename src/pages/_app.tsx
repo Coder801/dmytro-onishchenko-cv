@@ -6,7 +6,6 @@ import type { AppProps } from "next/app";
 import { Oswald, Roboto } from "next/font/google";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
-import { ComponentType } from "react";
 import { Provider } from "react-redux";
 
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
@@ -14,8 +13,6 @@ import { Themes } from "@/config/types";
 import { AppProvider } from "@/context/AppContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { store } from "@/store";
-
-import Home from "./home";
 
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
@@ -31,13 +28,7 @@ const oswald = Oswald({
   variable: "--font-gluten",
 });
 
-function MyApp({ Component, pageProps, router }: AppProps) {
-  const routesMap: Record<string, ComponentType> = {
-    "/": Home,
-  };
-
-  const PageComponent = routesMap[router.pathname] || Component;
-
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GoogleAnalytics />
@@ -69,7 +60,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </Head>
         <AppProvider>
           <ThemeProvider initialTheme={Themes.river}>
-            <PageComponent
+            <Component
               {...pageProps}
               className={`${roboto.variable} ${oswald.variable}`}
             />

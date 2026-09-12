@@ -5,7 +5,7 @@ const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/en");
+    router.replace("/resume");
   }, [router]);
 
   return null;

@@ -1,29 +1,45 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import path from "path";
-import fs from "fs";
+
+import { ResumeNotFoundError } from "@/server/resume/errors";
+import { getResume } from "@/server/resume/getResume";
+import { isValidSlug } from "@/server/resume/paths";
+import { SUPPORTED_LANGUAGES } from "@/types/languages";
 
 const DEFAULT_LANG = "en";
 
-const getSuportedLanguages = () => {
-  return fs
-    .readdirSync(path.join(process.cwd(), "src", "data", "cv"))
-    .filter((file) => file.endsWith(".json"));
-};
-
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { lang = DEFAULT_LANG }: { lang?: string } = req.query;
-  const isSupportedLanguage = getSuportedLanguages().includes(`${lang}.json`);
+  const {
+    lang = DEFAULT_LANG,
+    profile,
+    company,
+    role,
+  }: {
+    lang?: string;
+    profile?: string;
+    company?: string;
+    role?: string;
+  } = req.query;
 
-  const content = fs.readFileSync(
-    path.join(
-      process.cwd(),
-      "src",
-      "data",
-      "cv",
-      `${isSupportedLanguage ? lang : DEFAULT_LANG}.json`
-    ),
-    "utf8"
-  );
+  const resolvedLang = (SUPPORTED_LANGUAGES as string[]).includes(lang)
+    ? lang
+    : DEFAULT_LANG;
 
-  res.status(200).json({ lang: lang, content: JSON.parse(content) });
+  for (const value of [profile, company, role]) {
+    if (value !== undefined && !isValidSlug(value)) {
+      res.status(404).json({ message: "Not found" });
+      return;
+    }
+  }
+
+  try {
+    const content = getResume(resolvedLang, { profile, company, role });
+    res.status(200).json({ lang: resolvedLang, content });
+  } catch (error) {
+    if (error instanceof ResumeNotFoundError) {
+      res.status(404).json({ message: "Not found" });
+      return;
+    }
+
+    throw error;
+  }
 }
