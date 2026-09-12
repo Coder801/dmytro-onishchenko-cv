@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useTheme } from "@/context/ThemeContext";
 import { Chip } from "@/ui/Chip";
 import { Typography } from "@/ui/Typography";
 import { formatDate, getDatePeriod } from "@/utils";
@@ -18,7 +17,6 @@ export const Timeline: FC<TimelineProps> = ({
   children,
   className,
 }) => {
-  const { theme } = useTheme();
   const { t } = useTranslation("common");
   const [startDate, endDate = ""] = date as [string, string?];
 
@@ -28,7 +26,7 @@ export const Timeline: FC<TimelineProps> = ({
   const formattedPeriod = getDatePeriod(startDate, endDate, t);
 
   return (
-    <div className={clsx(styles.container, className, styles[theme])}>
+    <div className={clsx(styles.container, className)}>
       <Typography tag="h3" weight="lighter" className={styles.position}>
         <strong>{position}</strong> <span>::</span> {company}
       </Typography>

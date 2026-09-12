@@ -9,9 +9,7 @@ import { appWithTranslation } from "next-i18next";
 import { Provider } from "react-redux";
 
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import { Themes } from "@/config/types";
 import { AppProvider } from "@/context/AppContext";
-import { ThemeProvider } from "@/context/ThemeContext";
 import { store } from "@/store";
 
 const roboto = Roboto({
@@ -59,12 +57,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </Head>
         <AppProvider>
-          <ThemeProvider initialTheme={Themes.river}>
-            <Component
-              {...pageProps}
-              className={`${roboto.variable} ${oswald.variable}`}
-            />
-          </ThemeProvider>
+          <Component
+            {...pageProps}
+            className={`${roboto.variable} ${oswald.variable}`}
+          />
         </AppProvider>
       </Provider>
     </>

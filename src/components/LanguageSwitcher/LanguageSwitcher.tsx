@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { isEqual } from "lodash";
 import { FC, useCallback } from "react";
 
-import { useTheme } from "@/context/ThemeContext";
 import type { Languages } from "@/types/languages";
 import { CountryFlag } from "@/ui/CountryFlag";
 import { trackEvent } from "@/utils";
@@ -16,7 +15,6 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
   onChange,
   className,
 }) => {
-  const { theme } = useTheme();
   const handleClick = useCallback(
     (code: Languages) => {
       if (!onChange || code === currentLanguage) {
@@ -37,7 +35,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
   }
 
   return (
-    <div className={clsx(styles.container, className, styles[theme])}>
+    <div className={clsx(styles.container, className)}>
       {availableLanguages.sort().map((option: Languages) => {
         const isActive = isEqual(option, currentLanguage);
 

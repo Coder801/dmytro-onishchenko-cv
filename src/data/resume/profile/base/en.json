@@ -119,13 +119,16 @@
         "NextJS/React",
         "Monorepo",
         "TypeScript",
-        "AI",
+        "LLM Agents",
+        "RAG",
         "Module Federation"
       ],
-      "description": "Continued driving the UI development for a platform for monitoring and managing cloud servers and virtual machines after the team transitioned to DataCore Software. Focused on scaling the microfrontend architecture and introducing AI-assisted development practices into the workflow.",
+      "description": "Continued driving the UI development for a platform for monitoring and managing cloud servers and virtual machines after the team transitioned to DataCore Software. Focused on scaling the microfrontend architecture and introducing AI-assisted development practices — including LLM-based agent tooling and retrieval-augmented systems — into the engineering workflow.",
       "keyAchievements": [
+        "Designed and led the rollout of a Claude Code-based agent architecture (custom agents, skills, and hooks) that automated recurring engineering workflows - code review prep, bug triage, refactoring - increasing development and bug-fixing throughput by 70%.",
+        "Built a retrieval-augmented (RAG) knowledge layer over internal documentation and infrastructure runbooks, giving engineers and agents fast, accurate context for incident troubleshooting and onboarding.",
+        "Mentored 3-4 engineers on adopting AI-assisted development workflows (agent/skill design, prompt structuring, guardrails) and authored internal guidelines that became the team's playbook for AI tool adoption.",
         "Performed codebase refactoring and standardization, improving readability and maintainability.",
-        "Made a major contribution to automating the development workflow with AI, designing agent architectures and skills that increased development and bug-fixing throughput by 70%.",
         "Participated in R&D processes to evaluate new technologies and approaches impacting the product."
       ]
     },
@@ -137,14 +140,15 @@
         "NextJS/React",
         "Monorepo",
         "TypeScript",
-        "AI",
+        "LLM Agents",
         "Module Federation"
       ],
       "description": "Developed and maintained the UI for a platform for monitoring and managing cloud servers and virtual machines. Worked on the project using NextJS/React, building out the product's microfrontend architecture from the ground up.",
       "keyAchievements": [
         "Implemented microfrontends with Module Federation, including a dedicated project for integration and architecture development.",
         "Performed codebase refactoring and standardization, improving readability and maintainability.",
-        "Made a significant contribution to test coverage, building a large share of unit and end-to-end tests from scratch and raising coverage from 0% to roughly 70-80%, reducing regressions."
+        "Made a significant contribution to test coverage, building a large share of unit and end-to-end tests from scratch and raising coverage from 0% to roughly 70-80%, reducing regressions.",
+        "Piloted AI-assisted coding workflows using Claude Code agents and skills for repetitive frontend tasks - component scaffolding, PR-review support, test generation - laying the groundwork for the agent-driven development process later scaled at DataCore."
       ]
     },
     {

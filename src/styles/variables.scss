@@ -32,7 +32,7 @@ $header-sizes: (4rem, 2.2rem, 1.6rem, 1.4rem, 1.2rem, 1rem);
   --dark-surface: 30, 30, 30;
   --off-white: 245, 245, 245;
 
-  /* 🧩 Semantic Colors - Default Theme (Dark) */
+  /* 🧩 Semantic Colors */
   --color-bg-primary: rgb(var(--steel));
   --color-bg-secondary: rgb(var(--navy));
   --color-bg-surface: rgb(var(--white));
@@ -48,43 +48,4 @@ $header-sizes: (4rem, 2.2rem, 1.6rem, 1.4rem, 1.2rem, 1rem);
   /* ✍️ Fonts */
   --font-roboto: "Roboto", sans-serif;
   --font-oswald: "Oswald", sans-serif;
-}
-
-/* 🌙 Dark Theme */
-body[data-theme="dark"] {
-  --color-bg-primary: rgb(var(--dark-bg));
-  --color-bg-secondary: rgb(var(--dark-surface));
-  --color-bg-surface: rgb(var(--dark-surface));
-  --color-bg-aside: rgb(var(--navy));
-  --color-text-primary: rgb(var(--light-gray));
-  --color-text-secondary: rgb(var(--off-white));
-  --color-text-mark: rgb(var(--white));
-  --background-chip-primary: rgb(var(--light-gray), 0.15);
-  --background-chip-secondary: rgb(var(--light-gray), 0.3);
-}
-
-/* ☀️ Light Theme */
-body[data-theme="light"] {
-  --color-bg-primary: rgb(var(--off-white));
-  --color-bg-secondary: rgb(var(--white));
-  --color-bg-surface: rgb(var(--white));
-  --color-bg-aside: rgb(var(--light-gray));
-  --color-text-primary: rgb(var(--black));
-  --color-text-secondary: rgb(var(--gray));
-  --color-text-mark: rgb(var(--yellow));
-  --background-chip-primary: rgb(var(--gray), 0.1);
-  --background-chip-secondary: rgb(var(--gray), 0.2);
-}
-
-/* 🎨 Blue Theme */
-body[data-theme="blue"] {
-  --color-bg-primary: rgb(var(--navy));
-  --color-bg-secondary: rgb(var(--steel));
-  --color-bg-surface: rgb(var(--white));
-  --color-bg-aside: rgb(var(--blue-gray));
-  --color-text-primary: rgb(var(--light-gray));
-  --color-text-secondary: rgb(var(--gray));
-  --color-text-mark: rgb(var(--black));
-  --background-chip-primary: rgb(var(--blue), 0.1);
-  --background-chip-secondary: rgb(var(--blue), 0.2);
 }

@@ -2,8 +2,9 @@
 
 .button {
   background: none;
-  border-style: solid;
-  border-width: 3px;
+  border: 2px solid var(--color-text-mark);
+  border-radius: 0;
+  color: var(--color-text-mark);
   cursor: pointer;
   display: inline-block;
   padding: var(--space-sm) var(--space-sm);
@@ -22,14 +23,15 @@
   }
 
   &:disabled {
+    background: var(--background-chip-primary);
     cursor: not-allowed;
+    opacity: 0.5;
   }
 
   &.loading {
     &::after {
       animation: rotation 1s linear infinite;
-      border: 2px solid #fff;
-      border-bottom-color: transparent;
+      border: 2px solid rgb(var(--black));
       border-radius: 50%;
       box-sizing: border-box;
       content: "";
@@ -51,28 +53,6 @@
       100% {
         transform: rotate(360deg);
       }
-    }
-  }
-
-  // Theme specific styles
-  &.default {
-    border-radius: 4px;
-    font-size: 0.9em;
-    padding: 10px 40px;
-  }
-
-  &.river {
-    border: 2px solid var(--color-text-mark);
-    border-radius: 0;
-    color: var(--color-text-mark);
-
-    &:disabled {
-      background: var(--background-chip-primary);
-      opacity: 0.5;
-    }
-
-    &.loading::after {
-      border-color: rgb(var(--black));
     }
   }
 }

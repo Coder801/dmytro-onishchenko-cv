@@ -2,97 +2,80 @@
 
 .container {
   display: grid;
+  gap: var(--space-md);
+  grid-template-areas:
+    "position date"
+    "description description"
+    "skills skills";
+  grid-template-columns: 2fr 1fr;
 
   & .position {
     display: block;
     grid-area: position;
-  }
 
-  & .date {
-    display: flex;
-    gap: var(--space-xs);
-    grid-area: date;
-  }
+    & strong {
+      color: var(--color-text-mark);
+      display: block;
+      font-weight: inherit;
+    }
 
-  & .description {
-    grid-area: description;
-  }
+    span {
+      display: none;
+    }
 
-  & .skills {
-    grid-area: skills;
-  }
-
-  // River Theme
-  // =========================
-  &.river {
-    gap: var(--space-md);
-    grid-template-areas:
-      "position date"
-      "description description"
-      "skills skills";
-    grid-template-columns: 2fr 1fr;
-
-    & .position {
-      & strong {
-        color: var(--color-text-mark);
-        display: block;
-        font-weight: inherit;
+    @include respond-to(md) {
+      strong {
+        display: inline;
       }
 
       span {
-        display: none;
-      }
-
-      @include respond-to(md) {
-        strong {
-          display: inline;
-        }
-
-        span {
-          display: inline;
-        }
+        display: inline;
       }
     }
+  }
 
-    & .date {
-      align-items: flex-end;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding-top: var(--space-sm);
-      white-space: nowrap;
+  & .date {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    grid-area: date;
+    justify-content: flex-start;
+    padding-top: var(--space-sm);
+    white-space: nowrap;
 
-      @include respond-to(md) {
-        flex-direction: row;
-        justify-content: flex-end;
-      }
-
-      & .period {
-        color: var(--color-text-mark);
-
-        &::before {
-          content: " :: ";
-          display: none;
-
-          @include respond-to(md) {
-            display: inline;
-          }
-        }
-      }
+    @include respond-to(md) {
+      flex-direction: row;
+      justify-content: flex-end;
     }
 
-    & .description {
-      display: block;
-    }
-
-    & .skillsLabel {
+    & .period {
       color: var(--color-text-mark);
-    }
 
-    & .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
+      &::before {
+        content: " :: ";
+        display: none;
+
+        @include respond-to(md) {
+          display: inline;
+        }
+      }
     }
+  }
+
+  & .description {
+    display: block;
+    grid-area: description;
+  }
+
+  & .skillsLabel {
+    color: var(--color-text-mark);
+  }
+
+  & .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    grid-area: skills;
   }
 }

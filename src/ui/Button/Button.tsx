@@ -1,8 +1,6 @@
 import clsx from "clsx";
 import { FC, ReactNode } from "react";
 
-import { useTheme } from "@/context/ThemeContext";
-
 import styles from "./styles.module.scss";
 
 type ButtonProps = {
@@ -22,11 +20,9 @@ export const Button: FC<ButtonProps> = ({
   disabled = false,
   isLoading = true,
 }) => {
-  const { theme } = useTheme();
-
   return (
     <button
-      className={clsx(styles.button, styles[theme], className, {
+      className={clsx(styles.button, className, {
         [styles.loading]: isLoading,
       })}
       onClick={onClick}

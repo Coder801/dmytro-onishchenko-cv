@@ -2,55 +2,43 @@
 
 .container {
   display: flex;
+  flex-direction: column;
 
   .button {
     background: none;
+    background-color: #fff;
     border: none;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    filter: blur(0.5px);
+    left: -1px;
+    padding: var(--base);
+    position: relative;
+    transition: 0.3s ease;
 
     &:disabled {
       cursor: default;
+
+      & .flag {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      filter: blur(0);
+    }
+
+    .flag {
+      opacity: 0.5;
+      transition: 0.3s ease;
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      top: -2px;
     }
   }
 
-  // Theme specific styles
-  // ------------------------------
-
-  &.river {
-    flex-direction: column;
-
-    .button {
-      background-color: #fff;
-      filter: blur(0.5px);
-      left: -1px;
-      padding: var(--base);
-      position: relative;
-      transition: 0.3s ease;
-
-      &:disabled {
-        & .flag {
-          opacity: 1;
-        }
-      }
-
-      &:hover {
-        filter: blur(0);
-      }
-
-      .flag {
-        opacity: 0.5;
-        transition: 0.3s ease;
-        width: 100%;
-      }
-
-      &:not(:first-child) {
-        top: -2px;
-      }
-    }
-
-    @include respond-to(xl) {
-      display: grid;
-    }
+  @include respond-to(xl) {
+    display: grid;
   }
 }
