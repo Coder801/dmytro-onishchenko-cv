@@ -1,0 +1,37 @@
+{
+  "additionalSkills": {
+    "skills": ["C", "C++", "ESP32", "STM32"],
+    "items": [
+      {
+        "title": "Power Outage Monitoring Bot",
+        "description": "Built a bot that tracks power/light availability and sends notifications when it changes, using microcontroller-based sensors."
+      },
+      {
+        "title": "Ender 3 Plotter Conversion",
+        "description": "Designed and implemented motion-control algorithms to convert an old Ender 3 3D printer into a pen plotter."
+      },
+      {
+        "title": "Smart Home Server",
+        "description": "Built a server for managing and monitoring smart home devices."
+      },
+      {
+        "title": "Drone Camera Gimbal Servo Control",
+        "description": "Developed servo control logic for stabilizing and controlling a drone camera gimbal."
+      }
+    ]
+  },
+  "hobbies": [
+    {
+      "title": "Hardware Tinkering",
+      "description": "Soldering and repairing electronics and drones."
+    },
+    {
+      "title": "Mountain Biking",
+      "description": "MTB and enduro riding, competing in local-scale races."
+    },
+    {
+      "title": "3D Printing & Modeling",
+      "description": "3D printing with FDM and resin technologies, plus 3D modeling in Fusion 360."
+    }
+  ]
+}

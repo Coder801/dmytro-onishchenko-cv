@@ -3,8 +3,9 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { ResumeNotFoundError } from "@/server/resume/errors";
 import { getResume } from "@/server/resume/getResume";
 import { listApplications } from "@/server/resume/listApplications";
+import { listRoles } from "@/server/resume/listRoles";
 import { SUPPORTED_LANGUAGES } from "@/types/languages";
-import { SitemapItem, SitemapResponse } from "@/types/sitemap";
+import { SitemapItem, SitemapResponse, SitemapRoleItem } from "@/types/sitemap";
 
 const DEFAULT_LANG = "en";
 
@@ -34,5 +35,18 @@ export default function handler(
     []
   );
 
-  res.status(200).json({ lang: resolvedLang, items });
+  const roles = listRoles().reduce<SitemapRoleItem[]>((acc, role) => {
+    try {
+      const resume = getResume(resolvedLang, { role });
+      acc.push({ role, position: resume.profile.position });
+    } catch (error) {
+      if (!(error instanceof ResumeNotFoundError)) {
+        throw error;
+      }
+    }
+
+    return acc;
+  }, []);
+
+  res.status(200).json({ lang: resolvedLang, items, roles });
 }

@@ -7,9 +7,11 @@ import { Languages, SUPPORTED_LANGUAGES } from "@/types/languages";
 
 import {
   AchievementsSection,
+  AdditionalSkillsSection,
   ContactsSection,
   DownloadButton,
   EducationSection,
+  HobbiesSection,
   LanguagesSection,
   ProfileSection,
   SkillsSection,
@@ -36,8 +38,16 @@ export const River: FC<RiverProps> = ({
     return params.get("showAllWorkHistory") === "true";
   });
 
-  const { profile, summary, workHistory, education, achievements, languages } =
-    data.content;
+  const {
+    profile,
+    summary,
+    workHistory,
+    education,
+    achievements,
+    languages,
+    additionalSkills,
+    hobbies,
+  } = data.content;
 
   return (
     <div
@@ -64,6 +74,13 @@ export const River: FC<RiverProps> = ({
         <EducationSection items={education} />
 
         <AchievementsSection items={achievements} />
+
+        <AdditionalSkillsSection
+          skills={additionalSkills?.skills ?? []}
+          items={additionalSkills?.items ?? []}
+        />
+
+        <HobbiesSection items={hobbies ?? []} />
 
         <LanguagesSection items={languages} />
 

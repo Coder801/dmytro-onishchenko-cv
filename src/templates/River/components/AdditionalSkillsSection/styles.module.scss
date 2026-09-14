@@ -1,0 +1,21 @@
+.skills {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+
+  & .skill {
+    display: inline-flex;
+    margin-bottom: calc(-1 * var(--space-md));
+  }
+}
+
+.list {
+  margin: 0;
+}
+
+.itemTitle {
+  color: var(--color-text-mark);
+}

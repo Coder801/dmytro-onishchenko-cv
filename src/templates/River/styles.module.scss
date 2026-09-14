@@ -3,44 +3,6 @@
 $language-switcher-width: 30px;
 
 // ------------------------------
-// Global Styles
-// ------------------------------
-body {
-  background: linear-gradient(
-    -45deg,
-    var(--color-bg-primary),
-    var(--color-bg-secondary)
-  );
-  color: var(--color-text-secondary);
-  font-family: var(--font-roboto);
-  margin: 0;
-  padding: var(--space-md);
-  width: 100%;
-
-  @media print {
-    background: var(--color-bg-surface);
-  }
-
-  p,
-  li {
-    font-family: var(--font-roboto);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-oswald);
-  }
-
-  @media print {
-    padding: 0;
-  }
-}
-
-// ------------------------------
 // Layout Styles
 // ------------------------------
 .container {

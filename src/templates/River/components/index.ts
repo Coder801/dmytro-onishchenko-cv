@@ -1,7 +1,9 @@
 export { AchievementsSection } from "./AchievementsSection";
+export { AdditionalSkillsSection } from "./AdditionalSkillsSection";
 export { ContactsSection } from "./ContactsSection";
 export { DownloadButton } from "./DownloadButton";
 export { EducationSection } from "./EducationSection";
+export { HobbiesSection } from "./HobbiesSection";
 export { LanguagesSection } from "./LanguagesSection";
 export { ProfileSection } from "./ProfileSection";
 export { SkillsSection } from "./SkillsSection";

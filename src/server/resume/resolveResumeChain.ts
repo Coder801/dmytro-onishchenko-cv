@@ -35,6 +35,9 @@ const assertDirectoryExists = (dir: string) => {
  * Resolves the ordered list of layer directories to read and merge for a
  * given resume request: profile/base -> profile/<variant> -> roles/<role> ->
  * applications/<company>/<role>. Later layers are partial overrides.
+ *
+ * A `role` given without `company` resolves the chain up to (and including)
+ * that role, without an application layer on top.
  */
 export const resolveResumeChain = ({
   profile,
@@ -66,6 +69,25 @@ export const resolveResumeChain = ({
     const chain = [baseDir];
     if (profileKey !== BASE_PROFILE) chain.push(profileDir);
     chain.push(roleDir, applicationDir);
+
+    return chain;
+  }
+
+  if (role) {
+    assertValidSlug(role);
+
+    const roleDir = path.join(ROLES_DIR, role);
+    assertDirectoryExists(roleDir);
+
+    const { profile: profileKey } = readMeta<RoleMeta>(roleDir);
+    assertValidSlug(profileKey);
+
+    const profileDir = path.join(PROFILE_DIR, profileKey);
+    assertDirectoryExists(profileDir);
+
+    const chain = [baseDir];
+    if (profileKey !== BASE_PROFILE) chain.push(profileDir);
+    chain.push(roleDir);
 
     return chain;
   }

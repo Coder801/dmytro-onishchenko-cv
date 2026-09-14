@@ -46,6 +46,21 @@ export type SkillCategory = {
   skills: string[];
 };
 
+export type AdditionalSkillItem = {
+  title: string;
+  description?: string;
+};
+
+export type AdditionalSkills = {
+  skills: string[];
+  items: AdditionalSkillItem[];
+};
+
+export type HobbyItem = {
+  title: string;
+  description?: string;
+};
+
 export type ProfileInfo = {
   name: {
     first: string;
@@ -72,6 +87,8 @@ export type Resume = {
   education: Education[];
   achievements: Achievement[];
   languages: Language[];
+  additionalSkills?: AdditionalSkills;
+  hobbies?: HobbyItem[];
 };
 
 export type DeepPartial<T> = T extends object

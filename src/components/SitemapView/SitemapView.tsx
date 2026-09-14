@@ -8,7 +8,7 @@ import { Section } from "@/components/Section";
 import type { RootState } from "@/store";
 import { useGetSitemapQuery } from "@/store/api";
 import { selectCurrentLanguage } from "@/store/slices/languageSlice";
-import type { SitemapItem } from "@/types/sitemap";
+import type { SitemapItem, SitemapRoleItem } from "@/types/sitemap";
 import { Preloader } from "@/ui/Preloader";
 import { Typography } from "@/ui/Typography";
 
@@ -49,9 +49,27 @@ export const SitemapView: FC = () => {
     </li>
   );
 
+  const renderRoleItem = ({ role, position }: SitemapRoleItem) => (
+    <li key={role} className={styles.item}>
+      <Link className={styles.link} href={`/roles/${role}`}>
+        <Typography weight="bold" className={styles.position}>
+          {position}
+        </Typography>
+        <Typography size="s" variant="secondary">
+          {slugToTitle(role)}
+        </Typography>
+      </Link>
+    </li>
+  );
+
   return (
-    <Section title={t("sitemap")} className={styles.sitemap}>
-      <ul className={styles.list}>{data.items.map(renderItem)}</ul>
-    </Section>
+    <div className={styles.sitemap}>
+      <Section title={t("disciplines")}>
+        <ul className={styles.list}>{data.roles.map(renderRoleItem)}</ul>
+      </Section>
+      <Section title={t("sitemap")}>
+        <ul className={styles.list}>{data.items.map(renderItem)}</ul>
+      </Section>
+    </div>
   );
 };
