@@ -52,8 +52,13 @@ export type AdditionalSkillItem = {
 };
 
 export type AdditionalSkills = {
+  title?: string;
   skills: string[];
   items: AdditionalSkillItem[];
+};
+
+export type ResumeLayout = {
+  workHistoryAtEnd?: boolean;
 };
 
 export type HobbyItem = {
@@ -89,6 +94,7 @@ export type Resume = {
   languages: Language[];
   additionalSkills?: AdditionalSkills;
   hobbies?: HobbyItem[];
+  layout?: ResumeLayout;
 };
 
 export type DeepPartial<T> = T extends object

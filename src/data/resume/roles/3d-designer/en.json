@@ -1,0 +1,43 @@
+{
+  "summary": {
+    "intro": "Software engineer with a background in web development who has built hands-on practical experience in 3D modeling and technical drafting. Experienced in creating complete 3D models for FDM and resin (SLA/DLP) 3D printing — from concept to print-ready geometry, accounting for tolerances, wall thickness, and support structures. Produces technical documentation including electrical wiring diagrams and apartment renovation/layout floor plans. Proficient in AutoCAD, Fusion 360, and Autodesk Design Review, with hands-on experience in slicers such as Cura, OrcaSlicer, and Bambu Studio. Brings a software engineer's problem-solving mindset, combined with precision and a solid understanding of additive manufacturing constraints."
+  },
+  "additionalSkills": {
+    "title": "3D & CAD Project Experience",
+    "skills": [],
+    "items": [
+      {
+        "title": "3D Modeling for FDM & Resin Printing",
+        "description": "Designed 100+ complete, print-ready 3D models for FDM and resin (SLA/DLP) printing, adapting geometry for wall thickness, tolerances, orientation, and support structures to ensure reliable prints."
+      },
+      {
+        "title": "Electrical Wiring Diagrams",
+        "description": "Produced detailed electrical wiring diagrams for residential premises, mapping circuits, outlets, and lighting layouts in AutoCAD."
+      },
+      {
+        "title": "Apartment Layout & Renovation Drafting",
+        "description": "Created floor plans and renovation/layout redesign drawings for apartments ranging from 40 to 100 m², including wall changes and room reconfiguration, in AutoCAD."
+      },
+      {
+        "title": "Design Review & Validation",
+        "description": "Reviewed and annotated 3D models and drawings in Autodesk Design Review to validate designs before finalizing them for print or construction."
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "Hackathon Contributor",
+      "organization": "Killhouse (3rd OShBr)",
+      "description": "Completed courses on drone management and assembly. Participated in a hackathon focused on developing software for drones."
+    }
+  ],
+  "hobbies": [
+    {
+      "title": "3D Printing & Modeling",
+      "description": "Design and print personal projects on FDM and resin printers; enjoy experimenting with new materials and print settings."
+    }
+  ],
+  "layout": {
+    "workHistoryAtEnd": true
+  }
+}

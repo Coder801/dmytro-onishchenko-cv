@@ -263,10 +263,16 @@
   ],
   "education": [
     {
+      "institution": "European University",
+      "date": ["2026"],
+      "field": "Faculty of Management and Logistics (D3)",
+      "degree": "Management & Logistics"
+    },
+    {
       "institution": "Petro Mohyla Black Sea National University",
       "date": ["2007", "2013"],
       "field": "Department of Software Engineering",
-      "degree": "Bachelor of Computer Science"
+      "degree": "Studied Computer Science"
     }
   ],
   "achievements": [

@@ -1,0 +1,41 @@
+{
+  "profile": {
+    "position": "3D Designer / CAD Engineer",
+    "skills": [
+      "AutoCAD",
+      "Fusion 360",
+      "Autodesk Design Review",
+      "3D Modeling",
+      "Parametric Design",
+      "Technical Drafting (2D/3D)",
+      "FDM 3D Printing",
+      "Resin (SLA/DLP) Printing",
+      "Cura",
+      "OrcaSlicer",
+      "Bambu Studio",
+      "Electrical Schematics",
+      "Floor Plans / Layouts"
+    ],
+    "allSkills": [
+      "AutoCAD",
+      "Fusion 360",
+      "Autodesk Design Review",
+      "3D Modeling",
+      "Parametric Design",
+      "Technical Drafting (2D/3D)",
+      "FDM 3D Printing",
+      "Resin (SLA/DLP) Printing",
+      "Cura",
+      "OrcaSlicer",
+      "Bambu Studio",
+      "Electrical Schematics",
+      "Floor Plans / Layouts",
+      "STEP/STL/DWG Export",
+      "GD&T Fundamentals",
+      "Print Bed Calibration & Slicing",
+      "Rapid Prototyping",
+      "BOM Preparation",
+      "Reverse Engineering"
+    ]
+  }
+}

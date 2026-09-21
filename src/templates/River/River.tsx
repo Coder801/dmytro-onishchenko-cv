@@ -47,7 +47,13 @@ export const River: FC<RiverProps> = ({
     languages,
     additionalSkills,
     hobbies,
+    layout,
   } = data.content;
+
+  const workHistorySection = (
+    <WorkHistorySection items={workHistory} showAll={showAllWorkHistory} />
+  );
+  const workHistoryAtEnd = layout?.workHistoryAtEnd ?? false;
 
   return (
     <div
@@ -69,13 +75,14 @@ export const River: FC<RiverProps> = ({
 
         <SkillsSection skills={profile.skills} />
 
-        <WorkHistorySection items={workHistory} showAll={showAllWorkHistory} />
+        {!workHistoryAtEnd && workHistorySection}
 
         <EducationSection items={education} />
 
         <AchievementsSection items={achievements} />
 
         <AdditionalSkillsSection
+          title={additionalSkills?.title}
           skills={additionalSkills?.skills ?? []}
           items={additionalSkills?.items ?? []}
         />
@@ -83,6 +90,8 @@ export const River: FC<RiverProps> = ({
         <HobbiesSection items={hobbies ?? []} />
 
         <LanguagesSection items={languages} />
+
+        {workHistoryAtEnd && workHistorySection}
 
         <DownloadButton
           className={styles.downloadButton}

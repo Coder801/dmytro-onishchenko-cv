@@ -11,11 +11,13 @@ import { Typography } from "@/ui/Typography";
 import styles from "./styles.module.scss";
 
 type AdditionalSkillsSectionProps = {
+  title?: string;
   skills: string[];
   items: AdditionalSkillItem[];
 };
 
 export const AdditionalSkillsSection: FC<AdditionalSkillsSectionProps> = ({
+  title,
   skills,
   items,
 }) => {
@@ -26,7 +28,7 @@ export const AdditionalSkillsSection: FC<AdditionalSkillsSectionProps> = ({
   }
 
   return (
-    <Section title={t("additionalSkills")}>
+    <Section title={title ?? t("additionalSkills")}>
       {!isEmpty(skills) && (
         <Typography className={styles.skills}>
           {skills.map((skill) => (
