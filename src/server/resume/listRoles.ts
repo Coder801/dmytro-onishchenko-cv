@@ -8,6 +8,8 @@ export const DISCIPLINE_ROLES = [
   "fullstack",
   "ai-engineer",
   "embedded-trainee",
+  "frontend-lead",
+  "3d-designer",
 ] as const;
 
 export const listRoles = (): string[] => [...DISCIPLINE_ROLES];
