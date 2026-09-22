@@ -1,4 +1,5 @@
 import i18n from "i18next";
+import Head from "next/head";
 import { FC, useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -70,12 +71,25 @@ export const ResumeView: FC<ResumeViewProps> = ({ resumeQuery }) => {
     return <ErrorState onRetry={refetch} />;
   }
 
+  const { first, last } = data.content.profile.name;
+  const pageTitle = [
+    first,
+    last,
+    data.content.profile.position,
+    data.lang.toUpperCase(),
+  ].join(" - ");
+
   return (
-    <River
-      data={data}
-      isVisible={isVisible}
-      currentLanguage={currentLanguage}
-      onLanguageChange={onLanguageChange}
-    />
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
+      <River
+        data={data}
+        isVisible={isVisible}
+        currentLanguage={currentLanguage}
+        onLanguageChange={onLanguageChange}
+      />
+    </>
   );
 };
