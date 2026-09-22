@@ -8,6 +8,7 @@ import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 import { Provider } from "react-redux";
 
+import { BuildVersion } from "@/components/BuildVersion";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { AppProvider } from "@/context/AppContext";
 import { store } from "@/store";
@@ -62,6 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             className={`${roboto.variable} ${oswald.variable}`}
           />
         </AppProvider>
+        <BuildVersion />
       </Provider>
     </>
   );

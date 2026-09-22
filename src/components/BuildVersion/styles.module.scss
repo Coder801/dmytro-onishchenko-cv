@@ -1,0 +1,14 @@
+.badge {
+  bottom: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  opacity: 0.5;
+  position: fixed;
+  right: var(--space-sm);
+  user-select: none;
+  z-index: 100;
+
+  @media print {
+    display: none;
+  }
+}
