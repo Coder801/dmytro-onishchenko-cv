@@ -1,5 +1,52 @@
 {
   "profile": {
-    "position": "Junior Embedded Developer"
+    "position": "Junior Embedded Developer",
+    "skills": [
+      "C",
+      "C++",
+      "Arduino",
+      "STM32",
+      "ESP32",
+      "UART/SPI/I2C",
+      "Datasheets",
+      "Python",
+      "REST API",
+      "Flask",
+      "FastAPI",
+      "Django",
+      "SQL/PostgreSQL",
+      "Git",
+      "OOP",
+      "Frameworks"
+    ],
+    "allSkills": [
+      "C",
+      "C++",
+      "Arduino",
+      "STM32",
+      "ESP32",
+      "UART",
+      "SPI",
+      "I2C",
+      "Datasheets",
+      "Firmware Development",
+      "Debugging (GDB)",
+      "Makefile/CMake",
+      "Data Structures & Algorithms",
+      "Python",
+      "REST API",
+      "Flask",
+      "FastAPI",
+      "Django",
+      "SQL",
+      "PostgreSQL",
+      "SQLite",
+      "ORM",
+      "JavaScript/TypeScript",
+      "Frameworks",
+      "Git",
+      "OOP",
+      "Agile"
+    ]
   }
 }

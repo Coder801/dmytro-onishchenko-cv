@@ -1,0 +1,39 @@
+{
+  "summary": {
+    "intro": "After 10+ years in software engineering, progressing to senior and lead roles across frontend and full-stack development, consciously transitioning into embedded systems and open to starting at a junior level and salary to build hands-on commercial experience. Comfortable working with Arduino, STM32, and ESP32 boards, communication protocols (UART/SPI/I2C), and reading component datasheets to select and integrate hardware. Has built drone replacement/upgrade parts, an ESP32-based plotter/laser-cutter conversion, and automation devices, combining firmware work with the engineering discipline carried over from a decade of production software experience. Also has commercial experience building Python REST APIs (Flask, FastAPI, Django) with SQL databases. No commercial experience in embedded specifically yet, but a fast learning curve, a strong programming foundation, and a genuine, self-driven interest in hardware."
+  },
+  "additionalSkills": {
+    "title": "Embedded & IoT Project Experience",
+    "skills": [],
+    "items": [
+      {
+        "title": "ESP32-Based Automation Devices",
+        "description": "Designed and built automation devices on ESP32, covering firmware development, sensor integration over UART/SPI/I2C, and full hardware assembly."
+      },
+      {
+        "title": "3D Printer Conversion into a Plotter & Laser Cutter",
+        "description": "Converted a 3D printer into a plotter and a laser cutter on ESP32, implementing motor control and reworking the electronics and firmware for the new tool heads."
+      },
+      {
+        "title": "Drone Parts & Repairs",
+        "description": "Designed and 3D-printed replacement and upgrade parts for drones, and performed hands-on assembly and repair work."
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "Hackathon Contributor",
+      "organization": "Killhouse (3rd OShBr)",
+      "description": "Completed courses on drone management and assembly. Participated in a hackathon focused on developing software for drones."
+    }
+  ],
+  "hobbies": [
+    {
+      "title": "Electronics & DIY Automation",
+      "description": "Tinkers with Arduino/ESP32-based projects at home: sensors, automation devices, and hardware repairs and mods for drones and 3D printers."
+    }
+  ],
+  "layout": {
+    "workHistoryAtEnd": true
+  }
+}

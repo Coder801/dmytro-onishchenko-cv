@@ -7,8 +7,7 @@ export const DISCIPLINE_ROLES = [
   "senior-frontend",
   "fullstack",
   "ai-engineer",
-  "embedded-trainee",
-  "frontend-lead",
+  "junior-embedded-software-engineer",
   "3d-designer",
 ] as const;
 

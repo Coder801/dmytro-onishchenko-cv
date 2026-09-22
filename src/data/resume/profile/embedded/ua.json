@@ -1,5 +1,52 @@
 {
   "profile": {
-    "position": "Молодший Embedded-розробник"
+    "position": "Молодший Embedded-розробник",
+    "skills": [
+      "C",
+      "C++",
+      "Arduino",
+      "STM32",
+      "ESP32",
+      "UART/SPI/I2C",
+      "Даташити",
+      "Python",
+      "REST API",
+      "Flask",
+      "FastAPI",
+      "Django",
+      "SQL/PostgreSQL",
+      "Git",
+      "ООП",
+      "Фреймворки"
+    ],
+    "allSkills": [
+      "C",
+      "C++",
+      "Arduino",
+      "STM32",
+      "ESP32",
+      "UART",
+      "SPI",
+      "I2C",
+      "Даташити",
+      "Розробка прошивок",
+      "Відладка (GDB)",
+      "Makefile/CMake",
+      "Структури даних та алгоритми",
+      "Python",
+      "REST API",
+      "Flask",
+      "FastAPI",
+      "Django",
+      "SQL",
+      "PostgreSQL",
+      "SQLite",
+      "ORM",
+      "JavaScript/TypeScript",
+      "Фреймворки",
+      "Git",
+      "ООП",
+      "Agile"
+    ]
   }
 }
