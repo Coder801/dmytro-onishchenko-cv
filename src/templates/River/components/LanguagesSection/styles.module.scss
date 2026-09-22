@@ -4,10 +4,6 @@
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
 
-  @media print {
-    margin-bottom: -100px;
-  }
-
   & strong {
     color: var(--color-text-mark);
     font-weight: normal;
