@@ -15,6 +15,7 @@ import {
 import { River } from "@/templates/River";
 import { Languages } from "@/types/languages";
 import { Preloader } from "@/ui/Preloader";
+import { buildResumeFileName } from "@/utils/buildResumeFileName";
 
 import styles from "./styles.module.scss";
 
@@ -78,6 +79,7 @@ export const ResumeView: FC<ResumeViewProps> = ({ resumeQuery }) => {
     data.content.profile.position,
     data.lang.toUpperCase(),
   ].join(" - ");
+  const fileName = buildResumeFileName(resumeQuery, data.lang);
 
   return (
     <>
@@ -89,6 +91,7 @@ export const ResumeView: FC<ResumeViewProps> = ({ resumeQuery }) => {
         isVisible={isVisible}
         currentLanguage={currentLanguage}
         onLanguageChange={onLanguageChange}
+        fileName={fileName}
       />
     </>
   );

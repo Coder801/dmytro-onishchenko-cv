@@ -25,6 +25,7 @@ type RiverProps = {
   isVisible: boolean;
   currentLanguage: Languages;
   onLanguageChange: (code: Languages) => void;
+  fileName: string;
 };
 
 export const River: FC<RiverProps> = ({
@@ -32,6 +33,7 @@ export const River: FC<RiverProps> = ({
   isVisible,
   currentLanguage,
   onLanguageChange,
+  fileName,
 }) => {
   const [showAllWorkHistory, setShowAllWorkHistory] = useState(() => {
     const params = new URLSearchParams(window.location.search);
@@ -96,6 +98,7 @@ export const River: FC<RiverProps> = ({
         <DownloadButton
           className={styles.downloadButton}
           onCollapseWorkHistory={() => setShowAllWorkHistory(false)}
+          fileName={fileName}
         />
       </div>
       <div className={styles.languageSwitcherContainer}>

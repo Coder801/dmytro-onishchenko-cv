@@ -79,6 +79,7 @@ describe("downloadPdf", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           currentPage: "https://example.com/page?lang=en",
+          currentLanguage: "en",
           size: {
             width: 832,
             height: 1532,
@@ -196,6 +197,30 @@ describe("downloadPdf", () => {
 
     expect(mockAnchor.download).toBe(PDF_FILE_NAME);
     expect(mockAnchor.href).toBe("blob:mock-url");
+  });
+
+  it("should use the provided fileName option instead of the default", async () => {
+    const mockBlob = new Blob(["pdf content"], { type: "application/pdf" });
+    const mockResponse = {
+      ok: true,
+      blob: vi.fn().mockResolvedValue(mockBlob),
+    };
+    mockFetch.mockResolvedValue(mockResponse);
+
+    const mockAnchor = {
+      href: "",
+      download: "",
+      click: mockClick,
+    };
+    mockCreateElement.mockReturnValue(mockAnchor);
+
+    await downloadPdf(() => {}, {
+      fileName: "dmytro-onishchenko-senior-frontend-en.pdf",
+    });
+
+    expect(mockAnchor.download).toBe(
+      "dmytro-onishchenko-senior-frontend-en.pdf",
+    );
   });
 
   it("should use pdf-content dimensions with padding", async () => {

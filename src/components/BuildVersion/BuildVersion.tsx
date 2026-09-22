@@ -12,8 +12,7 @@ export const BuildVersion: FC = () => {
 
   return (
     <span className={styles.badge} title="Build version">
-      v{version}
-      {hash ? `-${hash}` : ""}
+      v{version} {hash ? `-${hash}` : ""}
     </span>
   );
 };

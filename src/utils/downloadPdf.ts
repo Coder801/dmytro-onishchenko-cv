@@ -3,6 +3,7 @@ import { PDF_FILE_NAME } from "@/config/constants";
 
 type DownloadPdfOptions = {
   showAllWorkHistory?: boolean;
+  fileName?: string;
 };
 
 export const downloadPdf = async (
@@ -32,6 +33,7 @@ export const downloadPdf = async (
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         currentPage: pageUrl.toString(),
+        currentLanguage,
         size: {
           width: Math.max((pdfContent?.scrollWidth || 0) + 32),
           height: Math.max((pdfContent?.scrollHeight || 0) + 32),
@@ -52,7 +54,7 @@ export const downloadPdf = async (
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = PDF_FILE_NAME;
+  a.download = options.fileName ?? PDF_FILE_NAME;
   a.click();
   URL.revokeObjectURL(url);
 };

@@ -11,11 +11,13 @@ import styles from "./styles.module.scss";
 type DownloadButtonProps = {
   onCollapseWorkHistory?: () => void;
   className?: string;
+  fileName: string;
 };
 
 export const DownloadButton: FC<DownloadButtonProps> = ({
   onCollapseWorkHistory,
   className,
+  fileName,
 }) => {
   const { t } = useTranslation("common");
   const [isLoadingFull, setIsLoadingFull] = useState(false);
@@ -33,7 +35,7 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
       () => {
         setIsLoadingFull(false);
       },
-      { showAllWorkHistory: true },
+      { showAllWorkHistory: true, fileName },
     );
   };
 
@@ -45,9 +47,12 @@ export const DownloadButton: FC<DownloadButtonProps> = ({
       label: "short",
     });
     onCollapseWorkHistory?.();
-    downloadPdf(() => {
-      setIsLoadingShort(false);
-    });
+    downloadPdf(
+      () => {
+        setIsLoadingShort(false);
+      },
+      { fileName },
+    );
   };
 
   return (
